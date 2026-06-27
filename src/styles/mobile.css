@@ -1,0 +1,132 @@
+/* mobile.css — INFLAPY
+   Cargado ÚLTIMO en BaseLayout → overrides todos los scoped styles
+   Breakpoints: 1024 · 768 · 640 · 480 · 380 */
+
+/* Safe-area padding en containers principales */
+@supports (padding: max(0px)) {
+  @media (max-width: 768px) {
+    .container,
+    .hdr-inner,
+    .tb-inner,
+    .hero__inner,
+    .footer__grid,
+    .footer__bottom-inner,
+    .footer__cta-inner {
+      padding-left:  max(var(--container-px), env(safe-area-inset-left)) !important;
+      padding-right: max(var(--container-px), env(safe-area-inset-right)) !important;
+    }
+  }
+}
+
+/* Touch targets en nav móvil */
+@media (max-width: 1024px) {
+  .mob-direct,
+  .mob-item__trigger { min-height: 48px; }
+  .mob-item__link    { min-height: 44px; display: flex !important; align-items: center; }
+  .hdr-burger        { width: 44px; height: 44px; }
+
+  a, button, [role="button"], summary, label,
+  .hdr-cta, .hero__btn, .btn {
+    -webkit-tap-highlight-color: rgba(var(--c-primary-rgb), .15);
+  }
+}
+
+/* Sections más compactas en móvil */
+@media (max-width: 480px) {
+  .section { padding-block: 2.5rem !important; }
+  .band    { padding-top: 1.5rem !important;   }
+}
+@media (max-width: 380px) {
+  .section { padding-block: 2.1rem !important; }
+}
+
+/* Hero mobile */
+@media (max-width: 768px) {
+  .hero__inner {
+    grid-template-columns: 1fr !important;
+    gap: clamp(1.5rem, 5vw, 2.25rem) !important;
+  }
+  .hero__title {
+    font-size: clamp(1.9rem, 7vw, 2.6rem) !important;
+  }
+  .hero__desc {
+    font-size: clamp(1rem, 4vw, 1.0625rem) !important;
+  }
+  .hero__right { display: none !important; }
+}
+@media (max-width: 480px) {
+  .hero__ctas {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .hero__ctas .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 48px;
+  }
+}
+
+/* Footer nav touch targets */
+@media (max-width: 768px) {
+  .footer__nav-link { min-height: 40px; align-items: center; }
+  .footer__legal-link { padding: .35rem .25rem; }
+  .tb-item { min-height: 32px; }
+}
+
+/* Forms — iOS anti-zoom + touch */
+@media (max-width: 640px) {
+  .cform { padding: clamp(1.1rem, 5vw, 1.75rem) !important; }
+  .cform input,
+  .cform textarea,
+  .cform select { font-size: 16px !important; min-height: 48px; }
+  .cform textarea { min-height: 120px; }
+  .cform__submit { width: 100% !important; min-height: 50px; }
+}
+
+/* WhatsApp float — icono solo en móvil */
+@media (max-width: 640px) {
+  .wa-float {
+    width: 52px;
+    height: 52px;
+    padding: 0 !important;
+    justify-content: center;
+    bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+    right:  max(1rem, env(safe-area-inset-right))  !important;
+  }
+  .wa-float__label { display: none !important; }
+}
+
+/* Footer CTA */
+@media (max-width: 480px) {
+  .footer__cta-actions { width: 100%; }
+  .footer__btn { flex: 1 1 100%; justify-content: center; min-height: 46px; }
+  .footer__social { justify-content: flex-start; }
+}
+
+/* Logo en pantallas muy pequeñas */
+@media (max-width: 380px) {
+  .hdr-inner   { gap: .75rem !important; }
+  .hdr-logo__word { font-size: 1.05rem !important; }
+}
+
+/* Menu open: ocultar WA float */
+body.menu-open { overflow: hidden; }
+body.menu-open .wa-float { display: none !important; }
+
+/* Prevenir desbordamiento en contenido largo */
+.prose, .post__body > *, .post__sidebar { min-width: 0; }
+.prose pre, .prose table { max-width: 100%; }
+
+/* overflow-wrap en párrafos */
+@media (max-width: 768px) {
+  p, li, h1, h2, h3, h4, dd, dt, blockquote, figcaption {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  pre, table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

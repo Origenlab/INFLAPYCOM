@@ -1,0 +1,244 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import { PRODUCTS, SITE } from '../config/site';
+
+const title = 'Catálogo de Inflables | INFLAPY — Renta en CDMX';
+const description =
+  'Catálogo completo de inflables para renta en CDMX y Estado de México. Castillos, toboganes y circuitos desde $800 MXN. Instalación incluida.';
+
+const filters = [
+  { id: 'todos', label: 'Todos' },
+  { id: 'chicos', label: 'Chicos (1–3 años)' },
+  { id: 'medianos', label: 'Medianos (3–10 años)' },
+  { id: 'grandes', label: 'Grandes (5–15 años)' },
+];
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical={`${SITE.url}/catalogo`}
+>
+  <!-- 1. Page hero (compact) -->
+  <section class="catalog-hero">
+    <div class="container">
+      <span class="eyebrow">Catálogo completo</span>
+      <h1 class="hero-heading">Todos nuestros inflables</h1>
+      <p class="hero-sub">
+        8 modelos disponibles · Instalación incluida · CDMX y EdoMex
+      </p>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs" role="tablist" aria-label="Filtrar por categoría de edad">
+        {filters.map((f, i) => (
+          <button
+            class:list={['filter-btn', i === 0 && 'filter-btn--active']}
+            data-filter={f.id}
+            role="tab"
+            aria-selected={i === 0 ? 'true' : 'false'}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Products grid -->
+  <section class="catalog-grid-section">
+    <div class="container">
+      <div class="catalog-grid" id="catalog-grid">
+        {PRODUCTS.map((p, i) => (
+          <article class="product-card-wrapper" data-category={p.category}>
+            <ProductCard product={p} eager={i < 3} />
+          </article>
+        ))}
+      </div>
+
+      <!-- Empty state (hidden by default) -->
+      <div class="empty-state" id="empty-state" hidden>
+        <p>No hay inflables en esta categoría.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CTAFinal -->
+  <CTAFinal />
+</PageLayout>
+
+<style>
+/* ── Container ── */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* ── Catalog hero (compact) ── */
+.catalog-hero {
+  background: var(--c-white);
+  padding-block: var(--sp-10) var(--sp-8);
+  border-bottom: 1px solid var(--c-border);
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.hero-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  line-height: 1.15;
+  margin-bottom: var(--sp-3);
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--c-muted);
+  line-height: 1.6;
+  margin-bottom: var(--sp-7);
+}
+
+/* ── Filter tabs ── */
+.filter-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.45rem 1.1rem;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-full, 9999px);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--c-ink-2);
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
+
+.filter-btn--active {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+  font-weight: 700;
+  position: relative;
+}
+
+.filter-btn--active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2.5px;
+  background: var(--c-primary);
+  border-radius: 2px;
+}
+
+/* ── Catalog grid ── */
+.catalog-grid-section {
+  padding-block: var(--section-py);
+  background: var(--c-surface);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+@media (max-width: 900px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Wrapper for filtering — hidden state */
+.product-card-wrapper {
+  display: block;
+}
+
+.product-card-wrapper[hidden] {
+  display: none;
+}
+
+/* ── Empty state ── */
+.empty-state {
+  text-align: center;
+  padding: var(--sp-12) var(--sp-4);
+  color: var(--c-muted);
+  font-size: 1rem;
+}
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const wrappers = document.querySelectorAll<HTMLElement>('.product-card-wrapper');
+  const emptyState = document.getElementById('empty-state') as HTMLElement | null;
+
+  function applyFilter(filterValue: string) {
+    let visibleCount = 0;
+
+    wrappers.forEach((card) => {
+      const category = card.dataset.category ?? '';
+      const show = filterValue === 'todos' || category === filterValue;
+      if (show) {
+        card.removeAttribute('hidden');
+        visibleCount++;
+      } else {
+        card.setAttribute('hidden', '');
+      }
+    });
+
+    if (emptyState) {
+      if (visibleCount === 0) {
+        emptyState.removeAttribute('hidden');
+      } else {
+        emptyState.setAttribute('hidden', '');
+      }
+    }
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      filterBtns.forEach((b) => {
+        b.classList.remove('filter-btn--active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('filter-btn--active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Apply filter
+      applyFilter(btn.dataset.filter ?? 'todos');
+    });
+  });
+</script>

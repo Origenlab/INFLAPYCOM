@@ -1,0 +1,27 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: string;
+}
+
+const props = Astro.props;
+---
+<BaseLayout {...props}>
+  <TopBar />
+  <Header />
+  <main id="main-content">
+    <slot />
+  </main>
+  <Footer />
+  <WhatsAppFloat />
+</BaseLayout>

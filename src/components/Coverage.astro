@@ -1,0 +1,160 @@
+---
+import { COVERAGE } from '../config/site';
+---
+
+<section class="coverage" id="cobertura">
+  <div class="coverage__container">
+    <div class="coverage__header">
+      <span class="coverage__eyebrow">Cobertura</span>
+      <h2 class="coverage__heading">Servicio en toda la Zona Metropolitana</h2>
+    </div>
+
+    <div class="coverage__grid">
+      <!-- CDMX column -->
+      <div class="coverage__col">
+        <h3 class="coverage__col-title">
+          <span class="coverage__dot" aria-hidden="true"></span>
+          Ciudad de México (CDMX)
+        </h3>
+        <ul class="coverage__zones">
+          {COVERAGE.cdmx.map((zona) => (
+            <li class="coverage__zone">
+              <span class="coverage__bullet" aria-hidden="true"></span>
+              {zona}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Estado de México column -->
+      <div class="coverage__col">
+        <h3 class="coverage__col-title">
+          <span class="coverage__dot" aria-hidden="true"></span>
+          Estado de México
+        </h3>
+        <ul class="coverage__zones">
+          {COVERAGE.edomex.map((zona) => (
+            <li class="coverage__zone">
+              <span class="coverage__bullet" aria-hidden="true"></span>
+              {zona}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <p class="coverage__note">
+      ¿No ves tu alcaldía o municipio? Escríbenos — cubrimos más zonas de las listadas.
+    </p>
+  </div>
+</section>
+
+<style>
+  .coverage {
+    background: var(--c-ink);
+    padding-block: var(--section-py);
+  }
+
+  .coverage__container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+
+  .coverage__header {
+    text-align: center;
+    margin-bottom: var(--sp-10);
+  }
+
+  .coverage__eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-primary);
+    margin-bottom: var(--sp-3);
+  }
+
+  .coverage__heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .coverage__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+
+  @media (min-width: 640px) {
+    .coverage__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .coverage__col {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    padding: var(--sp-6);
+  }
+
+  .coverage__col-title {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--sp-5);
+  }
+
+  .coverage__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: var(--c-primary);
+    flex-shrink: 0;
+  }
+
+  .coverage__zones {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2) var(--sp-4);
+  }
+
+  .coverage__zone {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .coverage__bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background: var(--c-primary);
+    flex-shrink: 0;
+  }
+
+  .coverage__note {
+    margin-top: var(--sp-8);
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-style: italic;
+  }
+</style>

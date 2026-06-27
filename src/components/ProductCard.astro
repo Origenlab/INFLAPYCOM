@@ -1,0 +1,166 @@
+---
+import type { Product } from '../config/site';
+
+interface Props {
+  product: Product;
+  eager?: boolean;
+}
+
+const { product: p, eager = false } = Astro.props;
+---
+<article class="product-card">
+  <a href={`/${p.slug}`}>
+    <div class="card-img">
+      {p.badge && (
+        <span class:list={['card-pill', p.badgeHot && 'card-pill--hot']}>
+          {p.badge}
+        </span>
+      )}
+      <img
+        class="card-img-photo"
+        src={p.images[0]}
+        alt={`${p.name} inflable para renta en CDMX — INFLAPY`}
+        width="800"
+        height="600"
+        loading={eager ? 'eager' : 'lazy'}
+        decoding={eager ? 'auto' : 'async'}
+        fetchpriority={eager ? 'high' : undefined}
+      />
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">{p.name}</h3>
+      <p class="card-desc">{p.desc}</p>
+      <div class="card-specs">
+        <span class="spec-chip">{p.dimensions}</span>
+        <span class="spec-chip">{p.ageRange}</span>
+        {p.height && <span class="spec-chip">{p.height} alto</span>}
+      </div>
+      <div class="card-foot">
+        <div class="card-price">
+          Desde <strong>${p.price.toLocaleString('es-MX')} MXN</strong>
+        </div>
+        <span class="card-arrow">
+          Ver detalles
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+.product-card {
+  background: var(--c-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--c-border);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.product-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+.product-card > a { display: block; color: inherit; text-decoration: none; }
+
+.card-img {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #1a1a2e;
+}
+.card-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: .18rem .6rem;
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,.28);
+  z-index: 2;
+}
+.card-pill--hot {
+  background: rgba(var(--c-primary-rgb), .88);
+  border-color: transparent;
+}
+.card-img-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.product-card:hover .card-img-photo { transform: scale(1.04); }
+
+.card-body { padding: 18px 20px; }
+.card-title {
+  font-size: 1rem;
+  font-weight: var(--weight-bold);
+  margin-bottom: 6px;
+  transition: color var(--transition);
+}
+.product-card:hover .card-title { color: var(--c-primary); }
+.card-desc {
+  font-size: .85rem;
+  color: var(--c-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.spec-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: .18rem .56rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-full);
+  font-size: .73rem;
+  color: var(--c-muted);
+}
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--c-border);
+}
+.card-price { font-size: .78rem; color: var(--c-muted); }
+.card-price strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: var(--weight-bold);
+  color: var(--c-primary);
+  line-height: 1.2;
+}
+.card-arrow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-heading);
+  font-size: .8rem;
+  font-weight: var(--weight-semibold);
+  color: var(--c-primary);
+  transition: gap var(--transition);
+}
+.product-card:hover .card-arrow { gap: 8px; }
+.card-arrow svg { width: 15px; height: 15px; }
+</style>

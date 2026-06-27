@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://inflapy.com/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Catálogo general -->
+  <url>
+    <loc>https://inflapy.com/catalogo.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Secciones por categoría -->
+  <url>
+    <loc>https://inflapy.com/inflables-chicos.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inflapy.com/inflables-medianos.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inflapy.com/inflables-grandes.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- inflables.html → canonical apunta a catalogo.html, prioridad baja -->
+  <url>
+    <loc>https://inflapy.com/inflables.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Páginas de producto — inflables chicos -->
+  <url>
+    <loc>https://inflapy.com/inflables-chicos/mini-castillo.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Páginas de producto — inflables medianos -->
+  <url>
+    <loc>https://inflapy.com/inflables-medianos/dragones-rojos.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://inflapy.com/inflables-medianos/mini-jungla.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://inflapy.com/inflables-medianos/gusanitos.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://inflapy.com/inflables-medianos/castillo-de-princesas.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Páginas de producto — inflables grandes -->
+  <url>
+    <loc>https://inflapy.com/inflables-grandes/barco-pirata.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://inflapy.com/inflables-grandes/extremo.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://inflapy.com/inflables-grandes/castillo-blanco.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

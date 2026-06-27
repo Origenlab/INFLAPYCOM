@@ -1,12 +1,19 @@
 {
-  "short_name": "",
-  "name": "",
-  "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
-    "sizes": "192x192"
-  }],
+  "short_name": "INFLAPY",
+  "name": "INFLAPY - Renta de Inflables CDMX",
+  "description": "Renta de inflables para fiestas en CDMX y Estado de México. 30 años de experiencia.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    }
+  ],
   "start_url": "/?utm_source=homescreen",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FF5722",
+  "lang": "es-MX",
+  "categories": ["shopping", "business"]
 }

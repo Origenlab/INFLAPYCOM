@@ -66,18 +66,13 @@
   // Header Scroll Effect
   // ========================================
   const header = document.querySelector('.header');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', function() {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
-      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+    if (window.pageYOffset > 60) {
+      header.classList.add('scrolled');
     } else {
-      header.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+      header.classList.remove('scrolled');
     }
-
-    lastScroll = currentScroll;
   }, { passive: true });
 
 
@@ -162,31 +157,23 @@
   });
 
   // ========================================
-  // Lazy Loading Images (for future use)
+  // Lazy Loading Images
   // ========================================
-  if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(function(img) {
-      img.src = img.dataset.src;
-    });
-  } else {
-    // Fallback for browsers that don't support lazy loading
-    const lazyImages = document.querySelectorAll('img[data-src]');
-
-    const imageObserver = new IntersectionObserver(function(entries) {
+  // Images use native loading="lazy" with direct src attributes.
+  // No JS needed for modern browsers — only polyfill for legacy.
+  if (!('loading' in HTMLImageElement.prototype)) {
+    var lazyImages = document.querySelectorAll('img[data-src]');
+    var imageObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          const img = entry.target;
+          var img = entry.target;
           img.src = img.dataset.src;
           img.classList.add('loaded');
           imageObserver.unobserve(img);
         }
       });
     });
-
-    lazyImages.forEach(function(img) {
-      imageObserver.observe(img);
-    });
+    lazyImages.forEach(function(img) { imageObserver.observe(img); });
   }
 
   // ========================================

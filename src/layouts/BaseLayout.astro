@@ -1,0 +1,73 @@
+---
+import { SITE } from '../config/site';
+import '../styles/tokens.css';
+import '../styles/mobile.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: string;
+}
+
+const {
+  title = `${SITE.brand} | ${SITE.name}`,
+  description = SITE.description,
+  canonical = Astro.url.href,
+  ogImage = `${SITE.url}${SITE.ogImage}`,
+  noindex = false,
+  schema,
+} = Astro.props;
+---
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="author" content={SITE.brand} />
+  {noindex
+    ? <meta name="robots" content="noindex, follow" />
+    : <meta name="robots" content="index, follow" />
+  }
+  <link rel="canonical" href={canonical} />
+  <meta name="geo.region" content="MX-CMX" />
+  <meta name="geo.placename" content="Ciudad de México" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Theme -->
+  <meta name="theme-color" content={SITE.themeColor} />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- JSON-LD -->
+  {schema && <script is:inline type="application/ld+json" set:html={schema} />}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <slot />
+
+  <!-- Cloudflare Web Analytics -->
+  <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "REEMPLAZAR_CON_TOKEN_REAL"}'></script>
+</body>
+</html>

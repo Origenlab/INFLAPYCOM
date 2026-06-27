@@ -1,0 +1,248 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { SITE, CONTACT, WA_MESSAGES, getProductsByCategory } from '../../config/site';
+import { waUrl, telUrl } from '../../lib/utils';
+
+const products = getProductsByCategory('chicos');
+const waHref = waUrl(WA_MESSAGES.cotizar);
+const telHref = telUrl();
+
+const title = 'Inflables para Bebés | INFLAPY CDMX — Renta 1 a 3 Años';
+const description =
+  'Inflables seguros para bebés y niños de 1 a 3 años en CDMX. Mini Castillo con paredes acolchadas bajas. Instalación incluida desde $800 MXN.';
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical={`${SITE.url}/inflables-chicos`}
+>
+  <!-- 1. Category hero -->
+  <section class="cat-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true">›</span>
+        <a href="/catalogo">Catálogo</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Inflables para Bebés</span>
+      </nav>
+      <span class="eyebrow">Categoría</span>
+      <h1 class="cat-heading">Inflables para Bebés (1–3 años)</h1>
+      <p class="cat-sub">
+        Inflables diseñados especialmente para los más pequeños. Paredes acolchadas bajas,
+        materiales seguros y tamaños compactos que caben incluso en interiores.
+      </p>
+      <div class="cat-meta">
+        <span class="count-badge">{products.length} modelo{products.length !== 1 ? 's' : ''} disponible{products.length !== 1 ? 's' : ''}</span>
+        <span class="cat-price-hint">Desde <strong>$800 MXN</strong> / evento</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Products grid -->
+  <section class="cat-grid">
+    <div class="container">
+      <div class="products-grid">
+        {products.map((p, i) => (
+          <ProductCard product={p} eager={i === 0} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CTA strip -->
+  <section class="cta-strip">
+    <div class="container cta-inner">
+      <div class="cta-text">
+        <p class="cta-label">¿Tienes dudas sobre el espacio o la edad?</p>
+        <p class="cta-sub">Te asesoramos gratis por WhatsApp en minutos.</p>
+      </div>
+      <div class="cta-actions">
+        <a href={waHref} class="btn btn-wa" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.955 7.955 0 01-4.078-1.118l-.29-.173-3.008.853.854-2.938-.19-.302A7.955 7.955 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          Cotizar por WhatsApp
+        </a>
+        <a href={telHref} class="btn btn-ghost">
+          Llamar: {CONTACT.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* ── Cat hero ── */
+.cat-hero {
+  background: var(--c-white);
+  padding-block: var(--sp-12) var(--sp-8);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.8rem;
+  color: var(--c-muted);
+  margin-bottom: var(--sp-4);
+  flex-wrap: wrap;
+}
+.breadcrumb a { color: var(--c-muted); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--c-primary); }
+.breadcrumb span[aria-current] { color: var(--c-ink); font-weight: 500; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.cat-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  line-height: 1.15;
+  margin-bottom: var(--sp-3);
+}
+
+.cat-sub {
+  font-size: 1rem;
+  color: var(--c-muted);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: var(--sp-5);
+}
+
+.cat-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: color-mix(in srgb, var(--c-primary) 10%, transparent);
+  color: var(--c-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+}
+
+.cat-price-hint {
+  font-size: 0.9rem;
+  color: var(--c-muted);
+}
+.cat-price-hint strong {
+  color: var(--c-ink);
+  font-weight: 700;
+}
+
+/* ── Products grid ── */
+.cat-grid {
+  padding-block: var(--section-py);
+  background: var(--c-surface);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+@media (max-width: 900px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+
+/* ── CTA strip ── */
+.cta-strip {
+  background: var(--c-ink);
+  padding-block: var(--sp-8);
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.cta-label {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-white);
+  margin: 0 0 var(--sp-1);
+}
+.cta-sub {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: .75rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+.btn svg { flex-shrink: 0; width: 18px; height: 18px; }
+
+.btn-wa {
+  background: var(--c-wa);
+  color: #04210f;
+  box-shadow: 0 4px 16px rgba(37,211,102,.3);
+}
+.btn-wa:hover { background: #1ebe5a; transform: translateY(-1px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--c-white);
+  border-color: rgba(255,255,255,.4);
+}
+.btn-ghost:hover { border-color: var(--c-white); background: rgba(255,255,255,.08); }
+
+@media (max-width: 640px) {
+  .cta-inner { flex-direction: column; align-items: flex-start; }
+  .cta-actions { width: 100%; }
+  .btn { flex: 1; justify-content: center; }
+}
+</style>

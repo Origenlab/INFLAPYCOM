@@ -1,0 +1,181 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { PRODUCTS, CONTACT, WA_MESSAGES, SITE } from '../../config/site';
+import { waUrl, telUrl } from '../../lib/utils';
+
+const product = PRODUCTS.find(p => p.id === 'castillo-de-princesas')!;
+const related = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3);
+const waHref = waUrl(WA_MESSAGES.reservar(product.name));
+const telHref = telUrl();
+const categoryLabels: Record<string, string> = { chicos: 'Inflables para Bebés', medianos: 'Inflables Medianos', grandes: 'Inflables Grandes' };
+const categoryPaths: Record<string, string> = { chicos: '/inflables-chicos', medianos: '/inflables-medianos', grandes: '/inflables-grandes' };
+const catLabel = categoryLabels[product.category];
+const catPath = categoryPaths[product.category];
+const schema = JSON.stringify({
+  "@context": "https://schema.org", "@type": "Product",
+  "name": product.name, "description": product.desc,
+  "image": SITE.url + product.ogImage,
+  "brand": { "@type": "Brand", "name": SITE.brand },
+  "offers": { "@type": "Offer", "priceCurrency": "MXN", "price": product.price, "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": SITE.brand } }
+});
+---
+
+<PageLayout
+  title={`${product.name} — Renta de Inflable en CDMX | INFLAPY`}
+  description={product.desc}
+  canonical={`${SITE.url}/${product.slug}`}
+  ogImage={`${SITE.url}${product.ogImage}`}
+  schema={schema}
+>
+  <div class="product-page">
+    <div class="breadcrumb-bar"><div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a><span aria-hidden="true">›</span>
+        <a href="/catalogo">Catálogo</a><span aria-hidden="true">›</span>
+        <a href={catPath}>{catLabel}</a><span aria-hidden="true">›</span>
+        <span aria-current="page">{product.name}</span>
+      </nav>
+    </div></div>
+
+    <section class="product-main"><div class="container"><div class="product-layout">
+      <div class="gallery">
+        <div class="gallery-main">
+          <img id="main-img" src={product.images[0]} alt={`${product.name} — inflable para renta en CDMX`} width="800" height="600" loading="eager" decoding="auto" fetchpriority="high" />
+          {product.badge && <span class:list={['gallery-badge', product.badgeHot && 'gallery-badge--hot']}>{product.badge}</span>}
+        </div>
+        {product.images.length > 1 && (
+          <div class="gallery-thumbs">
+            {product.images.map((img, i) => (
+              <button class:list={['thumb-btn', i === 0 && 'thumb-btn--active']} data-src={img} aria-label={`Ver imagen ${i + 1}`} type="button">
+                <img src={img} alt="" width="120" height="90" loading="lazy" decoding="async" />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div class="product-info">
+        {product.badge && <span class:list={['info-badge', product.badgeHot && 'info-badge--hot']}>{product.badge}</span>}
+        <h1 class="product-name">{product.name}</h1>
+        <div class="price-block">
+          <p class="price-main">Desde <strong>${product.price.toLocaleString('es-MX')} MXN</strong> / evento</p>
+          {product.priceNote && <p class="price-note">{product.priceNote}</p>}
+        </div>
+        <div class="specs-grid">
+          <div class="spec-item"><span class="spec-label">Dimensiones</span><span class="spec-value">{product.dimensions}</span></div>
+          <div class="spec-item"><span class="spec-label">Capacidad</span><span class="spec-value">{product.capacity}</span></div>
+          <div class="spec-item"><span class="spec-label">Edad recomendada</span><span class="spec-value">{product.ageRange}</span></div>
+          {product.height && <div class="spec-item"><span class="spec-label">Altura</span><span class="spec-value">{product.height}</span></div>}
+        </div>
+        <p class="product-desc-long">{product.descLong}</p>
+        <div class="list-block">
+          <h3 class="list-title">Características</h3>
+          <ul class="check-list">{product.features.map(f => <li><span class="check-icon" aria-hidden="true">✓</span>{f}</li>)}</ul>
+        </div>
+        <div class="list-block">
+          <h3 class="list-title">Ideal para</h3>
+          <ul class="check-list">{product.ideal.map(i => <li><span class="check-icon" aria-hidden="true">✓</span>{i}</li>)}</ul>
+        </div>
+        <div class="product-ctas">
+          <a href={waHref} class="btn btn-wa" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.955 7.955 0 01-4.078-1.118l-.29-.173-3.008.853.854-2.938-.19-.302A7.955 7.955 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+            Reservar por WhatsApp
+          </a>
+          <a href={telHref} class="btn btn-ghost-ink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            {CONTACT.phoneDisplay}
+          </a>
+        </div>
+        <p class="cta-note">Instalación incluida · CDMX y Estado de México</p>
+      </div>
+    </div></div></section>
+
+    {related.length > 0 && (
+      <section class="related-section"><div class="container">
+        <h2 class="related-heading">También te puede gustar</h2>
+        <div class="related-grid">
+          {related.map(rp => (
+            <a href={`/${rp.slug}`} class="related-card">
+              <div class="related-img"><img src={rp.images[0]} alt={rp.name} width="400" height="300" loading="lazy" decoding="async" /></div>
+              <div class="related-body"><p class="related-name">{rp.name}</p><p class="related-price">Desde ${rp.price.toLocaleString('es-MX')} MXN</p></div>
+            </a>
+          ))}
+        </div>
+      </div></section>
+    )}
+  </div>
+</PageLayout>
+
+<style>
+.container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+.breadcrumb-bar { background: var(--c-white); border-bottom: 1px solid var(--c-border); padding-block: var(--sp-3); }
+.breadcrumb { display: flex; align-items: center; gap: var(--sp-2); font-size: 0.8rem; color: var(--c-muted); flex-wrap: wrap; }
+.breadcrumb a { color: var(--c-muted); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--c-primary); }
+.breadcrumb span[aria-current] { color: var(--c-ink); font-weight: 500; }
+.product-main { padding-block: var(--sp-8) var(--section-py); background: var(--c-white); }
+.product-layout { display: grid; grid-template-columns: 58fr 42fr; gap: var(--sp-10); align-items: start; }
+@media (max-width: 900px) { .product-layout { grid-template-columns: 1fr; gap: var(--sp-6); } }
+.gallery { display: flex; flex-direction: column; gap: var(--sp-3); }
+.gallery-main { position: relative; border-radius: var(--radius-xl); overflow: hidden; background: var(--c-surface); aspect-ratio: 4/3; }
+.gallery-main img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s ease; }
+.gallery-badge { position: absolute; top: 14px; left: 14px; padding: 0.25rem 0.75rem; background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); color: #fff; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: var(--radius-full); border: 1px solid rgba(255,255,255,0.28); z-index: 2; }
+.gallery-badge--hot { background: rgba(var(--c-primary-rgb), 0.88); border-color: transparent; }
+.gallery-thumbs { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+.thumb-btn { width: 80px; height: 60px; border-radius: var(--radius-md); overflow: hidden; border: 2px solid var(--c-border); padding: 0; cursor: pointer; background: none; transition: border-color var(--transition); flex-shrink: 0; }
+.thumb-btn img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb-btn:hover, .thumb-btn--active { border-color: var(--c-primary); }
+.product-info { display: flex; flex-direction: column; gap: var(--sp-5); }
+.info-badge { display: inline-flex; width: fit-content; padding: 0.25rem 0.75rem; background: color-mix(in srgb, var(--c-primary) 10%, transparent); color: var(--c-primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: var(--radius-full); }
+.info-badge--hot { background: var(--c-primary); color: #fff; }
+.product-name { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; color: var(--c-ink); line-height: 1.15; margin: 0; }
+.price-block { display: flex; flex-direction: column; gap: 4px; }
+.price-main { font-size: 1rem; color: var(--c-muted); margin: 0; }
+.price-main strong { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800; color: var(--c-primary); }
+.price-note { font-size: 0.82rem; color: var(--c-muted); margin: 0; }
+.specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); background: var(--c-surface); border-radius: var(--radius-lg); padding: var(--sp-4); }
+.spec-item { display: flex; flex-direction: column; gap: 2px; }
+.spec-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--c-muted); }
+.spec-value { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--c-ink); }
+.product-desc-long { font-size: 0.95rem; color: var(--c-ink-2, #3a424e); line-height: 1.7; margin: 0; }
+.list-block { display: flex; flex-direction: column; gap: var(--sp-2); }
+.list-title { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--c-ink); margin: 0; }
+.check-list { display: flex; flex-direction: column; gap: var(--sp-2); list-style: none; padding: 0; margin: 0; }
+.check-list li { display: flex; align-items: flex-start; gap: var(--sp-2); font-size: 0.9rem; color: var(--c-ink-2, #3a424e); line-height: 1.5; }
+.check-icon { flex-shrink: 0; width: 18px; height: 18px; background: var(--c-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 900; margin-top: 2px; }
+.product-ctas { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: var(--sp-2); padding: .85rem 1.5rem; font-family: var(--font-heading); font-size: 0.875rem; font-weight: 700; border-radius: var(--radius-md); border: 2px solid transparent; cursor: pointer; transition: background var(--transition), transform var(--transition); white-space: nowrap; line-height: 1; text-decoration: none; }
+.btn svg { flex-shrink: 0; width: 18px; height: 18px; }
+.btn-wa { background: var(--c-wa); color: #04210f; box-shadow: 0 4px 16px rgba(37,211,102,.3); }
+.btn-wa:hover { background: #1ebe5a; transform: translateY(-1px); }
+.btn-ghost-ink { background: transparent; color: var(--c-ink); border-color: var(--c-border); }
+.btn-ghost-ink:hover { border-color: var(--c-ink); background: var(--c-surface); }
+.cta-note { font-size: 0.78rem; color: var(--c-muted); margin: 0; }
+@media (max-width: 480px) { .product-ctas { flex-direction: column; } .btn { justify-content: center; } }
+.related-section { padding-block: var(--section-py); background: var(--c-surface); }
+.related-heading { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--c-ink); margin: 0 0 var(--sp-6); }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5); }
+@media (max-width: 768px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card { background: var(--c-white); border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--c-border); box-shadow: var(--shadow-sm); transition: box-shadow var(--transition), transform var(--transition); text-decoration: none; color: inherit; display: block; }
+.related-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.related-img { aspect-ratio: 4/3; overflow: hidden; background: var(--c-surface); }
+.related-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+.related-card:hover .related-img img { transform: scale(1.04); }
+.related-body { padding: var(--sp-4); }
+.related-name { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--c-ink); margin: 0 0 4px; }
+.related-price { font-size: 0.82rem; color: var(--c-primary); font-weight: 600; margin: 0; }
+</style>
+
+<script>
+  const mainImg = document.getElementById('main-img') as HTMLImageElement | null;
+  const thumbBtns = document.querySelectorAll<HTMLButtonElement>('.thumb-btn');
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.src;
+      if (mainImg && src) { mainImg.style.opacity = '0'; setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 150); }
+      thumbBtns.forEach(b => b.classList.remove('thumb-btn--active'));
+      btn.classList.add('thumb-btn--active');
+    });
+  });
+</script>
