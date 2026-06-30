@@ -1,63 +1,33 @@
 ---
-import { REVIEWS, SITE } from '../config/site';
-
-const starSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
-
-const reviewSchema = JSON.stringify(
-  REVIEWS.map((r) => ({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": r.stars,
-      "bestRating": 5,
-    },
-    "author": {
-      "@type": "Person",
-      "name": r.author,
-    },
-    "reviewBody": r.text,
-    "itemReviewed": {
-      "@type": "LocalBusiness",
-      "name": SITE.brand,
-      "url": SITE.url,
-    },
-  }))
-);
+// Reviews.astro — Sección de testimonios.
+// Data-driven desde REVIEWS (site.ts). Usa ReviewCard canónico.
+// REGLA: solo reseñas reales (cero aggregateRating fabricado).
+import { REVIEWS } from '../config/site';
+import SectionHeading from './SectionHeading.astro';
+import ReviewCard from './ReviewCard.astro';
 ---
 
 <section class="reviews" id="testimonios">
-  <div class="reviews__container">
-    <div class="reviews__header">
-      <span class="reviews__eyebrow">Reseñas</span>
-      <h2 class="reviews__heading">Lo que dicen nuestros clientes</h2>
-    </div>
+  <div class="reviews__inner">
+    <SectionHeading
+      eyebrow="Reseñas"
+      title="Lo que dicen"
+      titleAccent="nuestros clientes"
+      center={true}
+    />
 
     <div class="reviews__grid">
-      {REVIEWS.map((review) => (
-        <article class="review-card">
-          <div class="review-card__stars" aria-label={`${review.stars} estrellas`}>
-            {Array.from({ length: review.stars }).map(() => (
-              <span set:html={starSvg} />
-            ))}
-          </div>
-          <blockquote class="review-card__text">
-            <p>"{review.text}"</p>
-          </blockquote>
-          <footer class="review-card__author">
-            <div class="review-card__avatar" aria-hidden="true">{review.initials}</div>
-            <div class="review-card__meta">
-              <span class="review-card__name">{review.author}</span>
-              <span class="review-card__location">{review.location}</span>
-            </div>
-          </footer>
-        </article>
+      {REVIEWS.map((r) => (
+        <ReviewCard
+          quote={r.text}
+          name={r.author}
+          role={r.location}
+          rating={r.stars}
+        />
       ))}
     </div>
   </div>
 </section>
-
-<script type="application/ld+json" set:html={reviewSchema} />
 
 <style>
   .reviews {
@@ -65,34 +35,10 @@ const reviewSchema = JSON.stringify(
     padding-block: var(--section-py);
   }
 
-  .reviews__container {
+  .reviews__inner {
     max-width: var(--container-max);
     margin-inline: auto;
     padding-inline: var(--container-px);
-  }
-
-  .reviews__header {
-    text-align: center;
-    margin-bottom: var(--sp-10);
-  }
-
-  .reviews__eyebrow {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--c-primary);
-    margin-bottom: var(--sp-3);
-  }
-
-  .reviews__heading {
-    font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    font-weight: 800;
-    color: var(--c-ink);
-    line-height: 1.2;
   }
 
   .reviews__grid {
@@ -102,94 +48,10 @@ const reviewSchema = JSON.stringify(
   }
 
   @media (min-width: 640px) {
-    .reviews__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .reviews__grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (min-width: 1024px) {
-    .reviews__grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  /* ── Review card ── */
-  .review-card {
-    background: var(--c-white);
-    border: 1px solid var(--c-border);
-    border-radius: var(--radius-xl);
-    padding: var(--sp-6);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    flex-direction: column;
-    gap: var(--sp-4);
-    transition: var(--transition);
-  }
-
-  .review-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
-
-  .review-card__stars {
-    display: flex;
-    gap: 2px;
-    color: var(--c-primary);
-  }
-
-  .review-card__text {
-    margin: 0;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-style: italic;
-    line-height: 1.7;
-    color: var(--c-ink-2);
-    flex: 1;
-  }
-
-  .review-card__text p {
-    margin: 0;
-  }
-
-  .review-card__author {
-    display: flex;
-    align-items: center;
-    gap: var(--sp-3);
-    border-top: 1px solid var(--c-border);
-    padding-top: var(--sp-4);
-  }
-
-  .review-card__avatar {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: var(--radius-full);
-    background: rgba(var(--c-primary-rgb), 0.12);
-    color: var(--c-primary);
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .review-card__meta {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .review-card__name {
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--c-ink);
-  }
-
-  .review-card__location {
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    color: var(--c-muted);
+    .reviews__grid { grid-template-columns: repeat(3, 1fr); }
   }
 </style>

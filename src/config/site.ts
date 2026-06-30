@@ -14,7 +14,7 @@ export const SITE = {
   keywords:
     'renta de inflables CDMX, alquiler brincolines Ciudad de México, inflables para fiestas infantiles, renta castillos inflables Estado de México',
   ogImage: '/img/inflapy-og-image.jpg',
-  themeColor: '#FF5722',
+  themeColor: '#7830f8',
   locale: 'es-MX',
   /** Never show self-generated aggregateRating */
   allowSelfReviews: false,
@@ -38,6 +38,24 @@ export const WA_MESSAGES = {
   reservar: (producto: string) =>
     `Hola INFLAPY, me interesa rentar el inflable ${producto}. ¿Cuál es la disponibilidad?`,
 };
+
+// ── Keywords SEO (array ordenado kw1→kw3 — alimenta PageLayout automáticamente) ──
+// kw1 (24) + " | " + kw2 (24) = 51 chars ≤60 → title: "Renta de inflables CDMX | castillos y brincolines"
+export const KEYWORDS = [
+  'renta de inflables CDMX',      // kw1 primaria
+  'castillos y brincolines',      // kw2 producto
+  'fiestas infantiles CDMX',     // kw3 intención (overflow → no aparece en title)
+];
+
+// ── Navegación (misma fuente para Header y SectionMenu) ──
+export const NAV = [
+  { label: 'Catálogo', href: '/#catalogo' },
+  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Proceso', href: '/#proceso' },
+  { label: 'Reseñas', href: '/#testimonios' },
+  { label: 'Cobertura', href: '/#cobertura' },
+  { label: 'FAQ', href: '/#faq' },
+];
 
 export const SOCIAL = {
   facebook: 'https://www.facebook.com/inflapy',

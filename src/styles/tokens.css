@@ -5,17 +5,19 @@
    En ≤768 el container pasa a 100% — un solo margen en --container-px */
 
 :root {
-  /* Brand */
-  --c-primary:       #FF5722;
-  --c-primary-light: #FF8A65;
-  --c-primary-dark:  #E64A19;
-  --c-accent:        var(--c-primary);
-  --c-primary-rgb:   255, 87, 34;
+  /* Brand — extraído del logo inflapy.png */
+  --c-primary:       #7830f8;   /* morado principal */
+  --c-primary-light: #a060fa;   /* morado claro */
+  --c-primary-dark:  #5a18d4;   /* morado oscuro */
+  --c-accent:        #f83088;   /* hot pink (logo) */
+  --c-cyan:          #00d8e0;   /* cyan (logo) */
+  --c-yellow:        #e0f000;   /* amarillo-verde (logo) */
+  --c-primary-rgb:   120, 48, 248;
 
-  /* Ink / text */
-  --c-ink:    #14181f;
-  --c-ink-2:  #3a424e;
-  --c-muted:  #6b7280;
+  /* Ink / text — navy del logo */
+  --c-ink:    #001028;
+  --c-ink-2:  #1a2a44;
+  --c-muted:  #6b7a90;
 
   /* Surfaces */
   --c-border:  #e5e7eb;
@@ -87,13 +89,13 @@
   --transition-base: .2s ease;
 
   /* Layout */
-  --container-max:  90%;
-  --container-px:   clamp(1rem, 4vw, 2rem);
+  --container-max:  100%;
+  --container-px:   clamp(1.5rem, 5vw, 4rem);
   --container-prose: 740px;
 
   /* Header / topbar heights */
   --topbar-height: 36px;
-  --header-height: 64px;
+  --header-height: 74px;
   --stack-height:  calc(var(--topbar-height) + var(--header-height));
 
   /* Section rhythm */
@@ -106,22 +108,26 @@
 /* Responsive token overrides */
 @media (max-width: 1024px) {
   :root {
-    --header-height: 60px;
+    --header-height: 68px;
     --section-py: clamp(2.75rem, 6vw, 4rem);
   }
 }
 @media (max-width: 768px) {
-  :root { --container-max: 90%; }
+  :root { --container-px: clamp(1.25rem, 5vw, 2rem); }
 }
 @media (max-width: 640px) {
   :root {
     --topbar-height: 34px;
-    --header-height: 58px;
+    --header-height: 62px;
     --section-py: clamp(2.5rem, 7vw, 3.25rem);
+    --container-px: 1.25rem;
   }
 }
 @media (max-width: 480px) {
-  :root { --section-py: 2.5rem; }
+  :root {
+    --section-py: 2.5rem;
+    --container-px: 1rem;
+  }
 }
 @media (max-width: 380px) {
   :root {

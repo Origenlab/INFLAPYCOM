@@ -1,136 +1,224 @@
 ---
-import { CONTACT, SITE, WA_MESSAGES } from '../config/site';
+import { CONTACT, WA_MESSAGES } from '../config/site';
 import { waUrl, telUrl } from '../lib/utils';
 ---
+
 <div class="topbar">
-  <div class="topbar__container">
-    <span class="topbar__tagline">{SITE.tagline}</span>
-    <span class="topbar__schedule">{CONTACT.schedule.display}</span>
+  <div class="topbar__inner">
+
+    <!-- Izquierda: trust tagline -->
+    <div class="topbar__trust">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      <span>30+ años de experiencia · CDMX y Estado de México</span>
+    </div>
+
+    <!-- Centro: horario -->
+    <div class="topbar__schedule">
+      <span class="topbar__sep" aria-hidden="true"></span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <span>{CONTACT.schedule.display}</span>
+    </div>
+
+    <!-- Derecha: teléfono + WhatsApp -->
     <div class="topbar__contact">
+      <span class="topbar__sep" aria-hidden="true"></span>
+
       <a href={telUrl()} class="topbar__tel" aria-label={`Llamar al ${CONTACT.phoneDisplay}`}>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
         </svg>
         {CONTACT.phoneDisplay}
       </a>
-      <a href={waUrl(WA_MESSAGES.cotizar)} class="topbar__wa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+
+      <a
+        href={waUrl(WA_MESSAGES.cotizar)}
+        class="topbar__wa"
+        target="_blank"
+        rel="noopener"
+        aria-label="Cotizar por WhatsApp"
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
-        WhatsApp
+        Cotizar gratis
       </a>
     </div>
+
   </div>
 </div>
 
 <style>
+/* ── Barra completa ── */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 501;
-  height: var(--topbar-height);
-  display: flex;
-  align-items: center;
   background: var(--c-ink);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.78rem;
-  font-weight: 500;
+  height: var(--topbar-height);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.topbar__container {
+/* ── Contenedor interno ── */
+.topbar__inner {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-px);
-  height: var(--topbar-height);
-  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.topbar__tagline {
+/* ── Separador vertical ── */
+.topbar__sep {
+  display: block;
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+/* ── Trust tagline (izquierda, empuja el resto a la derecha) ── */
+.topbar__trust {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   flex: 1;
   min-width: 0;
+  color: rgba(255, 255, 255, 0.72);
 }
 
+.topbar__trust svg {
+  color: var(--c-primary);
+  flex-shrink: 0;
+}
+
+/* ── Horario (centro) ── */
 .topbar__schedule {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   white-space: nowrap;
   flex-shrink: 0;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.55);
 }
 
+.topbar__schedule svg {
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* ── Contacto (derecha) ── */
 .topbar__contact {
   display: flex;
   align-items: center;
-  gap: var(--sp-4);
+  gap: var(--sp-3);
   flex-shrink: 0;
 }
 
-.topbar__tel,
-.topbar__wa {
+/* Teléfono */
+.topbar__tel {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  color: rgba(255, 255, 255, 0.85);
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   white-space: nowrap;
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.45rem;
   border-radius: var(--radius-sm);
   transition: color 0.15s ease, background 0.15s ease;
 }
 
 .topbar__tel:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 
+/* WhatsApp — píldora verde visible */
 .topbar__wa {
-  background: rgba(255, 255, 255, 0.14);
-  padding: 0.25rem 0.8rem;
-  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--c-wa);
+  color: #04210f;
   font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-full);
+  transition: background 0.15s ease, transform 0.15s ease;
 }
 
 .topbar__wa:hover {
-  background: rgba(255, 255, 255, 0.26);
-  color: #fff;
+  background: #1ebe5a;
+  transform: translateY(-1px);
 }
 
-/* Ocultar schedule en mobile */
-@media (max-width: 768px) {
-  .topbar__schedule {
-    display: none;
-  }
+/* ── Responsive ── */
+
+/* ≤900px: ocultar horario */
+@media (max-width: 900px) {
+  .topbar__schedule { display: none; }
+  .topbar__schedule + .topbar__sep,
+  .topbar__contact > .topbar__sep:first-child { display: none; }
 }
 
+/* ≤640px: trust oculto, tel+WA de borde a borde */
 @media (max-width: 640px) {
-  .topbar__tagline {
-    display: none;
-  }
-  .topbar__contact {
-    flex: 1;
-    justify-content: flex-end;
+  .topbar { padding: 0; }
+
+  .topbar__inner {
+    max-width: 100%;
+    padding-inline: 0;
     gap: 0;
   }
+
+  .topbar__trust,
+  .topbar__schedule { display: none; }
+
+  .topbar__contact {
+    flex: 1;
+    width: 100%;
+    gap: 0;
+  }
+
+  .topbar__contact > .topbar__sep {
+    display: none;
+  }
+
   .topbar__tel,
   .topbar__wa {
     flex: 1;
     justify-content: center;
     min-height: var(--topbar-height);
     border-radius: 0;
-    background: transparent;
-    font-weight: 600;
+    padding: 0;
+    font-size: 0.8rem;
+    gap: 6px;
   }
+
   .topbar__tel {
-    box-shadow: inset -1px 0 rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
   }
-  .topbar__tel:hover,
-  .topbar__wa:hover {
-    background: rgba(255, 255, 255, 0.1);
+
+  .topbar__wa {
+    background: var(--c-wa);
+    color: #04210f;
   }
+
+  .topbar__tel:hover { background: rgba(255, 255, 255, 0.12); }
+  .topbar__wa:hover  { background: #1ebe5a; transform: none; }
 }
 </style>

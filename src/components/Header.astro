@@ -25,10 +25,15 @@ const currentPath = Astro.url.pathname;
 <header class="site-header" id="site-header">
   <div class="hdr-inner container">
     <a href="/" class="hdr-logo" aria-label={`${SITE.brand} - Inicio`}>
-      <div class="hdr-logo__mark" aria-hidden="true">I</div>
-      <span class="hdr-logo__word">
-        {SITE.brand}<span class="hdr-logo__tld">.com</span>
-      </span>
+      <img
+        src="/img/logo-inflapy.png"
+        alt={SITE.brand}
+        class="hdr-logo__img"
+        width="217"
+        height="50"
+        loading="eager"
+        decoding="async"
+      />
     </a>
 
     <nav class="hdr-nav" aria-label="Navegación principal">
@@ -143,31 +148,21 @@ const currentPath = Astro.url.pathname;
 .hdr-logo {
   display: inline-flex;
   align-items: center;
-  gap: .55rem;
   flex-shrink: 0;
   text-decoration: none;
 }
-.hdr-logo__mark {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, var(--c-primary), var(--c-primary-light));
-  color: #fff;
-  font-family: var(--font-heading);
-  font-weight: var(--weight-black);
-  font-size: 1.25rem;
-  box-shadow: 0 4px 12px rgba(var(--c-primary-rgb), .35);
+.hdr-logo__img {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
-.hdr-logo__word {
-  font-family: var(--font-heading);
-  font-weight: var(--weight-black);
-  font-size: 1.35rem;
-  letter-spacing: -.02em;
-  color: var(--c-ink);
+@media (max-width: 1024px) {
+  .hdr-logo__img { height: 44px; }
 }
-.hdr-logo__tld { color: var(--c-primary); }
+@media (max-width: 640px) {
+  .hdr-logo__img { height: 38px; }
+}
 
 .hdr-nav { margin-left: auto; }
 .hdr-nav__list {

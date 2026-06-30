@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../config/site';
+import { buildKeywordTitle } from '../lib/seo';
 import '../styles/tokens.css';
 import '../styles/mobile.css';
 
@@ -10,16 +11,22 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   schema?: string;
+  keywords?: string[];
 }
 
 const {
-  title = `Renta de inflables | ${SITE.name} | CDMX y EdoMex`,
+  title: titleProp,
+  keywords,
   description = SITE.description,
   canonical = Astro.url.href,
   ogImage = `${SITE.url}${SITE.ogImage}`,
   noindex = false,
   schema,
 } = Astro.props;
+
+// Auto-genera el <title> desde keywords si no se pasa title explícito.
+// Regla kw-first: "kw1 | kw2 | …" respetando ≤60 chars.
+const title = titleProp ?? (keywords?.length ? buildKeywordTitle(keywords) : `${SITE.brand} | ${SITE.name}`);
 ---
 <!doctype html>
 <html lang="es-MX">

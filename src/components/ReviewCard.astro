@@ -1,0 +1,89 @@
+---
+// ReviewCard.astro — Tarjeta de testimonio canónica (origen EJEMPLOS).
+// Prueba social real: estrellas + cita + autor con iniciales. Sin ratings inventados.
+// Props mapeados desde REVIEWS en site.ts.
+interface Props {
+  quote: string;
+  name: string;
+  role?: string;
+  rating?: number;
+}
+const { quote, name, role, rating = 5 } = Astro.props;
+const stars = Math.max(0, Math.min(5, Math.round(rating)));
+const initials = name
+  .split(/\s+/)
+  .slice(0, 2)
+  .map((w) => w.charAt(0))
+  .join('')
+  .toUpperCase();
+const STAR = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>`;
+---
+
+<article class="rcard">
+  <div class="rcard__stars" role="img" aria-label={`${stars} de 5 estrellas`}>
+    {Array.from({ length: 5 }).map((_, i) => (
+      <span class={i < stars ? 'is-on' : 'is-off'} set:html={STAR} />
+    ))}
+  </div>
+
+  <blockquote class="rcard__quote">{quote}</blockquote>
+
+  <footer class="rcard__author">
+    <span class="rcard__avatar" aria-hidden="true">{initials}</span>
+    <span class="rcard__who">
+      <cite class="rcard__name">{name}</cite>
+      {role && <span class="rcard__role">{role}</span>}
+    </span>
+  </footer>
+</article>
+
+<style>
+  .rcard {
+    display: flex; flex-direction: column; height: 100%; gap: var(--sp-4);
+    background: var(--c-white); border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl); padding: var(--sp-6);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  .rcard:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  /* Estrellas */
+  .rcard__stars { display: inline-flex; gap: 3px; }
+  .rcard__stars span { display: inline-flex; }
+  .rcard__stars .is-on  { color: #f5a623; }
+  .rcard__stars .is-off { color: var(--c-border); }
+
+  /* Cita */
+  .rcard__quote {
+    margin: 0; flex-grow: 1;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--c-ink-2);
+    quotes: "\201C" "\201D";
+  }
+  .rcard__quote::before { content: open-quote; }
+  .rcard__quote::after  { content: close-quote; }
+
+  /* Autor */
+  .rcard__author {
+    display: flex; align-items: center; gap: var(--sp-3);
+    margin-top: auto; padding-top: var(--sp-4);
+    border-top: 1px solid var(--c-border);
+  }
+  .rcard__avatar {
+    flex-shrink: 0; width: 44px; height: 44px;
+    border-radius: var(--radius-full);
+    display: grid; place-items: center;
+    font-family: var(--font-heading); font-weight: 700;
+    font-size: 0.85rem; letter-spacing: .02em; color: #fff;
+    background: linear-gradient(135deg, var(--c-primary), rgba(var(--c-primary-rgb), .7));
+  }
+  .rcard__who { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .rcard__name { font-style: normal; font-weight: 600; color: var(--c-ink); font-size: 0.9rem; }
+  .rcard__role { font-size: 0.78rem; color: var(--c-muted); }
+</style>

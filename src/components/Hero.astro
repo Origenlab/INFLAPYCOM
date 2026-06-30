@@ -1,14 +1,26 @@
 ---
-import { WA_MESSAGES } from '../config/site';
+import { WA_MESSAGES, CONTACT } from '../config/site';
 import { waUrl } from '../lib/utils';
+
+const features = [
+  'Castillos, toboganes y brincolines para todas las edades',
+  'Instalación y retiro incluidos — sin costo adicional',
+  'Equipos desinfectados antes de cada evento',
+  'Seguro de responsabilidad civil en cada renta',
+];
+
+const checkIcon = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
 ---
 
 <section class="hero">
-  <div class="hero__container">
+  <div class="hero__inner">
 
     <!-- Columna izquierda: eyebrow + H1 -->
     <div class="hero__left">
-      <span class="hero__eyebrow">30 años de experiencia · CDMX y EdoMex</span>
+      <p class="hero__eyebrow">
+        <span class="hero__eyebrow-bar" aria-hidden="true"></span>
+        30 años en CDMX y Estado de México
+      </p>
       <h1 class="hero__title">
         Renta de Inflables para
         <mark class="hero__accent">Fiestas Increíbles</mark>
@@ -16,53 +28,80 @@ import { waUrl } from '../lib/utils';
       </h1>
     </div>
 
-    <!-- Columna derecha: dos párrafos + CTAs -->
+    <!-- Columna derecha: features + precio + CTAs -->
     <div class="hero__right">
-      <p class="hero__p">
-        Castillos, toboganes y brincolines para niños de todas las edades. Instalación y retiro incluidos — tú solo enfócate en disfrutar la fiesta.
-      </p>
-      <p class="hero__p">
-        Más de 10,000 eventos en CDMX y Estado de México. Precios desde $800 MXN con seguro de responsabilidad civil y equipo sanitizado antes de cada renta.
-      </p>
+
+      <!-- Lista de beneficios -->
+      <ul class="hero__features" role="list">
+        {features.map((f) => (
+          <li class="hero__feature">
+            <span class="hero__feature-icon" set:html={checkIcon} />
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Callout de precio -->
+      <div class="hero__price-callout">
+        <div class="hero__price-left">
+          <span class="hero__price-from">Precios desde</span>
+          <span class="hero__price-amount">$800 <abbr title="Pesos mexicanos">MXN</abbr></span>
+        </div>
+        <div class="hero__price-right">
+          <span class="hero__price-detail">por evento · 6–8 horas</span>
+          <span class="hero__price-detail">CDMX y Estado de México</span>
+        </div>
+      </div>
+
+      <!-- CTAs -->
       <div class="hero__ctas">
         <a
           href={waUrl(WA_MESSAGES.cotizar)}
           target="_blank"
           rel="noopener"
-          class="btn-primary"
+          class="hero__btn hero__btn--wa"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
           Cotizar por WhatsApp
         </a>
-        <a href="/catalogo" class="btn-ghost">Ver catálogo</a>
+        <a href="/catalogo" class="hero__btn hero__btn--ghost">
+          Ver catálogo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
-    </div>
 
+      <!-- Social proof -->
+      <p class="hero__social-proof">
+        <span class="hero__stars" aria-hidden="true">★★★★★</span>
+        <span>+10,000 fiestas realizadas en CDMX y EdoMex</span>
+      </p>
+
+    </div>
   </div>
 </section>
 
 <style>
   .hero {
-    background: linear-gradient(135deg, #fff 0%, #fff5f0 55%, #ffe8da 100%);
-    padding-block: var(--section-py);
+    background: linear-gradient(135deg, #ffffff 0%, #f5f0ff 50%, #ede0ff 100%);
+    padding-block: clamp(3.5rem, 7vw, 5.5rem);
   }
 
-  .hero__container {
+  .hero__inner {
     max-width: var(--container-max);
     margin-inline: auto;
     padding-inline: var(--container-px);
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-8);
+    gap: var(--sp-10);
     align-items: center;
   }
 
   @media (min-width: 768px) {
-    .hero__container {
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2.5rem, 5vw, 4rem);
+    .hero__inner {
+      grid-template-columns: 1.1fr 1fr;
+      gap: clamp(3rem, 6vw, 5rem);
     }
   }
 
@@ -75,27 +114,31 @@ import { waUrl } from '../lib/utils';
   .hero__eyebrow {
     display: inline-flex;
     align-items: center;
+    gap: var(--sp-2);
     font-family: var(--font-body);
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--c-primary);
-    background: rgba(var(--c-primary-rgb), 0.08);
-    border: 1px solid rgba(var(--c-primary-rgb), 0.2);
-    border-radius: var(--radius-full);
-    padding: var(--sp-1) var(--sp-3);
-    margin-bottom: var(--sp-4);
-    width: fit-content;
+    margin: 0 0 var(--sp-5);
+  }
+  .hero__eyebrow-bar {
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    flex-shrink: 0;
   }
 
   .hero__title {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-size: clamp(2.4rem, 5vw, 3.75rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.08;
     color: var(--c-ink);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    margin: 0;
   }
 
   .hero__accent {
@@ -108,31 +151,114 @@ import { waUrl } from '../lib/utils';
   .hero__right {
     display: flex;
     flex-direction: column;
-    gap: var(--sp-5);
+    gap: var(--sp-6);
   }
 
-  .hero__p {
+  /* Feature list */
+  .hero__features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .hero__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
     font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.75;
-    color: var(--c-ink-2);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--c-ink);
+    line-height: 1.45;
   }
 
+  .hero__feature-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--c-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Price callout */
+  .hero__price-callout {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-5);
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-left: 4px solid var(--c-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-4) var(--sp-5);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .hero__price-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .hero__price-from {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--c-muted);
+  }
+
+  .hero__price-amount {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--c-primary);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .hero__price-amount abbr {
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--c-muted);
+  }
+
+  .hero__price-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border-left: 1px solid var(--c-border);
+    padding-left: var(--sp-5);
+  }
+
+  .hero__price-detail {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--c-ink-2);
+    line-height: 1.35;
+  }
+
+  /* CTAs */
   .hero__ctas {
     display: flex;
     flex-wrap: wrap;
     gap: var(--sp-3);
-    align-items: center;
-    padding-top: var(--sp-2);
   }
 
-  /* ── Botones ── */
-  .btn-primary {
+  .hero__btn {
     display: inline-flex;
     align-items: center;
     gap: var(--sp-2);
-    background: var(--c-primary);
-    color: #fff;
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
@@ -143,31 +269,51 @@ import { waUrl } from '../lib/utils';
     white-space: nowrap;
   }
 
-  .btn-primary:hover {
-    background: var(--c-primary-dark);
+  .hero__btn--wa {
+    background: #25D366;
+    color: #fff;
+  }
+  .hero__btn--wa:hover {
+    background: #1eb557;
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
   }
 
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
+  .hero__btn--ghost {
     background: transparent;
     color: var(--c-ink);
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: var(--sp-3) var(--sp-6);
-    border-radius: var(--radius-full);
     border: 2px solid var(--c-border);
-    text-decoration: none;
-    transition: var(--transition);
-    white-space: nowrap;
   }
-
-  .btn-ghost:hover {
+  .hero__btn--ghost:hover {
     border-color: var(--c-primary);
     color: var(--c-primary);
     transform: translateY(-1px);
+  }
+
+  /* Social proof */
+  .hero__social-proof {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--c-ink-2);
+    margin: 0;
+  }
+
+  .hero__stars {
+    color: #f59e0b;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 767px) {
+    .hero__inner { gap: var(--sp-8); }
+    .hero__title { font-size: clamp(1.9rem, 7vw, 2.6rem); }
+    .hero__ctas { flex-direction: column; }
+    .hero__btn { width: 100%; justify-content: center; }
+    .hero__price-callout { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
+    .hero__price-right { border-left: none; padding-left: 0; border-top: 1px solid var(--c-border); padding-top: var(--sp-3); }
   }
 </style>

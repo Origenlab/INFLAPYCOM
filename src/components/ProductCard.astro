@@ -8,159 +8,255 @@ interface Props {
 
 const { product: p, eager = false } = Astro.props;
 ---
-<article class="product-card">
-  <a href={`/${p.slug}`}>
-    <div class="card-img">
+
+<article class="pcard">
+  <a class="pcard__link" href={`/${p.slug}`} aria-label={`Ver detalles de ${p.name}`}>
+
+    <!-- Imagen -->
+    <div class="pcard__media">
       {p.badge && (
-        <span class:list={['card-pill', p.badgeHot && 'card-pill--hot']}>
+        <span class:list={['pcard__badge', p.badgeHot && 'pcard__badge--hot']}>
           {p.badge}
         </span>
       )}
       <img
-        class="card-img-photo"
+        class="pcard__img"
         src={p.images[0]}
-        alt={`${p.name} inflable para renta en CDMX — INFLAPY`}
+        alt={`${p.name} — renta de inflable en CDMX · INFLAPY`}
         width="800"
         height="600"
         loading={eager ? 'eager' : 'lazy'}
         decoding={eager ? 'auto' : 'async'}
         fetchpriority={eager ? 'high' : undefined}
       />
+      <span class="pcard__overlay" aria-hidden="true"></span>
     </div>
-    <div class="card-body">
-      <h3 class="card-title">{p.name}</h3>
-      <p class="card-desc">{p.desc}</p>
-      <div class="card-specs">
-        <span class="spec-chip">{p.dimensions}</span>
-        <span class="spec-chip">{p.ageRange}</span>
-        {p.height && <span class="spec-chip">{p.height} alto</span>}
+
+    <!-- Cuerpo -->
+    <div class="pcard__body">
+      <div class="pcard__meta">
+        <span class="pcard__category">{p.categoryLabel}</span>
       </div>
-      <div class="card-foot">
-        <div class="card-price">
-          Desde <strong>${p.price.toLocaleString('es-MX')} MXN</strong>
-        </div>
-        <span class="card-arrow">
-          Ver detalles
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </span>
+
+      <h3 class="pcard__title">{p.name}</h3>
+      <p class="pcard__desc">{p.desc}</p>
+
+      <div class="pcard__specs">
+        <span class="pcard__chip">{p.dimensions}</span>
+        <span class="pcard__chip">{p.ageRange}</span>
+        {p.height && <span class="pcard__chip">{p.height} altura</span>}
       </div>
     </div>
+
+    <!-- Footer -->
+    <div class="pcard__foot">
+      <div class="pcard__price">
+        <span class="pcard__price-from">Desde</span>
+        <strong class="pcard__price-amount">${p.price.toLocaleString('es-MX')} MXN</strong>
+        <span class="pcard__price-note">{p.priceNote}</span>
+      </div>
+      <span class="pcard__cta">
+        Ver inflable
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </span>
+    </div>
+
   </a>
 </article>
 
 <style>
-.product-card {
+/* ── Tarjeta ── */
+.pcard {
   background: var(--c-white);
+  border: 1px solid var(--c-border);
   border-radius: var(--radius-xl);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow .2s ease, transform .2s ease;
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--c-border);
-  transition: box-shadow var(--transition), transform var(--transition);
 }
-.product-card:hover {
+.pcard:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
-.product-card > a { display: block; color: inherit; text-decoration: none; }
 
-.card-img {
+.pcard__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Imagen ── */
+.pcard__media {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #1a1a2e;
+  background: var(--c-surface);
+  flex-shrink: 0;
 }
-.card-pill {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: .18rem .6rem;
-  background: rgba(255,255,255,.18);
-  backdrop-filter: blur(8px);
-  color: #fff;
-  font-size: .68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255,255,255,.28);
-  z-index: 2;
-}
-.card-pill--hot {
-  background: rgba(var(--c-primary-rgb), .88);
-  border-color: transparent;
-}
-.card-img-photo {
+.pcard__img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .4s ease;
+  transition: transform .45s ease;
 }
-.product-card:hover .card-img-photo { transform: scale(1.04); }
+.pcard:hover .pcard__img { transform: scale(1.05); }
 
-.card-body { padding: 18px 20px; }
-.card-title {
-  font-size: 1rem;
-  font-weight: var(--weight-bold);
-  margin-bottom: 6px;
+.pcard__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,.25) 100%);
+  pointer-events: none;
+}
+
+.pcard__badge {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  z-index: 2;
+  padding: .2rem .65rem;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #fff;
+  background: rgba(255,255,255,.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: var(--radius-full);
+}
+.pcard__badge--hot {
+  background: var(--c-primary);
+  border-color: transparent;
+  backdrop-filter: none;
+}
+
+/* ── Cuerpo ── */
+.pcard__body {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex: 1;
+}
+
+.pcard__meta { display: flex; align-items: center; gap: var(--sp-2); }
+
+.pcard__category {
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--c-muted);
+}
+
+.pcard__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.25;
+  margin: 0;
   transition: color var(--transition);
 }
-.product-card:hover .card-title { color: var(--c-primary); }
-.card-desc {
+.pcard:hover .pcard__title { color: var(--c-primary); }
+
+.pcard__desc {
   font-size: .85rem;
-  color: var(--c-muted);
-  line-height: var(--leading-relaxed);
-  margin-bottom: 12px;
+  color: var(--c-ink-2);
+  line-height: 1.65;
+  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.card-specs {
+
+.pcard__specs {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 14px;
+  gap: var(--sp-2);
+  margin-top: auto;
 }
-.spec-chip {
+
+.pcard__chip {
   display: inline-flex;
   align-items: center;
-  padding: .18rem .56rem;
+  padding: .2rem .6rem;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--radius-full);
-  font-size: .73rem;
+  font-size: .72rem;
+  font-weight: 500;
   color: var(--c-muted);
 }
-.card-foot {
+
+/* ── Footer ── */
+.pcard__foot {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 12px;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
   border-top: 1px solid var(--c-border);
+  background: var(--c-surface);
+  flex-shrink: 0;
 }
-.card-price { font-size: .78rem; color: var(--c-muted); }
-.card-price strong {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: var(--weight-bold);
-  color: var(--c-primary);
-  line-height: 1.2;
-}
-.card-arrow {
+
+.pcard__price {
   display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.pcard__price-from {
+  font-size: .68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--c-muted);
+}
+
+.pcard__price-amount {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--c-primary);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.pcard__price-note {
+  font-size: .68rem;
+  color: var(--c-muted);
+  line-height: 1.3;
+}
+
+.pcard__cta {
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--sp-1);
+  padding: .55rem 1rem;
+  background: var(--c-primary);
+  color: #fff;
   font-family: var(--font-heading);
   font-size: .8rem;
-  font-weight: var(--weight-semibold);
-  color: var(--c-primary);
-  transition: gap var(--transition);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  transition: background var(--transition), gap var(--transition);
+  flex-shrink: 0;
 }
-.product-card:hover .card-arrow { gap: 8px; }
-.card-arrow svg { width: 15px; height: 15px; }
+.pcard:hover .pcard__cta {
+  background: var(--c-primary-dark);
+  gap: var(--sp-2);
+}
 </style>

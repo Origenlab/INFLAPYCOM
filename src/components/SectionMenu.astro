@@ -1,20 +1,15 @@
 ---
-import { WA_MESSAGES } from '../config/site';
+import { NAV, WA_MESSAGES } from '../config/site';
 import { waUrl } from '../lib/utils';
 
-const links = [
-  { label: 'Catálogo', href: '/#catalogo' },
-  { label: 'Servicios', href: '/#servicios' },
-  { label: 'Proceso', href: '/#proceso' },
-  { label: 'Reseñas', href: '/#testimonios' },
-  { label: 'FAQ', href: '/#faq' },
-];
+// Data-driven desde NAV (site.ts) — misma fuente que el Header
+// Al cambiar NAV, se actualiza solo
 ---
 
 <nav class="section-menu" aria-label="Navegación de secciones">
   <div class="sm__container">
     <div class="sm__links">
-      {links.map((link) => (
+      {NAV.map((link) => (
         <a href={link.href} class="sm__link">{link.label}</a>
       ))}
     </div>

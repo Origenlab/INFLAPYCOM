@@ -1,5 +1,6 @@
 ---
 import { FAQ } from '../config/site';
+import SectionHeading from './SectionHeading.astro';
 
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -19,10 +20,12 @@ const faqSchema = JSON.stringify({
 
 <section class="faq" id="faq">
   <div class="faq__container">
-    <div class="faq__header">
-      <span class="faq__eyebrow">Preguntas frecuentes</span>
-      <h2 class="faq__heading">Todo lo que necesitas saber</h2>
-    </div>
+    <SectionHeading
+      eyebrow="Preguntas frecuentes"
+      title="Todo lo que necesitas"
+      titleAccent="saber antes de rentar"
+      center={true}
+    />
 
     <div class="faq__list">
       {FAQ.map((item, i) => (
@@ -50,30 +53,6 @@ const faqSchema = JSON.stringify({
     max-width: var(--container-max);
     margin-inline: auto;
     padding-inline: var(--container-px);
-  }
-
-  .faq__header {
-    text-align: center;
-    margin-bottom: var(--sp-10);
-  }
-
-  .faq__eyebrow {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--c-primary);
-    margin-bottom: var(--sp-3);
-  }
-
-  .faq__heading {
-    font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    font-weight: 800;
-    color: var(--c-ink);
-    line-height: 1.2;
   }
 
   .faq__list {

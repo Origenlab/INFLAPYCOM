@@ -1,5 +1,23 @@
 import { SITE, CONTACT, type Product } from '../config/site';
 
+const TITLE_MAX = 60;
+
+/**
+ * Genera el <title> keyword-first: "kw1 | kw2 | …" sin sobrepasar 60 chars.
+ * Omite (no corta) cualquier keyword que no cabe. kw1 siempre aparece.
+ * Usado en BaseLayout cuando se pasan `keywords` sin `title` explícito.
+ */
+export function buildKeywordTitle(keywords: readonly string[]): string {
+  const mods = keywords.map((k) => k.trim()).filter(Boolean);
+  if (!mods.length) return `${SITE.brand} | ${SITE.name}`;
+  let title = mods[0]!;
+  for (let i = 1; i < mods.length; i++) {
+    const next = `${title} | ${mods[i]}`;
+    if (next.length <= TITLE_MAX) title = next;
+  }
+  return title.charAt(0).toUpperCase() + title.slice(1);
+}
+
 interface SeoProps {
   title?: string;
   description?: string;
