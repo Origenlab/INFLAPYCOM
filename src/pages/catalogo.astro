@@ -2,11 +2,12 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import CTAFinal from '../components/CTAFinal.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { PRODUCTS, SITE } from '../config/site';
 
 const title = 'Catálogo de inflables | Brincolines y castillos | Renta CDMX y EdoMex';
 const description =
-  'Catálogo completo de inflables para renta en CDMX y Estado de México. Castillos, toboganes y circuitos desde $800 MXN. Instalación incluida.';
+  'Catálogo de inflables con brincolines y castillos en renta CDMX y EdoMex. 8 modelos disponibles desde $800 MXN — instalación incluida, entrega puntual el día del evento.';
 
 const filters = [
   { id: 'todos', label: 'Todos' },
@@ -24,6 +25,10 @@ const filters = [
   <!-- 1. Page hero (compact) -->
   <section class="catalog-hero">
     <div class="container">
+      <Breadcrumbs items={[
+        { label: 'Inicio', href: '/' },
+        { label: 'Catálogo' },
+      ]} />
       <span class="eyebrow">Catálogo completo</span>
       <h1 class="hero-heading">Todos nuestros inflables</h1>
       <p class="hero-sub">

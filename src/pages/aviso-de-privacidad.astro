@@ -1,0 +1,369 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE, CONTACT } from '../config/site';
+
+const title = `Aviso de Privacidad | ${SITE.brand}`;
+const description = `Aviso de privacidad de ${SITE.brand} conforme a la Ley Federal de Protección de Datos Personales en Posesión de Particulares (LFPDPPP) de México.`;
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical={`${SITE.url}/aviso-de-privacidad`}
+  noindex={false}
+>
+
+  <!-- ── Breadcrumb ── -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Aviso de Privacidad</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── Contenido ── -->
+  <section class="legal-section">
+    <div class="container">
+      <div class="legal-wrapper">
+
+        <header class="legal-header">
+          <h1 class="legal-title">Aviso de Privacidad</h1>
+          <p class="legal-updated">Última actualización: Junio 2026</p>
+        </header>
+
+        <div class="legal-content">
+
+          <section class="legal-block">
+            <h2>1. Identidad y domicilio del responsable</h2>
+            <p>
+              <strong>{SITE.brand}</strong> (en adelante "el Responsable"), con nombre comercial
+              INFLAPY, con domicilio en la Ciudad de México, México, es responsable del tratamiento
+              de los datos personales que usted nos proporcione, de conformidad con lo establecido
+              en la Ley Federal de Protección de Datos Personales en Posesión de Particulares
+              (LFPDPPP) y su Reglamento.
+            </p>
+            <p>
+              Para cualquier consulta relacionada con el tratamiento de sus datos personales,
+              puede contactarnos a través de:
+            </p>
+            <ul>
+              <li>Correo electrónico: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
+              <li>Teléfono: <a href={`tel:+52${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a></li>
+              <li>WhatsApp: +{CONTACT.whatsapp}</li>
+            </ul>
+          </section>
+
+          <section class="legal-block">
+            <h2>2. Datos personales que recabamos</h2>
+            <p>
+              Para las finalidades señaladas en el presente aviso, el Responsable podrá recabar
+              las siguientes categorías de datos personales:
+            </p>
+            <h3>Datos de identificación y contacto</h3>
+            <ul>
+              <li>Nombre completo</li>
+              <li>Número de teléfono (fijo o celular)</li>
+              <li>Correo electrónico</li>
+              <li>Municipio o alcaldía de residencia</li>
+            </ul>
+            <h3>Datos sobre el evento</h3>
+            <ul>
+              <li>Fecha del evento</li>
+              <li>Tipo de inflable de interés</li>
+              <li>Dirección del evento (únicamente cuando se confirma una reservación)</li>
+            </ul>
+            <p>
+              Le informamos que en nuestra empresa <strong>no recabamos datos personales
+              sensibles</strong> (datos biométricos, datos de salud, información financiera
+              detallada u otros definidos como sensibles por la LFPDPPP).
+            </p>
+            <p>
+              Los datos personales podrán ser recabados directamente de usted a través de:
+              formularios en nuestro sitio web, mensajes de WhatsApp, llamadas telefónicas
+              o comunicaciones por correo electrónico.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>3. Finalidades del tratamiento</h2>
+            <h3>Finalidades primarias (necesarias para la relación)</h3>
+            <ul>
+              <li>Atender sus solicitudes de cotización o información sobre nuestros servicios de renta de inflables</li>
+              <li>Gestionar reservaciones y confirmar disponibilidad</li>
+              <li>Coordinar la entrega, instalación y retiro de inflables en el domicilio indicado</li>
+              <li>Enviar confirmaciones de reservación y recordatorios del evento</li>
+              <li>Resolver dudas, quejas o aclaraciones sobre el servicio contratado</li>
+            </ul>
+            <h3>Finalidades secundarias (opcionales)</h3>
+            <ul>
+              <li>Enviar información sobre nuevos modelos de inflables, promociones o descuentos especiales</li>
+              <li>Invitarle a compartir su experiencia o reseña del servicio</li>
+            </ul>
+            <p>
+              Si usted no desea que sus datos sean utilizados para las finalidades secundarias,
+              puede manifestarlo enviando un correo a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+              con el asunto "No comunicaciones comerciales" en cualquier momento.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>4. Transferencias de datos personales</h2>
+            <p>
+              {SITE.brand} no transfiere datos personales a terceros nacionales o extranjeros,
+              salvo en los casos permitidos por la LFPDPPP, incluyendo:
+            </p>
+            <ul>
+              <li>Cuando la transferencia sea necesaria para el cumplimiento de una obligación legal</li>
+              <li>Cuando sea requerida por autoridad competente mediante mandato judicial o administrativo</li>
+              <li>Cuando la transferencia sea necesaria para la protección de intereses vitales del titular</li>
+            </ul>
+            <p>
+              En ningún caso vendemos, cedemos ni compartimos su información personal con fines
+              comerciales a empresas ajenas a nuestra operación.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>5. Derechos ARCO y cómo ejercerlos</h2>
+            <p>
+              Usted tiene derecho a ejercer en todo momento los siguientes derechos respecto
+              de sus datos personales:
+            </p>
+            <ul>
+              <li><strong>Acceso:</strong> conocer qué datos personales tenemos de usted y cómo los utilizamos</li>
+              <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos o incompletos</li>
+              <li><strong>Cancelación:</strong> solicitar la eliminación de sus datos de nuestros registros</li>
+              <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos para finalidades específicas</li>
+            </ul>
+            <p>
+              Para ejercer cualquiera de estos derechos, envíe una solicitud por escrito al correo
+              electrónico <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> con la siguiente información:
+            </p>
+            <ul>
+              <li>Nombre completo del titular</li>
+              <li>Descripción del derecho ARCO que desea ejercer</li>
+              <li>Descripción clara y precisa de los datos sobre los que desea ejercer su derecho</li>
+              <li>Documento que acredite su identidad (INE, pasaporte u otro)</li>
+            </ul>
+            <p>
+              Atenderemos su solicitud en un plazo máximo de <strong>20 días hábiles</strong> a partir
+              de su recepción, conforme a lo establecido en la LFPDPPP.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>6. Mecanismos para revocar el consentimiento</h2>
+            <p>
+              Usted puede revocar el consentimiento que haya otorgado para el tratamiento de
+              sus datos personales enviando una solicitud al correo
+              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> con el asunto
+              "Revocación de consentimiento". Le informaremos en el mismo plazo indicado en
+              la sección anterior (20 días hábiles) sobre la procedencia de su solicitud y,
+              en su caso, confirmaremos la eliminación de sus datos.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>7. Uso de cookies y tecnologías de rastreo</h2>
+            <p>
+              Nuestro sitio web puede utilizar cookies técnicas o de sesión con la finalidad
+              de garantizar su correcto funcionamiento. No utilizamos cookies de seguimiento
+              o publicidad comportamental de terceros sin su consentimiento previo.
+            </p>
+            <p>
+              Puede configurar su navegador para rechazar o eliminar cookies en cualquier momento,
+              aunque esto podría afectar la funcionalidad del sitio.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>8. Cambios al aviso de privacidad</h2>
+            <p>
+              El presente aviso de privacidad puede ser modificado en cualquier momento. Cualquier
+              cambio sustancial será comunicado a través de nuestro sitio web
+              <a href={SITE.url} target="_blank" rel="noopener">{SITE.domain}</a> o por correo
+              electrónico a los titulares que nos hayan proporcionado su dirección.
+            </p>
+            <p>
+              El uso continuo de nuestros servicios después de la publicación de los cambios
+              implica la aceptación de las modificaciones realizadas al aviso.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>9. Autoridad de protección de datos</h2>
+            <p>
+              Si considera que su derecho a la protección de datos personales ha sido lesionado
+              por alguna conducta u omisión de nuestra parte, o presume que existe alguna violación
+              a las disposiciones previstas en la LFPDPPP, podrá interponer la queja o denuncia
+              correspondiente ante el INAI (Instituto Nacional de Transparencia, Acceso a la
+              Información y Protección de Datos Personales), a través del sitio
+              <a href="https://www.inai.org.mx" target="_blank" rel="noopener noreferrer">www.inai.org.mx</a>.
+            </p>
+          </section>
+
+          <div class="legal-footer">
+            <p>
+              Este aviso de privacidad es aplicable a todos los usuarios que interactúan con
+              {SITE.brand} a través de nuestro sitio web, teléfono, WhatsApp o cualquier otro
+              medio de comunicación.
+            </p>
+            <p><strong>Fecha de última actualización:</strong> Junio 2026</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb-bar {
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  padding-block: var(--sp-3);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.85rem;
+  color: var(--c-muted);
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--c-ink-2);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.breadcrumb a:hover { color: var(--c-primary); }
+
+.breadcrumb span[aria-hidden] {
+  color: var(--c-border);
+}
+
+.breadcrumb span[aria-current] {
+  color: var(--c-primary);
+  font-weight: 600;
+}
+
+/* ── Legal section ── */
+.legal-section {
+  background: var(--c-white);
+  padding-block: var(--sp-12) var(--sp-16);
+}
+
+.legal-wrapper {
+  max-width: 740px;
+  margin-inline: auto;
+}
+
+.legal-header {
+  margin-bottom: var(--sp-10);
+  padding-bottom: var(--sp-6);
+  border-bottom: 2px solid var(--c-primary);
+}
+
+.legal-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-2);
+}
+
+.legal-updated {
+  font-size: 0.88rem;
+  color: var(--c-muted);
+  margin: 0;
+}
+
+/* ── Legal content ── */
+.legal-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+.legal-block h2 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-3);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.legal-block h3 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--c-ink-2);
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.legal-block p {
+  font-size: 0.97rem;
+  color: var(--c-ink-2);
+  line-height: 1.75;
+  margin-bottom: var(--sp-3);
+}
+
+.legal-block p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-block ul {
+  margin: var(--sp-3) 0 var(--sp-3) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.legal-block li {
+  font-size: 0.95rem;
+  color: var(--c-ink-2);
+  line-height: 1.65;
+}
+
+.legal-block a {
+  color: var(--c-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-block a:hover {
+  opacity: 0.8;
+}
+
+/* ── Footer ── */
+.legal-footer {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--c-border);
+}
+
+.legal-footer p {
+  font-size: 0.88rem;
+  color: var(--c-muted);
+  line-height: 1.65;
+  margin-bottom: var(--sp-2);
+}
+</style>

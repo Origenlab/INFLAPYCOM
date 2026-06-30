@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:cocoy.com)",
+      "WebFetch(domain:www.lahormigaplay.com)",
+      "WebFetch(domain:inflablesparafiestas.com.mx)",
+      "WebFetch(domain:inflablesmoctezuma.com)",
+      "WebFetch(domain:kavicinflables.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

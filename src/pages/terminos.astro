@@ -1,0 +1,428 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE, CONTACT } from '../config/site';
+
+const title = `Términos y Condiciones | ${SITE.brand}`;
+const description = `Términos y condiciones de renta de inflables de ${SITE.brand}. Conoce las condiciones de servicio, política de cancelación y responsabilidades del cliente.`;
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical={`${SITE.url}/terminos`}
+  noindex={false}
+>
+
+  <!-- ── Breadcrumb ── -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Términos y Condiciones</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── Contenido ── -->
+  <section class="legal-section">
+    <div class="container">
+      <div class="legal-wrapper">
+
+        <header class="legal-header">
+          <h1 class="legal-title">Términos y Condiciones</h1>
+          <p class="legal-updated">Última actualización: Junio 2026</p>
+          <p class="legal-intro">
+            Los presentes términos y condiciones regulan la relación entre {SITE.brand} (en adelante "INFLAPY")
+            y el cliente que contrata el servicio de renta de inflables. Al realizar una reservación o pago,
+            el cliente acepta en su totalidad las condiciones descritas en este documento.
+          </p>
+        </header>
+
+        <div class="legal-content">
+
+          <section class="legal-block">
+            <h2>1. Condiciones generales de renta</h2>
+            <p>
+              INFLAPY ofrece el servicio de renta de inflables (castillos, toboganes, brincolines y circuitos)
+              para eventos privados en la Ciudad de México y Estado de México. El servicio incluye traslado,
+              instalación y retiro del equipo al finalizar el evento.
+            </p>
+            <ul>
+              <li>La renta mínima es de 4 horas continuas por evento.</li>
+              <li>El tiempo estándar de renta es de 6 a 8 horas, incluyendo el tiempo de montaje y desmontaje.</li>
+              <li>Sólo se permite el uso del inflable en el horario acordado al momento de la reservación.</li>
+              <li>El servicio está sujeto a disponibilidad en la fecha solicitada.</li>
+              <li>INFLAPY se reserva el derecho de rechazar solicitudes de servicio que considere inapropiadas
+                o que no puedan ser atendidas de manera segura.</li>
+            </ul>
+          </section>
+
+          <section class="legal-block">
+            <h2>2. Reservaciones y pago</h2>
+            <p>
+              Para confirmar la reservación de un inflable se requiere el cumplimiento de los siguientes requisitos:
+            </p>
+            <ul>
+              <li><strong>Anticipo:</strong> Se requiere un anticipo del 30% al 50% del costo total del servicio
+                para separar la fecha. El porcentaje exacto se indicará al momento de la cotización.</li>
+              <li><strong>Liquidación:</strong> El saldo restante deberá cubrirse el día del evento, antes
+                o al momento de la instalación del inflable.</li>
+              <li><strong>Métodos de pago aceptados:</strong> Efectivo, transferencia bancaria o depósito.
+                Consulte los datos bancarios al momento de la reservación.</li>
+              <li>La fecha se considera confirmada únicamente cuando INFLAPY recibe y confirma el anticipo.</li>
+              <li>No se garantiza la disponibilidad hasta haber recibido el pago del anticipo.</li>
+            </ul>
+          </section>
+
+          <section class="legal-block">
+            <h2>3. Política de cancelación y cambios de fecha</h2>
+            <p>
+              Entendemos que los imprevistos ocurren. Nuestra política de cancelación es la siguiente:
+            </p>
+            <ul>
+              <li>
+                <strong>Cancelación con más de 7 días naturales de anticipación:</strong>
+                Se reembolsa el 80% del anticipo pagado. El 20% restante se retiene como cargo administrativo.
+              </li>
+              <li>
+                <strong>Cancelación entre 3 y 7 días naturales antes del evento:</strong>
+                Se reembolsa el 50% del anticipo. El 50% restante se retiene.
+              </li>
+              <li>
+                <strong>Cancelación con menos de 3 días naturales de anticipación:</strong>
+                No aplica reembolso del anticipo.
+              </li>
+              <li>
+                <strong>Cambio de fecha:</strong> Se permite un cambio de fecha sin costo adicional
+                siempre que se solicite con al menos 5 días naturales de anticipación y exista
+                disponibilidad en la nueva fecha solicitada. Cambios posteriores o de última hora
+                podrán generar un cargo del 15% del total.
+              </li>
+              <li>
+                <strong>Cancelación por causas de fuerza mayor:</strong> En caso de emergencias
+                debidamente documentadas (desastres naturales, accidentes graves, fallecimientos),
+                INFLAPY evaluará cada caso de manera particular para ofrecer la mejor solución posible.
+              </li>
+            </ul>
+          </section>
+
+          <section class="legal-block">
+            <h2>4. Responsabilidades del cliente</h2>
+            <p>
+              El cliente que contrata el servicio acepta las siguientes responsabilidades:
+            </p>
+            <ul>
+              <li>
+                <strong>Supervisión adulta constante:</strong> El cliente es responsable de garantizar
+                la presencia de al menos un adulto supervisando el uso del inflable en todo momento
+                durante el evento. INFLAPY no se hace responsable de accidentes o lesiones derivados
+                de la falta de supervisión.
+              </li>
+              <li>
+                <strong>Uso adecuado del equipo:</strong> El cliente debe asegurarse de que los usuarios
+                del inflable lo utilicen de acuerdo con las instrucciones de uso proporcionadas por
+                el personal de INFLAPY al momento de la instalación.
+              </li>
+              <li>
+                <strong>Límite de capacidad:</strong> Se prohíbe exceder el número máximo de usuarios
+                simultáneos indicado para cada modelo. El cliente es responsable de hacer cumplir este límite.
+              </li>
+              <li>
+                <strong>Restricciones de uso:</strong> No se permite el uso del inflable por personas
+                que excedan el peso máximo recomendado, bajo efectos del alcohol u otras sustancias,
+                ni el ingreso de zapatos, objetos punzocortantes, alimentos o bebidas al interior del inflable.
+              </li>
+              <li>
+                <strong>Daños al equipo:</strong> El cliente es económicamente responsable por daños
+                al inflable causados por mal uso, descuido o negligencia durante el evento. El costo
+                de reparación o reposición será evaluado y cobrado por INFLAPY.
+              </li>
+              <li>
+                <strong>Preparación del espacio:</strong> El cliente debe asegurarse de que el espacio
+                cumpla con los requisitos técnicos descritos en la sección 7 antes de la llegada del equipo.
+              </li>
+            </ul>
+          </section>
+
+          <section class="legal-block">
+            <h2>5. Responsabilidades de INFLAPY</h2>
+            <p>
+              INFLAPY se compromete a:
+            </p>
+            <ul>
+              <li>Llegar puntual al domicilio acordado en el horario confirmado (±30 minutos por condiciones de tráfico).</li>
+              <li>Entregar el inflable limpio, desinfectado y en condiciones óptimas de funcionamiento.</li>
+              <li>Realizar la instalación correcta del equipo, incluyendo anclaje y revisión de seguridad antes de entregarlo al cliente.</li>
+              <li>Retirar el equipo al finalizar el evento en el horario acordado.</li>
+              <li>Atender cualquier falla técnica del equipo durante el evento, a la brevedad posible.</li>
+              <li>Sustituir el equipo o reprogramar el servicio sin costo adicional si la falla es atribuible al equipo de INFLAPY.</li>
+            </ul>
+            <p>
+              INFLAPY <strong>no se hace responsable</strong> por accidentes, lesiones, daños a terceros
+              o daños a la propiedad del cliente derivados de mal uso del equipo, falta de supervisión
+              adulta o incumplimiento de las instrucciones de uso proporcionadas.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>6. Espacio y requisitos técnicos</h2>
+            <p>
+              El cliente es responsable de verificar que el espacio del evento cumpla con los
+              siguientes requisitos mínimos antes de confirmar la reservación:
+            </p>
+            <ul>
+              <li>
+                <strong>Superficie plana:</strong> El inflable debe instalarse sobre una superficie plana,
+                nivelada y libre de objetos punzocortantes, vidrios, piedras o escombros.
+              </li>
+              <li>
+                <strong>Espacio libre:</strong> Se requiere el área indicada para cada modelo (ver catálogo)
+                más un metro de margen perimetral libre de obstáculos, muebles u otras estructuras.
+              </li>
+              <li>
+                <strong>Conexión eléctrica:</strong> El inflable necesita una toma de corriente de 110V
+                estándar dentro de un radio de 10 metros. La extensión debe ser de calibre adecuado
+                (mínimo calibre 14 AWG).
+              </li>
+              <li>
+                <strong>Techo mínimo (interiores):</strong> Para instalar en espacios cerrados, se requiere
+                una altura mínima de 2.5 metros para los modelos pequeños y hasta 4 metros para los modelos grandes.
+                Consulte el catálogo para cada modelo específico.
+              </li>
+            </ul>
+            <p>
+              Si al llegar al evento el espacio no cumple con los requisitos y la instalación resulta
+              imposible o insegura, INFLAPY no podrá realizar el servicio y el anticipo no será reembolsable.
+              Se recomienda verificar el espacio con anticipación y consultar cualquier duda antes de la reservación.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>7. Condiciones climáticas</h2>
+            <p>
+              Los inflables son equipos sensibles a condiciones climáticas adversas. Las siguientes
+              condiciones implican la suspensión del servicio por seguridad:
+            </p>
+            <ul>
+              <li>Vientos sostenidos superiores a 30 km/h o ráfagas de viento fuerte</li>
+              <li>Lluvia intensa o tormenta eléctrica durante el evento</li>
+              <li>Granizo o condiciones de riesgo similares</li>
+            </ul>
+            <p>
+              En caso de suspensión por condiciones climáticas:
+            </p>
+            <ul>
+              <li>Si las condiciones son adversas desde el inicio y el inflable no puede instalarse,
+                se ofrecerá reprogramar el evento o devolver el anticipo al 100%.</li>
+              <li>Si el evento ya inició y las condiciones empeoran, INFLAPY procederá a desinflar
+                el equipo por seguridad. En este caso no aplica reembolso parcial.</li>
+            </ul>
+          </section>
+
+          <section class="legal-block">
+            <h2>8. Propiedad intelectual y uso de imágenes</h2>
+            <p>
+              Las imágenes, videos y contenidos publicados en el sitio web de INFLAPY son propiedad
+              de INFLAPY o están licenciados para su uso. No está permitida su reproducción, distribución
+              o uso comercial sin autorización escrita previa.
+            </p>
+            <p>
+              Al compartir fotos o videos del evento con INFLAPY a través de WhatsApp u otros medios,
+              el cliente autoriza a INFLAPY a utilizarlos con fines de marketing y promoción, siempre
+              que no se identifique a menores de edad de forma individual y sin información privada de los asistentes.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>9. Ley aplicable y jurisdicción</h2>
+            <p>
+              Los presentes términos y condiciones se rigen por las leyes de los Estados Unidos Mexicanos,
+              en particular por el Código Civil Federal, la Ley Federal de Protección al Consumidor
+              (PROFECO) y demás ordenamientos aplicables.
+            </p>
+            <p>
+              Para la resolución de cualquier controversia derivada de la prestación del servicio,
+              las partes se someten a la jurisdicción de los tribunales competentes de la Ciudad de México,
+              renunciando a cualquier otro fuero que por razón de domicilio presente o futuro pudiera corresponderles.
+            </p>
+            <p>
+              Para quejas o aclaraciones de consumidor, puede acudir a la Procuraduría Federal del Consumidor
+              (PROFECO) a través del sitio <a href="https://www.profeco.gob.mx" target="_blank" rel="noopener noreferrer">www.profeco.gob.mx</a>.
+            </p>
+          </section>
+
+          <section class="legal-block">
+            <h2>10. Contacto</h2>
+            <p>
+              Para cualquier duda, aclaración o queja relacionada con estos términos y condiciones, puede contactarnos:
+            </p>
+            <ul>
+              <li>Correo electrónico: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
+              <li>Teléfono: <a href={`tel:+52${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a></li>
+              <li>WhatsApp: +{CONTACT.whatsapp}</li>
+              <li>Horario de atención: {CONTACT.schedule.days}, {CONTACT.schedule.hours}</li>
+            </ul>
+          </section>
+
+          <div class="legal-footer">
+            <p>
+              Al utilizar nuestros servicios, usted confirma haber leído, entendido y aceptado
+              los presentes términos y condiciones en su totalidad.
+            </p>
+            <p><strong>Fecha de última actualización:</strong> Junio 2026</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb-bar {
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  padding-block: var(--sp-3);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.85rem;
+  color: var(--c-muted);
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--c-ink-2);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.breadcrumb a:hover { color: var(--c-primary); }
+
+.breadcrumb span[aria-hidden] {
+  color: var(--c-border);
+}
+
+.breadcrumb span[aria-current] {
+  color: var(--c-primary);
+  font-weight: 600;
+}
+
+/* ── Legal section ── */
+.legal-section {
+  background: var(--c-white);
+  padding-block: var(--sp-12) var(--sp-16);
+}
+
+.legal-wrapper {
+  max-width: 740px;
+  margin-inline: auto;
+}
+
+.legal-header {
+  margin-bottom: var(--sp-10);
+  padding-bottom: var(--sp-6);
+  border-bottom: 2px solid var(--c-primary);
+}
+
+.legal-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-2);
+}
+
+.legal-updated {
+  font-size: 0.88rem;
+  color: var(--c-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.legal-intro {
+  font-size: 0.97rem;
+  color: var(--c-ink-2);
+  line-height: 1.72;
+  margin: 0;
+  padding: var(--sp-4);
+  background: var(--c-surface);
+  border-left: 3px solid var(--c-primary);
+  border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
+}
+
+/* ── Legal content ── */
+.legal-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+.legal-block h2 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-3);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.legal-block p {
+  font-size: 0.97rem;
+  color: var(--c-ink-2);
+  line-height: 1.75;
+  margin-bottom: var(--sp-3);
+}
+
+.legal-block p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-block ul {
+  margin: var(--sp-3) 0 var(--sp-3) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.legal-block li {
+  font-size: 0.95rem;
+  color: var(--c-ink-2);
+  line-height: 1.7;
+}
+
+.legal-block a {
+  color: var(--c-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-block a:hover {
+  opacity: 0.8;
+}
+
+/* ── Footer ── */
+.legal-footer {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--c-border);
+}
+
+.legal-footer p {
+  font-size: 0.88rem;
+  color: var(--c-muted);
+  line-height: 1.65;
+  margin-bottom: var(--sp-2);
+}
+</style>

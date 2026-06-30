@@ -1,0 +1,712 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE, CONTACT, WA_MESSAGES, STATS, COVERAGE } from '../config/site';
+import { waUrl, telUrl } from '../lib/utils';
+
+const waHref = waUrl(WA_MESSAGES.cotizar);
+const telHref = telUrl();
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": SITE.brand,
+  "url": SITE.url,
+  "logo": `${SITE.url}/img/inflapy-og-image.jpg`,
+  "description": SITE.description,
+  "foundingDate": "1993",
+  "areaServed": [
+    { "@type": "City", "name": "Ciudad de México" },
+    { "@type": "State", "name": "Estado de México" }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": `+52${CONTACT.phone}`,
+    "contactType": "customer service",
+    "availableLanguage": "Spanish",
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  }
+});
+
+const title = `Quiénes Somos — 30 Años de Historia | ${SITE.brand}`;
+const description = 'Conoce la historia de INFLAPY, empresa familiar fundada en 1993 en CDMX. Más de 30 años llevando alegría a familias con renta de inflables seguros y de calidad.';
+---
+
+<PageLayout
+  title={title}
+  description={description}
+  canonical={`${SITE.url}/nosotros`}
+  schema={schema}
+>
+
+  <!-- ── Breadcrumb ── -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Nosotros</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── Hero ── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Empresa familiar · Desde 1993</span>
+      <h1 class="hero-heading">Nuestra Historia —<br />30 Años de Alegría</h1>
+      <p class="hero-sub">
+        Desde una idea familiar en la Ciudad de México hasta más de 10,000 eventos realizados.<br />
+        Somos la empresa de renta de inflables con mayor trayectoria en la zona metropolitana.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Historia ── -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-layout">
+        <div class="story-text">
+          <span class="section-eyebrow">Nuestros orígenes</span>
+          <h2 class="section-heading">Todo comenzó en 1993</h2>
+          <p>
+            INFLAPY nació de una idea sencilla pero poderosa: que cada niño en la Ciudad de México
+            pudiera disfrutar de un brincolin de calidad en su fiesta, sin complicaciones y a un precio justo.
+          </p>
+          <p>
+            Don Jorge y su esposa comenzaron con un solo inflable, un camión propio y muchas ganas.
+            Las primeras fiestas fueron en colonias de la delegación Iztapalapa, llevando alegría
+            a familias que querían celebrar a sus hijos de manera especial sin gastar una fortuna.
+          </p>
+          <p>
+            Con el tiempo, la reputación de puntualidad, limpieza y trato amable hizo que los clientes
+            regresaran año tras año — y que recomendaran a sus amigos, vecinos y familia. Hoy, una
+            gran parte de nuestros clientes son hijos de los clientes originales de los 90.
+          </p>
+          <p>
+            Tres décadas después, seguimos siendo una empresa 100% familiar y orgullosamente mexicana.
+            Nuestros hijos trabajan con nosotros. Los mismos valores que guiaron el primer evento
+            en 1993 guían cada instalación hoy.
+          </p>
+        </div>
+        <div class="story-visual">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">1993</div>
+              <div class="timeline-content">
+                <strong>El primer inflable</strong>
+                <p>Comenzamos con un castillo clásico y nuestra primera fiesta en Iztapalapa.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2000</div>
+              <div class="timeline-content">
+                <strong>Expansión a EdoMex</strong>
+                <p>Ampliamos cobertura a Naucalpan, Tlalnepantla y Ecatepec.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2010</div>
+              <div class="timeline-content">
+                <strong>Flota de 8 modelos</strong>
+                <p>Incorporamos toboganes, circuitos y modelos temáticos para todos los gustos.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2020</div>
+              <div class="timeline-content">
+                <strong>Protocolo sanitario</strong>
+                <p>Adoptamos limpieza y desinfección certificada en cada evento.</p>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item--current">
+              <div class="timeline-year">Hoy</div>
+              <div class="timeline-content">
+                <strong>30 años y contando</strong>
+                <p>Más de 10,000 eventos. La misma familia, el mismo compromiso.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ── -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-value">30+</span>
+          <span class="stat-label">Años de experiencia</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">10,000+</span>
+          <span class="stat-label">Eventos realizados</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">8</span>
+          <span class="stat-label">Modelos disponibles</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">2</span>
+          <span class="stat-label">Zonas de cobertura</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Misión y Valores ── -->
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Lo que nos mueve</span>
+        <h2 class="section-heading">Nuestra misión y valores</h2>
+        <p class="section-sub">
+          Llevamos 30 años comprometidos con los mismos principios que nos dieron origen.
+          No son slogans — son la forma en que operamos cada día.
+        </p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">🛡️</div>
+          <h3>Seguridad primero</h3>
+          <p>
+            Todos nuestros inflables pasan revisión antes de cada evento. Lona resistente,
+            válvulas de seguridad y anclaje correcto. Sin atajos.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">⏰</div>
+          <h3>Puntualidad total</h3>
+          <p>
+            Llegamos antes de que empiece tu fiesta. Montamos, verificamos y entregamos
+            el inflable listo para brincar. Tu tiempo importa tanto como el nuestro.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">✨</div>
+          <h3>Limpieza certificada</h3>
+          <p>
+            Cada inflable se lava y desinfecta con productos seguros para niños antes y después
+            de cada uso. La higiene es innegociable en INFLAPY.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">❤️</div>
+          <h3>Trato familiar</h3>
+          <p>
+            Somos una familia que atiende a familias. Escuchamos lo que necesitas,
+            te asesoramos sin presión y hacemos que tu fiesta sea memorable.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">💰</div>
+          <h3>Precio justo</h3>
+          <p>
+            Precios transparentes, sin costos ocultos. Lo que ves en el catálogo incluye
+            traslado, instalación y retiro. Sin sorpresas al final del evento.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">🌎</div>
+          <h3>Cobertura amplia</h3>
+          <p>
+            Cubrimos toda la CDMX y la zona metropolitana del Estado de México.
+            Somos sus vecinos — llegamos rápido y conocemos cada colonia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Cobertura ── -->
+  <section class="coverage-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Dónde llegamos</span>
+        <h2 class="section-heading">Cobertura en CDMX y EdoMex</h2>
+        <p class="section-sub">
+          Operamos en toda la Ciudad de México y la zona metropolitana del Estado de México
+          sin costo adicional de traslado.
+        </p>
+      </div>
+      <div class="coverage-grid">
+        <div class="coverage-block">
+          <h3 class="coverage-title">Ciudad de México</h3>
+          <ul class="coverage-list">
+            {COVERAGE.cdmx.map(col => <li>{col}</li>)}
+            <li class="coverage-more">+ todas las alcaldías</li>
+          </ul>
+        </div>
+        <div class="coverage-block">
+          <h3 class="coverage-title">Estado de México</h3>
+          <ul class="coverage-list">
+            {COVERAGE.edomex.map(mun => <li>{mun}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Final ── -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <span class="cta-eyebrow">¿Listo para celebrar?</span>
+        <h2 class="cta-heading">Cotiza tu inflable ahora</h2>
+        <p class="cta-sub">
+          Escríbenos por WhatsApp y te respondemos en minutos. Sin compromiso — solo cuéntanos
+          la fecha, el lugar y la edad de los niños.
+        </p>
+        <div class="cta-actions">
+          <a href={waHref} class="btn btn--wa" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Cotizar por WhatsApp
+          </a>
+          <a href={telHref} class="btn btn--outline">
+            Llamar: {CONTACT.phoneDisplay}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb-bar {
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  padding-block: var(--sp-3);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.85rem;
+  color: var(--c-muted);
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--c-ink-2);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.breadcrumb a:hover { color: var(--c-primary); }
+
+.breadcrumb span[aria-hidden] {
+  color: var(--c-border);
+}
+
+.breadcrumb span[aria-current] {
+  color: var(--c-primary);
+  font-weight: 600;
+}
+
+/* ── Hero ── */
+.page-hero {
+  background: var(--c-white);
+  padding-block: var(--sp-14) var(--sp-12);
+  border-bottom: 1px solid var(--c-border);
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-3);
+}
+
+.hero-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  line-height: 1.12;
+  margin-bottom: var(--sp-4);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--c-muted);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-inline: auto;
+}
+
+/* ── Story ── */
+.story-section {
+  background: var(--c-white);
+  padding-block: var(--section-py);
+}
+
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .story-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-5);
+  line-height: 1.2;
+}
+
+.story-text p {
+  font-size: 1rem;
+  color: var(--c-ink-2);
+  line-height: 1.75;
+  margin-bottom: var(--sp-4);
+}
+
+/* ── Timeline ── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: var(--sp-6);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.85rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--c-border);
+}
+
+.timeline-item {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+  padding-bottom: var(--sp-6);
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--sp-6) + 0.5rem);
+  top: 0.35rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--c-border);
+  border: 2px solid var(--c-white);
+  z-index: 1;
+}
+
+.timeline-item--current::before {
+  background: var(--c-primary);
+}
+
+.timeline-year {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--c-primary);
+  min-width: 3rem;
+  padding-top: 0.1rem;
+}
+
+.timeline-content strong {
+  display: block;
+  font-weight: 700;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-1);
+  font-size: 0.95rem;
+}
+
+.timeline-content p {
+  font-size: 0.88rem;
+  color: var(--c-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Stats ── */
+.stats-section {
+  background: var(--c-primary);
+  padding-block: var(--sp-12);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.82);
+  font-weight: 500;
+}
+
+/* ── Values ── */
+.values-section {
+  background: var(--c-surface);
+  padding-block: var(--section-py);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--sp-10);
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--c-muted);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+@media (max-width: 900px) {
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .values-grid { grid-template-columns: 1fr; }
+}
+
+.value-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--sp-6);
+}
+
+.value-icon {
+  font-size: 2rem;
+  margin-bottom: var(--sp-3);
+  display: block;
+}
+
+.value-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-2);
+}
+
+.value-card p {
+  font-size: 0.92rem;
+  color: var(--c-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Coverage ── */
+.coverage-section {
+  background: var(--c-white);
+  padding-block: var(--section-py);
+}
+
+.coverage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8);
+}
+
+@media (max-width: 640px) {
+  .coverage-grid { grid-template-columns: 1fr; }
+}
+
+.coverage-block {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--sp-6);
+}
+
+.coverage-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--c-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--sp-4);
+}
+
+.coverage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.coverage-list li {
+  font-size: 0.92rem;
+  color: var(--c-ink-2);
+  padding-left: var(--sp-4);
+  position: relative;
+}
+
+.coverage-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--c-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.coverage-more {
+  color: var(--c-muted) !important;
+  font-style: italic;
+}
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--c-surface);
+  padding-block: var(--section-py);
+}
+
+.cta-card {
+  background: var(--c-ink);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--sp-12) var(--sp-8);
+  text-align: center;
+}
+
+.cta-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-3);
+}
+
+.cta-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: var(--sp-4);
+}
+
+.cta-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-8);
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--sp-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-full, 9999px);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.15s;
+  cursor: pointer;
+}
+
+.btn:hover { opacity: 0.88; }
+
+.btn--wa {
+  background: #25D366;
+  color: #fff;
+}
+
+.btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.btn--outline:hover {
+  border-color: #fff;
+  opacity: 1;
+}
+</style>

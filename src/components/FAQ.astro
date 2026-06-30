@@ -1,6 +1,21 @@
 ---
 import { FAQ } from '../config/site';
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": FAQ.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a,
+    },
+  })),
+});
 ---
+
+<script type="application/ld+json" set:html={faqSchema} />
 
 <section class="faq" id="faq">
   <div class="faq__container">

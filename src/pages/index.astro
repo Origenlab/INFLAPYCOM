@@ -27,22 +27,26 @@ const schema = JSON.stringify({
     "addressCountry": "MX"
   },
   "areaServed": "Ciudad de México y Estado de México",
-  "openingHours": "Mo-Su 08:00-20:00"
+  "openingHours": "Mo-Su 08:00-20:00",
+  "priceRange": "$800-$2500 MXN",
+  "currenciesAccepted": "MXN",
+  "paymentAccepted": "Efectivo, Transferencia bancaria",
+  "hasMap": "https://maps.google.com/?q=Ciudad+de+Mexico"
 });
 
-const iconLetters: Record<string, string> = {
-  truck: 'T',
-  shield: 'S',
-  eye: 'E',
-  'map-pin': 'M',
-  clock: 'C',
-  heart: 'H',
+const iconSvgs: Record<string, string> = {
+  truck: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+  shield: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  eye: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  'map-pin': `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  clock: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  heart: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
 };
 ---
 
 <PageLayout
   title="Renta de inflables | Inflables para fiestas | Inflables para eventos"
-  description={SITE.description}
+  description="Renta de inflables en Ciudad de México — los mejores inflables para fiestas y para eventos. Castillos, toboganes y brincolines desde $800 MXN. Instalación incluida, CDMX y EdoMex."
   schema={schema}
 >
   <!-- 1. Hero -->
@@ -77,14 +81,12 @@ const iconLetters: Record<string, string> = {
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">¿Por qué elegirnos?</span>
-        <h2 class="section-heading">30 años llevando alegría a familias</h2>
+        <h2 class="section-heading">Por qué elegirnos — servicio profesional en cada renta</h2>
       </div>
       <div class="services-grid">
         {SERVICES.map((s) => (
           <div class="service-card">
-            <div class="service-icon" aria-hidden="true">
-              {iconLetters[s.icon] ?? s.icon[0].toUpperCase()}
-            </div>
+            <div class="service-icon" set:html={iconSvgs[s.icon] ?? `<span>${s.icon[0].toUpperCase()}</span>`} aria-hidden="true" />
             <div class="service-body">
               <h3 class="service-title">{s.title}</h3>
               <p class="service-desc">{s.desc}</p>
@@ -230,9 +232,6 @@ const iconLetters: Record<string, string> = {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 800;
   flex-shrink: 0;
 }
 

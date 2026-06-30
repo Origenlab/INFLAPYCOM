@@ -1,0 +1,57 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string; // si no tiene href = es la página actual
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+const { SITE } = await import('../config/site');
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": item.label,
+    ...(item.href ? { "item": SITE.url + item.href } : {}),
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<nav class="breadcrumb" aria-label="Ruta de navegación">
+  {items.map((item, i) => (
+    <>
+      {i > 0 && <span class="breadcrumb__sep" aria-hidden="true">›</span>}
+      {item.href
+        ? <a class="breadcrumb__link" href={item.href}>{item.label}</a>
+        : <span class="breadcrumb__current" aria-current="page">{item.label}</span>
+      }
+    </>
+  ))}
+</nav>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-1) var(--sp-2);
+    font-size: 0.8rem;
+    color: var(--c-muted);
+  }
+  .breadcrumb__link {
+    color: var(--c-muted);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .breadcrumb__link:hover { color: var(--c-primary); }
+  .breadcrumb__sep { color: var(--c-border); }
+  .breadcrumb__current { color: var(--c-ink); font-weight: 500; }
+</style>

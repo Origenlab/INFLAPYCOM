@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { SITE, CONTACT, WA_MESSAGES, getProductsByCategory } from '../../config/site';
 import { waUrl, telUrl } from '../../lib/utils';
 
@@ -10,7 +11,7 @@ const telHref = telUrl();
 
 const title = 'Inflables para bebés | Brincolines seguros 1 a 3 años | Renta CDMX';
 const description =
-  'Inflables seguros para bebés y niños de 1 a 3 años en CDMX. Mini Castillo con paredes acolchadas bajas. Instalación incluida desde $800 MXN.';
+  'Inflables para bebés con brincolines seguros de 1 a 3 años en renta CDMX. Mini Castillo con paredes acolchadas bajas, cabe en interiores. Instalación incluida desde $800 MXN.';
 ---
 
 <PageLayout
@@ -21,13 +22,11 @@ const description =
   <!-- 1. Category hero -->
   <section class="cat-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Ruta de navegación">
-        <a href="/">Inicio</a>
-        <span aria-hidden="true">›</span>
-        <a href="/catalogo">Catálogo</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">Inflables para Bebés</span>
-      </nav>
+      <Breadcrumbs items={[
+        { label: 'Inicio', href: '/' },
+        { label: 'Catálogo', href: '/catalogo' },
+        { label: 'Inflables para Bebés' },
+      ]} />
       <span class="eyebrow">Categoría</span>
       <h1 class="cat-heading">Inflables para Bebés (1–3 años)</h1>
       <p class="cat-sub">
@@ -85,19 +84,6 @@ const description =
   padding-block: var(--sp-12) var(--sp-8);
   border-bottom: 1px solid var(--c-border);
 }
-
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-  font-size: 0.8rem;
-  color: var(--c-muted);
-  margin-bottom: var(--sp-4);
-  flex-wrap: wrap;
-}
-.breadcrumb a { color: var(--c-muted); transition: color var(--transition); }
-.breadcrumb a:hover { color: var(--c-primary); }
-.breadcrumb span[aria-current] { color: var(--c-ink); font-weight: 500; }
 
 .eyebrow {
   display: inline-block;
