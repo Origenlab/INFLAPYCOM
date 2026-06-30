@@ -3,6 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '../components/Hero.astro';
 import TrustBar from '../components/TrustBar.astro';
 import SectionMenu from '../components/SectionMenu.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 import StatsStrip from '../components/StatsStrip.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import Reviews from '../components/Reviews.astro';
@@ -10,7 +11,8 @@ import Coverage from '../components/Coverage.astro';
 import FAQ from '../components/FAQ.astro';
 import CTAFinal from '../components/CTAFinal.astro';
 import ProductCard from '../components/ProductCard.astro';
-import { SITE, PRODUCTS, SERVICES, CONTACT } from '../config/site';
+import { SITE, PRODUCTS, SERVICES, CONTACT, WA_MESSAGES } from '../config/site';
+import { waUrl } from '../lib/utils';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -61,13 +63,12 @@ const iconSvgs: Record<string, string> = {
   <!-- 4. Catálogo -->
   <section id="catalogo" class="section-catalog">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Catálogo</span>
-        <h2 class="section-heading">Inflables para renta en CDMX</h2>
-        <p class="section-sub">
-          Los mejores inflables de la ciudad, desinfectados y con instalación incluida.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="Catálogo"
+        title="Inflables para renta en CDMX"
+        desc="Los mejores inflables de la ciudad, desinfectados y con instalación incluida."
+        center={true}
+      />
       <div class="catalog-grid">
         {PRODUCTS.map((p, i) => (
           <ProductCard product={p} eager={i === 0} />
@@ -79,20 +80,34 @@ const iconSvgs: Record<string, string> = {
   <!-- 5. Servicios -->
   <section id="servicios" class="section-services">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">¿Por qué elegirnos?</span>
-        <h2 class="section-heading">Por qué elegirnos — servicio profesional en cada renta</h2>
-      </div>
+      <SectionHeading
+        eyebrow="¿Por qué elegirnos?"
+        title="Servicio profesional en cada renta"
+        desc="Más de 500 fiestas atendidas, instalación incluida y atención personalizada de inicio a fin."
+        center={true}
+      />
       <div class="services-grid">
         {SERVICES.map((s) => (
-          <div class="service-card">
+          <article class="service-card">
             <div class="service-icon" set:html={iconSvgs[s.icon] ?? `<span>${s.icon[0].toUpperCase()}</span>`} aria-hidden="true" />
             <div class="service-body">
               <h3 class="service-title">{s.title}</h3>
               <p class="service-desc">{s.desc}</p>
               <span class="service-tag">{s.tag}</span>
+              <div class="service-ctas">
+                <a href="/nosotros" class="sc-link">Más info →</a>
+                <a
+                  href={waUrl(WA_MESSAGES.cotizar)}
+                  class="sc-wa"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Cotizar por WhatsApp"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                </a>
+              </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>
@@ -114,44 +129,10 @@ const iconSvgs: Record<string, string> = {
   <FAQ />
 
   <!-- 11. CTAFinal -->
-  <CTAFinal />
+  <CTAFinal variant="red" />
 </PageLayout>
 
 <style>
-/* ── Shared section header ── */
-.section-header {
-  text-align: center;
-  margin-bottom: var(--sp-8);
-}
-
-.eyebrow {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--c-primary);
-  margin-bottom: var(--sp-2);
-}
-
-.section-heading {
-  font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 800;
-  color: var(--c-ink);
-  line-height: 1.2;
-  margin-bottom: var(--sp-3);
-}
-
-.section-sub {
-  font-size: 1rem;
-  color: var(--c-muted);
-  max-width: 520px;
-  margin-inline: auto;
-  line-height: 1.6;
-}
-
 /* ── Container ── */
 .container {
   max-width: var(--container-max);
@@ -266,5 +247,44 @@ const iconSvgs: Record<string, string> = {
   text-transform: uppercase;
   border-radius: var(--radius-md);
   width: fit-content;
+}
+
+.service-ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}
+
+.sc-link {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-primary);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.sc-link:hover {
+  opacity: 0.75;
+}
+
+.sc-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.sc-wa:hover {
+  opacity: 0.85;
+  transform: scale(1.08);
 }
 </style>

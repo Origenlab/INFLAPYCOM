@@ -1,11 +1,16 @@
 ---
 import { WA_MESSAGES } from '../config/site';
-import { waUrl, telUrl } from '../lib/utils';
+import { waUrl } from '../lib/utils';
+
+interface Props {
+  variant?: 'red' | 'dark' | 'light';
+}
+const { variant = 'red' } = Astro.props;
 ---
 
-<section class="cta-final">
+<section class:list={['cta-final', `cta-final--${variant}`]}>
   <div class="cta-final__container">
-    <h2 class="cta-final__heading">¿Listo para la fiesta?</h2>
+    <h2 class="cta-final__heading">¿Listo para tu fiesta?</h2>
     <p class="cta-final__sub">
       Cotiza en WhatsApp en menos de 5 minutos. Instalación incluida, precios sin sorpresas.
     </p>
@@ -21,11 +26,8 @@ import { waUrl, telUrl } from '../lib/utils';
         </svg>
         Escribir por WhatsApp
       </a>
-      <a href={telUrl()} class="btn-outline">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </svg>
-        Llamar ahora
+      <a href="/catalogo" class="btn-ghost">
+        Ver catálogo
       </a>
     </div>
   </div>
@@ -33,9 +35,53 @@ import { waUrl, telUrl } from '../lib/utils';
 
 <style>
   .cta-final {
-    background: var(--c-primary);
     padding-block: var(--section-py);
     text-align: center;
+  }
+
+  /* ── Variante red (default) ── */
+  .cta-final--red {
+    background: var(--c-primary);
+  }
+  .cta-final--red .cta-final__heading { color: #fff; }
+  .cta-final--red .cta-final__sub { color: rgba(255, 255, 255, 0.85); }
+  .cta-final--red .btn-ghost {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  .cta-final--red .btn-ghost:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ── Variante dark ── */
+  .cta-final--dark {
+    background: var(--c-ink);
+  }
+  .cta-final--dark .cta-final__heading { color: #fff; }
+  .cta-final--dark .cta-final__sub { color: rgba(255, 255, 255, 0.75); }
+  .cta-final--dark .btn-ghost {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  .cta-final--dark .btn-ghost:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* ── Variante light ── */
+  .cta-final--light {
+    background: var(--c-surface);
+  }
+  .cta-final--light .cta-final__heading { color: var(--c-ink); }
+  .cta-final--light .cta-final__sub { color: var(--c-ink-2); }
+  .cta-final--light .btn-ghost {
+    color: var(--c-ink-2);
+    border-color: var(--c-border);
+  }
+  .cta-final--light .btn-ghost:hover {
+    border-color: var(--c-ink-2);
+    background: rgba(0, 0, 0, 0.04);
   }
 
   .cta-final__container {
@@ -48,7 +94,6 @@ import { waUrl, telUrl } from '../lib/utils';
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 800;
-    color: #fff;
     margin-bottom: var(--sp-4);
     line-height: 1.1;
   }
@@ -56,7 +101,6 @@ import { waUrl, telUrl } from '../lib/utils';
   .cta-final__sub {
     font-family: var(--font-body);
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.85);
     margin-bottom: var(--sp-8);
     line-height: 1.6;
     max-width: 50ch;
@@ -94,27 +138,24 @@ import { waUrl, telUrl } from '../lib/utils';
     box-shadow: var(--shadow-md);
   }
 
-  /* ── Outline button ── */
-  .btn-outline {
+  /* ── Ghost button (CTA secundario) ── */
+  .btn-ghost {
     display: inline-flex;
     align-items: center;
     gap: var(--sp-2);
     background: transparent;
-    color: #fff;
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
     padding: var(--sp-3) var(--sp-6);
     border-radius: var(--radius-full);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid;
     text-decoration: none;
     transition: var(--transition);
     white-space: nowrap;
   }
 
-  .btn-outline:hover {
-    border-color: #fff;
-    background: rgba(255, 255, 255, 0.1);
+  .btn-ghost:hover {
     transform: translateY(-1px);
   }
 </style>

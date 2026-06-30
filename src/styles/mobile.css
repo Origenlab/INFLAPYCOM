@@ -40,26 +40,22 @@
   .section { padding-block: 2.1rem !important; }
 }
 
-/* Hero mobile */
+/* Hero mobile — canonical 2-col layout (left: eyebrow+H1, right: 2 párrafos+CTAs) */
 @media (max-width: 768px) {
-  .hero__inner {
+  .hero__container {
     grid-template-columns: 1fr !important;
     gap: clamp(1.5rem, 5vw, 2.25rem) !important;
   }
   .hero__title {
     font-size: clamp(1.9rem, 7vw, 2.6rem) !important;
   }
-  .hero__desc {
-    font-size: clamp(1rem, 4vw, 1.0625rem) !important;
-  }
-  .hero__right { display: none !important; }
 }
 @media (max-width: 480px) {
   .hero__ctas {
     flex-direction: column !important;
     width: 100%;
   }
-  .hero__ctas .btn {
+  .hero__ctas a {
     width: 100% !important;
     justify-content: center !important;
     min-height: 48px;

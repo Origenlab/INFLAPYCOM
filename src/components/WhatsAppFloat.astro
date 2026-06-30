@@ -8,7 +8,7 @@ import { waUrl } from '../lib/utils';
   target="_blank"
   rel="noopener"
   class="wa-float"
-  aria-label="Cotizar por WhatsApp"
+  aria-label="Contactar por WhatsApp"
 >
   <svg
     class="wa-float__icon"
@@ -26,8 +26,8 @@ import { waUrl } from '../lib/utils';
 <style>
   .wa-float {
     position: fixed;
-    bottom: var(--sp-6);
-    right: var(--sp-6);
+    bottom: 1.5rem;
+    right: 1.5rem;
     z-index: 9999;
     display: inline-flex;
     align-items: center;
@@ -59,7 +59,12 @@ import { waUrl } from '../lib/utils';
 
   @media (max-width: 640px) {
     .wa-float {
-      padding: var(--sp-3);
+      width: 56px;
+      height: 56px;
+      padding: 0;
+      justify-content: center;
+      bottom: 1.5rem;
+      right: 1.5rem;
     }
 
     .wa-float__label {

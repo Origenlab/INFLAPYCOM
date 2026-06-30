@@ -1,16 +1,28 @@
 ---
-import { SITE, STATS, WA_MESSAGES } from '../config/site';
+import { WA_MESSAGES } from '../config/site';
 import { waUrl } from '../lib/utils';
 ---
 
 <section class="hero">
   <div class="hero__container">
-    <!-- Left column -->
+
+    <!-- Columna izquierda: eyebrow + H1 -->
     <div class="hero__left">
-      <span class="hero__eyebrow">30 años de experiencia</span>
-      <h1 class="hero__title">Renta de Inflables para Fiestas Increíbles en CDMX</h1>
-      <p class="hero__desc">
-        Castillos, toboganes y brincolines desde $800 MXN. Instalación incluida. Cubrimos toda la CDMX y Estado de México.
+      <span class="hero__eyebrow">30 años de experiencia · CDMX y EdoMex</span>
+      <h1 class="hero__title">
+        Renta de Inflables para
+        <mark class="hero__accent">Fiestas Increíbles</mark>
+        en Ciudad de México
+      </h1>
+    </div>
+
+    <!-- Columna derecha: dos párrafos + CTAs -->
+    <div class="hero__right">
+      <p class="hero__p">
+        Castillos, toboganes y brincolines para niños de todas las edades. Instalación y retiro incluidos — tú solo enfócate en disfrutar la fiesta.
+      </p>
+      <p class="hero__p">
+        Más de 10,000 eventos en CDMX y Estado de México. Precios desde $800 MXN con seguro de responsabilidad civil y equipo sanitizado antes de cada renta.
       </p>
       <div class="hero__ctas">
         <a
@@ -28,22 +40,6 @@ import { waUrl } from '../lib/utils';
       </div>
     </div>
 
-    <!-- Right column (hidden on mobile) -->
-    <div class="hero__right" aria-hidden="true">
-      <div class="hero__card">
-        <div class="hero__card-img" style={`background-image: url('${SITE.ogImage}')`}></div>
-        <div class="hero__card-overlay">
-          <div class="hero__stats-overlay">
-            {STATS.slice(0, 2).map((s) => (
-              <div class="hero__stat-pill">
-                <span class="hero__stat-val">{s.value}</span>
-                <span class="hero__stat-lbl">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -51,7 +47,6 @@ import { waUrl } from '../lib/utils';
   .hero {
     background: linear-gradient(135deg, #fff 0%, #fff5f0 55%, #ffe8da 100%);
     padding-block: var(--section-py);
-    overflow: hidden;
   }
 
   .hero__container {
@@ -60,22 +55,28 @@ import { waUrl } from '../lib/utils';
     padding-inline: var(--container-px);
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-10);
+    gap: var(--sp-8);
     align-items: center;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     .hero__container {
       grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 4rem);
     }
+  }
+
+  /* ── Izquierda ── */
+  .hero__left {
+    display: flex;
+    flex-direction: column;
   }
 
   .hero__eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: var(--sp-2);
     font-family: var(--font-body);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -85,25 +86,36 @@ import { waUrl } from '../lib/utils';
     border-radius: var(--radius-full);
     padding: var(--sp-1) var(--sp-3);
     margin-bottom: var(--sp-4);
+    width: fit-content;
   }
 
   .hero__title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
     font-weight: 800;
     line-height: 1.1;
     color: var(--c-ink);
-    margin-bottom: var(--sp-5);
     letter-spacing: -0.02em;
   }
 
-  .hero__desc {
+  .hero__accent {
+    color: var(--c-primary);
+    background: none;
+    font-style: normal;
+  }
+
+  /* ── Derecha ── */
+  .hero__right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-5);
+  }
+
+  .hero__p {
     font-family: var(--font-body);
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.75;
     color: var(--c-ink-2);
-    margin-bottom: var(--sp-8);
-    max-width: 52ch;
   }
 
   .hero__ctas {
@@ -111,9 +123,10 @@ import { waUrl } from '../lib/utils';
     flex-wrap: wrap;
     gap: var(--sp-3);
     align-items: center;
+    padding-top: var(--sp-2);
   }
 
-  /* ── Primary button ── */
+  /* ── Botones ── */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -136,11 +149,9 @@ import { waUrl } from '../lib/utils';
     box-shadow: var(--shadow-md);
   }
 
-  /* ── Ghost button ── */
   .btn-ghost {
     display: inline-flex;
     align-items: center;
-    gap: var(--sp-2);
     background: transparent;
     color: var(--c-ink);
     font-family: var(--font-body);
@@ -158,73 +169,5 @@ import { waUrl } from '../lib/utils';
     border-color: var(--c-primary);
     color: var(--c-primary);
     transform: translateY(-1px);
-  }
-
-  /* ── Right side card ── */
-  .hero__right {
-    display: none;
-  }
-
-  @media (min-width: 1024px) {
-    .hero__right {
-      display: block;
-    }
-  }
-
-  .hero__card {
-    position: relative;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-    box-shadow: var(--shadow-lg);
-  }
-
-  .hero__card-img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-color: #ffe8da;
-  }
-
-  .hero__card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(20,24,31,0.65) 0%, transparent 55%);
-    display: flex;
-    align-items: flex-end;
-    padding: var(--sp-6);
-  }
-
-  .hero__stats-overlay {
-    display: flex;
-    gap: var(--sp-3);
-    width: 100%;
-  }
-
-  .hero__stat-pill {
-    flex: 1;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: var(--radius-lg);
-    padding: var(--sp-3) var(--sp-4);
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .hero__stat-val {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1;
-  }
-
-  .hero__stat-lbl {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.8);
   }
 </style>
