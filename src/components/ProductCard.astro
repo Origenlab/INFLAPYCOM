@@ -95,12 +95,10 @@ const waHref = waUrl(WA_MESSAGES.reservar(p.name));
   display: flex;
   flex-direction: column;
   height: 100%;
-  transition: box-shadow .2s ease, transform .2s ease;
   box-shadow: var(--shadow-sm);
 }
 .pcard:hover {
   box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
 }
 
 .pcard__link {
@@ -125,9 +123,7 @@ const waHref = waUrl(WA_MESSAGES.reservar(p.name));
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .45s ease;
 }
-.pcard:hover .pcard__img { transform: scale(1.05); }
 
 .pcard__overlay {
   position: absolute;
@@ -184,9 +180,7 @@ const waHref = waUrl(WA_MESSAGES.reservar(p.name));
   color: var(--c-ink);
   line-height: 1.25;
   margin: 0;
-  transition: color var(--transition);
 }
-.pcard:hover .pcard__title { color: var(--c-primary); }
 
 .pcard__desc {
   font-size: .85rem;

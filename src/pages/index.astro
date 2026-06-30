@@ -28,8 +28,12 @@ import { waUrl } from '../lib/utils';
 const schema = buildSchema({ pageType: 'home' });
 
 // ── Inflables estrella para los spotlights (datos reales del catálogo) ──
+const mini    = PRODUCTS.find((p) => p.id === 'mini-castillo')!;
 const dragones = PRODUCTS.find((p) => p.id === 'dragones-rojos')!;
 const extremo = PRODUCTS.find((p) => p.id === 'extremo')!;
+
+// IDs que tienen spotlight propio → se excluyen del grid para no duplicar
+const SPOTLIGHT_IDS = new Set(['dragones-rojos', 'extremo']);
 
 // ── Guía de selección: qué inflable según edad y espacio (derivado de PRODUCTS) ──
 const guiaRows = [
@@ -79,15 +83,41 @@ const iconSvgs: Record<string, string> = {
         ]}
       />
       <div class="catalog-grid">
-        {PRODUCTS.map((p, i) => (
+        {PRODUCTS.filter((p) => !SPOTLIGHT_IDS.has(p.id)).map((p, i) => (
           <ProductCard product={p} eager={i === 0} />
         ))}
       </div>
     </div>
   </section>
 
-  {/* 5 · SPOTLIGHT — el más rentado (Dragones Rojos). Galería a la derecha. */}
+  {/* 5 · SPOTLIGHT — el más pequeño (Mini Castillo). Galería a la derecha. */}
   <CategoryFeature
+    eyebrow="El más pequeño"
+    title="Mini Castillo:"
+    titleAccent="para los más pequeños"
+    description={mini.descLong}
+    features={[
+      { label: 'Paredes acolchadas de baja altura', desc: 'seguridad total para bebés de 1 a 3 años' },
+      { label: 'Compacto 2×2 m', desc: 'cabe en interiores, departamentos y jardines pequeños' },
+      { label: 'Para 4–5 bebés de 1 a 3 años', desc: 'el inflable más adecuado para los más pequeños' },
+      { label: 'Llega desinfectado', desc: 'instalación incluida en CDMX y Estado de México' },
+    ]}
+    brands={[
+      { name: 'Cumpleaños 1, 2 y 3' },
+      { name: 'Baby shower' },
+      { name: 'Reuniones familiares' },
+    ]}
+    ctaLabel="Reservar Mini Castillo"
+    ctaHref={waUrl(WA_MESSAGES.reservar(mini.name))}
+    ctaExternal={true}
+    imgMain={{ src: mini.images[0], alt: 'Mini Castillo — inflable para bebés en renta CDMX' }}
+    imgA={{ src: mini.images[1], alt: 'Mini Castillo vista lateral con paredes acolchadas' }}
+    imgB={{ src: mini.images[2], alt: 'Bebés jugando en el Mini Castillo inflable' }}
+  />
+
+  {/* 6 · SPOTLIGHT — el más rentado (Dragones Rojos). Galería a la derecha. */}
+  <CategoryFeature
+    surface={true}
     eyebrow="El más rentado"
     title="Dragones Rojos:"
     titleAccent="el favorito de las fiestas"
@@ -111,10 +141,9 @@ const iconSvgs: Record<string, string> = {
     imgB={{ src: dragones.images[2], alt: 'Niños jugando en el inflable Dragones Rojos' }}
   />
 
-  {/* 6 · SPOTLIGHT — el más grande (Circuito Extremo). MISMO acomodo que arriba
+  {/* 7 · SPOTLIGHT — el más grande (Circuito Extremo). MISMO acomodo que arriba
        (galería a la derecha, SIN flip → sin zig-zag); fondo surface solo separa. */}
   <CategoryFeature
-    surface={true}
     eyebrow="El más grande"
     title="Circuito Extremo:"
     titleAccent="diversión sin límites"
