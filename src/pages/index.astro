@@ -1,42 +1,46 @@
 ---
+// ============================================================================
+// index.astro — HOME de INFLAPY (L1). Orquestador limpio, módulo por módulo,
+// homologado al estándar canónico EJEMPLOS.mx. Cero datos hardcodeados: todo
+// sale de src/config/site.ts (SSoT). Schema vía lib/seo (sin reseñas fabricadas).
+// Orden canónico: Hero → Franja (convierte) → Confianza → Catálogo → Guía de
+// selección → Spotlights → Empresa → Beneficios → Proceso → Reseñas → Cobertura
+// → FAQ+Contacto → Cierre.
+// ============================================================================
 import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '../components/Hero.astro';
 import TrustBar from '../components/TrustBar.astro';
 import SectionMenu from '../components/SectionMenu.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import StatsStrip from '../components/StatsStrip.astro';
+import ProductCard from '../components/ProductCard.astro';
+import CategoryFeature from '../components/CategoryFeature.astro';
+import RiskGuide from '../components/RiskGuide.astro';
+import CompanyAbout from '../components/CompanyAbout.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import Reviews from '../components/Reviews.astro';
 import Coverage from '../components/Coverage.astro';
-import FAQ from '../components/FAQ.astro';
+import FAQWithContact from '../components/FAQWithContact.astro';
 import CTAFinal from '../components/CTAFinal.astro';
-import ProductCard from '../components/ProductCard.astro';
-import ProductShowcase from '../components/ProductShowcase.astro';
-import CompanyAbout from '../components/CompanyAbout.astro';
-import { SITE, PRODUCTS, SERVICES, CONTACT, KEYWORDS } from '../config/site';
+import { PRODUCTS, SERVICES, KEYWORDS, WA_MESSAGES } from '../config/site';
+import { buildSchema } from '../lib/seo';
+import { waUrl } from '../lib/utils';
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": SITE.brand,
-  "description": SITE.description,
-  "url": SITE.url,
-  "telephone": "+52" + CONTACT.phone,
-  "image": SITE.url + SITE.ogImage,
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ciudad de México",
-    "addressRegion": "CMX",
-    "addressCountry": "MX"
-  },
-  "areaServed": "Ciudad de México y Estado de México",
-  "openingHours": "Mo-Su 08:00-20:00",
-  "priceRange": "$800-$2500 MXN",
-  "currenciesAccepted": "MXN",
-  "paymentAccepted": "Efectivo, Transferencia bancaria",
-  "hasMap": "https://maps.google.com/?q=Ciudad+de+Mexico"
-});
+const schema = buildSchema({ pageType: 'home' });
 
+// ── Inflables estrella para los spotlights (datos reales del catálogo) ──
+const dragones = PRODUCTS.find((p) => p.id === 'dragones-rojos')!;
+const extremo = PRODUCTS.find((p) => p.id === 'extremo')!;
+
+// ── Guía de selección: qué inflable según edad y espacio (derivado de PRODUCTS) ──
+const guiaRows = [
+  { nivel: '1–3 años', ejemplos: 'Mini Castillo', minimo: '2×2 m (cabe en interior)', complementos: '4–5 bebés' },
+  { nivel: '3–8 años', ejemplos: 'Mini Jungla · Gusanitos · Castillo de Princesas', minimo: '3×3 m', complementos: '4–5 niños' },
+  { nivel: '3–10 años', ejemplos: 'Dragones Rojos · Castillo Blanco', minimo: '4×4 m', complementos: '5–7 niños' },
+  { nivel: '5–12 años', ejemplos: 'Barco Pirata', minimo: '5×4 m (jardín)', complementos: '6–8 niños' },
+  { nivel: '6–15 años', ejemplos: 'Circuito Extremo', minimo: '8×4 m (aire libre)', complementos: '8–10 niños' },
+];
+
+// ── Iconos inline para las tarjetas de servicio (¿por qué elegirnos?) ──
 const iconSvgs: Record<string, string> = {
   truck: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
   shield: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
@@ -52,26 +56,26 @@ const iconSvgs: Record<string, string> = {
   description="Renta de inflables en CDMX: castillos, toboganes y brincolines desde $800 MXN. Instalación incluida. 30 años de experiencia en Ciudad de México y Estado de México."
   schema={schema}
 >
-  <!-- 1. Hero -->
+  {/* 1 · HERO — presenta la propuesta + precio + CTAs + confianza */}
   <Hero />
 
-  <!-- 2. TrustBar -->
-  <TrustBar />
-
-  <!-- 3. SectionMenu -->
+  {/* 2 · FRANJA DE SECCIONES — el hero presenta, la franja convierte */}
   <SectionMenu />
 
-  <!-- 4. Catálogo — grid rápido -->
-  <section id="catalogo" class="section-catalog">
+  {/* 3 · CONFIANZA — pilares honestos bajo el hero */}
+  <TrustBar />
+
+  {/* 4 · CATÁLOGO — los 8 inflables (cards data-driven) */}
+  <section id="catalogo" class="section section--catalog">
     <div class="container">
       <SectionHeading
+        layout="duo"
         eyebrow="Catálogo completo"
         title="Inflables para renta"
         titleAccent="en CDMX y EdoMex"
-        layout="duo"
         body={[
-          'Todos nuestros inflables están desinfectados, certificados y listos para entrega en CDMX y zona metropolitana. Elige el modelo que se adapte a tu espacio y a la edad de los niños.',
-          '¿No encuentras el indicado? Escríbenos por WhatsApp — te ayudamos a elegir el modelo perfecto para tu evento, espacio y presupuesto en minutos.',
+          'Todos nuestros inflables están desinfectados, revisados y listos para entrega en CDMX y zona metropolitana. Elige el modelo según el espacio que tengas y la edad de los niños.',
+          '¿No sabes cuál elegir? Más abajo te dejamos una guía rápida por edad y espacio — o escríbenos por WhatsApp y te ayudamos a decidir en minutos.',
         ]}
       />
       <div class="catalog-grid">
@@ -82,33 +86,95 @@ const iconSvgs: Record<string, string> = {
     </div>
   </section>
 
-  <!-- 4b. ProductShowcase — detalle alternado por modelo -->
-  <ProductShowcase />
+  {/* 5 · GUÍA DE SELECCIÓN — qué inflable según edad y espacio */}
+  <RiskGuide
+    eyebrow="Guía de selección"
+    title="¿Cuál inflable elijo"
+    titleAccent="para mi fiesta?"
+    desc="Una tabla rápida para acertar a la primera, según la edad de los niños y el espacio disponible."
+    body={[
+      'La elección correcta depende de dos cosas: cuántos años tienen los niños y cuánto espacio tienes. Esta guía cruza ambas para llevarte directo al modelo ideal.',
+      '¿Tu caso está entre dos opciones o tienes un espacio especial? Mándanos la medida por WhatsApp y te confirmamos el mejor inflable para tu evento.',
+    ]}
+    columns={['Edad de los niños', 'Modelo ideal', 'Espacio mínimo', 'Capacidad']}
+    rows={guiaRows}
+    note="Medidas orientativas por modelo. Confírmanos el alto libre y el tipo de piso (pasto, cemento o interior) y ajustamos la recomendación."
+    ctaLabel="Cotizar por WhatsApp"
+    ctaHref={waUrl(WA_MESSAGES.cotizar)}
+  />
 
-  <!-- 5. CompanyAbout -->
+  {/* 6 · SPOTLIGHT — el más rentado (Dragones Rojos) */}
+  <CategoryFeature
+    eyebrow="El más rentado"
+    title="Dragones Rojos:"
+    titleAccent="el favorito de las fiestas"
+    description={dragones.descLong}
+    features={[
+      { label: '2 dragones de 3 m', desc: 'decoración épica que domina cualquier jardín' },
+      { label: 'Tobogán lateral + zona de brinco', desc: 'diversión completa en un solo inflable' },
+      { label: 'Para 5–7 niños de 3 a 10 años', desc: 'el rango de edad más solicitado' },
+      { label: 'Espacio 4×4 m', desc: 'ideal para jardines y patios medianos' },
+    ]}
+    brands={[
+      { name: 'Cumpleaños 4–10' },
+      { name: 'Fiestas temáticas' },
+      { name: 'Eventos escolares' },
+    ]}
+    ctaLabel="Reservar Dragones Rojos"
+    ctaHref={waUrl(WA_MESSAGES.reservar(dragones.name))}
+    ctaExternal={true}
+    imgMain={{ src: dragones.images[0], alt: 'Dragones Rojos — castillo inflable con dos dragones en renta en CDMX' }}
+    imgA={{ src: dragones.images[1], alt: 'Dragones Rojos vista lateral con tobogán' }}
+    imgB={{ src: dragones.images[2], alt: 'Niños jugando en el inflable Dragones Rojos' }}
+  />
+
+  {/* 7 · SPOTLIGHT — el más grande (Circuito Extremo), galería al lado opuesto */}
+  <CategoryFeature
+    surface={true}
+    flip={true}
+    eyebrow="El más grande"
+    title="Circuito Extremo:"
+    titleAccent="diversión sin límites"
+    description={extremo.descLong}
+    features={[
+      { label: 'Circuito con obstáculos', desc: 'túneles, escalada y tobogán de altura' },
+      { label: 'Hasta 8–10 niños a la vez', desc: 'perfecto para fiestas grandes y escuelas' },
+      { label: 'Para edades de 5 a 15 años', desc: 'el reto favorito de los más grandes' },
+      { label: 'Requiere 8×4 m', desc: 'pensado para espacios abiertos al aire libre' },
+    ]}
+    brands={[
+      { name: 'Eventos escolares' },
+      { name: 'Fiestas +20 niños' },
+      { name: 'Cumpleaños 6–15' },
+    ]}
+    ctaLabel="Reservar Circuito Extremo"
+    ctaHref={waUrl(WA_MESSAGES.reservar(extremo.name))}
+    ctaExternal={true}
+    imgMain={{ src: extremo.images[0], alt: 'Circuito Extremo — inflable grande de obstáculos en renta en CDMX' }}
+    imgA={{ src: extremo.images[1], alt: 'Circuito Extremo zona de escalada' }}
+    imgB={{ src: extremo.images[2], alt: 'Circuito Extremo tobogán de altura' }}
+  />
+
+  {/* 8 · SOBRE LA EMPRESA — confianza (qué/cómo + cifras reales) */}
   <CompanyAbout />
 
-  <!-- 6. Servicios -->
-  <section id="servicios" class="section-services">
+  {/* 9 · ¿POR QUÉ ELEGIRNOS? — beneficios reales (servicios) */}
+  <section id="servicios" class="section section--services">
     <div class="container">
       <SectionHeading
+        layout="duo"
         eyebrow="¿Por qué elegirnos?"
         title="Servicio profesional"
         titleAccent="en cada renta"
-        layout="duo"
         body={[
-          'Más de 10,000 eventos atendidos. Instalación incluida, equipos sanitizados y atención personalizada de inicio a fin. Tu fiesta, sin preocupaciones.',
-          'Cubrimos toda la CDMX y zona metropolitana sin costo de traslado adicional. Llegamos puntual, montamos y recogemos todo al terminar.',
+          'Tres décadas de experiencia y miles de fiestas atendidas. Instalación incluida, equipos sanitizados y atención personalizada de inicio a fin — tu fiesta, sin preocupaciones.',
+          'Cubrimos toda la CDMX y zona metropolitana sin costo de traslado adicional. Llegamos puntuales, montamos y recogemos todo al terminar.',
         ]}
       />
       <div class="services-grid">
         {SERVICES.map((s) => (
           <article class="svc-card">
-            <div
-              class="svc-card__icon"
-              aria-hidden="true"
-              set:html={iconSvgs[s.icon] ?? `<span>${s.icon[0].toUpperCase()}</span>`}
-            />
+            <div class="svc-card__icon" aria-hidden="true" set:html={iconSvgs[s.icon] ?? `<span>${s.icon[0].toUpperCase()}</span>`} />
             <div class="svc-card__content">
               <h3 class="svc-card__title">{s.title}</h3>
               <p class="svc-card__desc">{s.desc}</p>
@@ -120,138 +186,54 @@ const iconSvgs: Record<string, string> = {
     </div>
   </section>
 
-  <!-- 6. ProcessSteps -->
+  {/* 10 · PROCESO — de tu mensaje a la fiesta */}
   <ProcessSteps />
 
-  <!-- 7. Reviews -->
+  {/* 11 · RESEÑAS — prueba social real */}
   <Reviews />
 
-  <!-- 8. StatsStrip -->
-  <StatsStrip />
-
-  <!-- 9. Coverage -->
+  {/* 12 · COBERTURA — zonas que atendemos */}
   <Coverage />
 
-  <!-- 10. FAQ -->
-  <FAQ />
+  {/* 13 · FAQ + CONTACTO — acordeón + tarjeta WhatsApp sticky */}
+  <FAQWithContact />
 
-  <!-- 11. CTAFinal -->
+  {/* 14 · CIERRE — último empujón a la conversión */}
   <CTAFinal variant="red" />
 </PageLayout>
 
 <style>
-/* ── Container ── */
-.container {
-  max-width: var(--container-max);
-  margin-inline: auto;
-  padding-inline: var(--container-px);
-}
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding-block: var(--section-py); }
+  .section--services { background: var(--c-surface); }
 
-/* ── Catalog section ── */
-.section-catalog {
-  padding-block: var(--section-py);
-}
+  /* ── Catálogo ── */
+  .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
+  @media (max-width: 900px) { .catalog-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .catalog-grid { grid-template-columns: 1fr; } }
 
-.catalog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-6);
-}
+  /* ── Servicios (¿por qué elegirnos?) ── */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5); }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
 
-@media (max-width: 900px) {
-  .catalog-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .svc-card {
+    background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-xl);
+    padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4);
+    box-shadow: var(--shadow-sm); transition: box-shadow .2s ease, transform .2s ease;
   }
-}
-
-@media (max-width: 560px) {
-  .catalog-grid {
-    grid-template-columns: 1fr;
+  .svc-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .svc-card__icon {
+    width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;
+    background: rgba(var(--c-primary-rgb), .1); color: var(--c-primary); border-radius: var(--radius-lg); flex-shrink: 0;
   }
-}
-
-/* ── Services section ── */
-.section-services {
-  padding-block: var(--section-py);
-  background: var(--c-surface);
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-5);
-}
-
-@media (max-width: 900px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-  .services-grid { grid-template-columns: 1fr; }
-}
-
-/* Service card — versión limpia */
-.svc-card {
-  background: var(--c-white);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-xl);
-  padding: var(--sp-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-4);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow .2s ease, transform .2s ease;
-}
-.svc-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.svc-card__icon {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(var(--c-primary-rgb), .1);
-  color: var(--c-primary);
-  border-radius: var(--radius-lg);
-  flex-shrink: 0;
-}
-
-.svc-card__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-2);
-  flex: 1;
-}
-
-.svc-card__title {
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--c-ink);
-  line-height: 1.25;
-  margin: 0;
-}
-
-.svc-card__desc {
-  font-size: .875rem;
-  color: var(--c-ink-2);
-  line-height: 1.65;
-  margin: 0;
-}
-
-.svc-card__tag {
-  align-self: flex-start;
-  display: inline-flex;
-  padding: .22rem .7rem;
-  background: rgba(var(--c-primary-rgb), .08);
-  color: var(--c-primary);
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  border-radius: var(--radius-full);
-  margin-top: auto;
-}
+  .svc-card__content { display: flex; flex-direction: column; gap: var(--sp-2); flex: 1; }
+  .svc-card__title { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--c-ink); line-height: 1.25; margin: 0; }
+  .svc-card__desc { font-size: .875rem; color: var(--c-ink-2); line-height: 1.65; margin: 0; }
+  .svc-card__tag {
+    align-self: flex-start; display: inline-flex; padding: .22rem .7rem;
+    background: rgba(var(--c-primary-rgb), .08); color: var(--c-primary);
+    font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    border-radius: var(--radius-full); margin-top: auto;
+  }
 </style>

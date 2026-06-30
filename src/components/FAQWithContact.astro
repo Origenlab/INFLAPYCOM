@@ -1,0 +1,227 @@
+---
+// FAQWithContact.astro — FAQ 2 columnas: acordeón (izq) + tarjeta WhatsApp sticky (der).
+// Canónico EJEMPLOS.mx, adaptado a INFLAPY (sin dependencia de FAQAccordion).
+// Header con SectionHeading layout="duo". Datos reales desde site.ts (FAQ).
+import SectionHeading from './SectionHeading.astro';
+import { FAQ, CONTACT } from '../config/site';
+
+interface Props {
+  /** Pares pregunta/respuesta. Default: FAQ de site.ts */
+  items?: { q: string; a: string }[];
+  /** Número de WhatsApp (solo dígitos). Default: CONTACT.whatsapp */
+  waNumber?: string;
+}
+const { items = FAQ, waNumber = CONTACT.whatsapp } = Astro.props;
+---
+
+<section class="fwc" id="faq">
+  <div class="fwc__inner">
+
+    <SectionHeading
+      layout="duo"
+      eyebrow="Preguntas frecuentes"
+      title="Resolvemos tus"
+      titleAccent="dudas antes de reservar"
+      desc="Lo que más nos preguntan sobre la renta — reservación, instalación, espacio y seguridad."
+      body={[
+        'Reunimos las dudas más comunes para que llegues a tu reservación con todo claro: cuánto antes apartar, qué incluye el precio, cuánto espacio necesitas y cómo cuidamos la seguridad de los niños.',
+        '¿Tu caso es distinto o no encuentras tu duda? Escríbenos por el formulario y te respondemos directo por WhatsApp en minutos.',
+      ]}
+    />
+
+    <div class="fwc__grid">
+
+      <!-- Col izquierda: acordeón FAQ -->
+      <div class="fwc__col-faq">
+        <div class="fwc__acc">
+          {items.map((item, i) => (
+            <details class="fwc__item" open={i === 0}>
+              <summary class="fwc__q">
+                <span>{item.q}</span>
+                <span class="fwc__chev" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+              </summary>
+              <div class="fwc__a"><p set:html={item.a} /></div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Col derecha: tarjeta de contacto sticky -->
+      <aside class="fwc__col-form">
+        <div class="fwc__card">
+          <div class="fwc__card-hd">
+            <div class="fwc__wa-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div>
+              <h3 class="fwc__card-title">¿Tu duda no está aquí?</h3>
+              <p class="fwc__card-sub">Te respondemos por WhatsApp en minutos.</p>
+            </div>
+          </div>
+
+          <form id="fwc-form" class="fwc__form" novalidate>
+            <div class="fwc__field">
+              <label class="fwc__label" for="fwc-name">Nombre <span class="fwc__opt">— opcional</span></label>
+              <input id="fwc-name" name="name" type="text" class="fwc__input" placeholder="Tu nombre" autocomplete="given-name" maxlength="80" />
+            </div>
+
+            <div class="fwc__field">
+              <label class="fwc__label" for="fwc-evento">Tipo de evento <span class="fwc__req" aria-hidden="true">*</span></label>
+              <div class="fwc__select-wrap">
+                <select id="fwc-evento" name="evento" class="fwc__input fwc__select" required>
+                  <option value="" disabled selected>Selecciona&hellip;</option>
+                  <option value="Cumpleaños infantil">Cumpleaños infantil</option>
+                  <option value="Baby shower / primer año">Baby shower / primer año</option>
+                  <option value="Evento escolar o kermés">Evento escolar o kermés</option>
+                  <option value="Posada o convivio">Posada o convivio</option>
+                  <option value="Evento empresarial">Evento empresarial</option>
+                  <option value="Otro">Otro tipo de evento</option>
+                </select>
+                <span class="fwc__chevron" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="fwc__field">
+              <label class="fwc__label" for="fwc-msg">Tu pregunta o necesidad <span class="fwc__req" aria-hidden="true">*</span></label>
+              <textarea id="fwc-msg" name="message" class="fwc__input fwc__textarea" placeholder="Ej: Es un cumple de 6 años en jardín, ¿qué inflable me recomiendan y cuánto espacio necesito?" rows="4" required maxlength="500"></textarea>
+              <span class="fwc__counter" id="fwc-counter" aria-live="polite">0 / 500</span>
+            </div>
+
+            <p id="fwc-error" class="fwc__error" role="alert" aria-live="assertive" hidden>Por favor selecciona el tipo de evento y escribe tu pregunta.</p>
+
+            <button type="submit" class="fwc__btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Enviar por WhatsApp
+            </button>
+
+            <p class="fwc__privacy">Al pulsar el botón se abre WhatsApp con tu mensaje. No guardamos ningún dato.</p>
+          </form>
+
+          <div class="fwc__card-ft">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-2.95-8.72A2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-.44a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href={`tel:+${waNumber}`} class="fwc__call-link">Prefiero llamar directamente</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ waNumber }}>
+  const form     = document.getElementById('fwc-form');
+  const textarea = document.getElementById('fwc-msg');
+  const counter  = document.getElementById('fwc-counter');
+  const errBox   = document.getElementById('fwc-error');
+  const sel      = document.getElementById('fwc-evento');
+
+  textarea && textarea.addEventListener('input', function () {
+    const n = this.value.length;
+    counter.textContent = n + ' / 500';
+    counter.style.color = n > 420 ? '#d97706' : '';
+    this.classList.remove('fwc__input--error');
+    if (errBox) errBox.hidden = true;
+  });
+  sel && sel.addEventListener('change', function () {
+    this.classList.remove('fwc__input--error');
+    if (errBox) errBox.hidden = true;
+  });
+
+  form && form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name    = document.getElementById('fwc-name').value.trim();
+    const evento  = sel.value;
+    const message = textarea.value.trim();
+    let valid = true;
+    if (!evento)  { sel.classList.add('fwc__input--error'); valid = false; }
+    if (!message) { textarea.classList.add('fwc__input--error'); valid = false; }
+    if (!valid)   { errBox.hidden = false; return; }
+
+    let text = 'Hola INFLAPY, tengo una pregunta sobre la renta de inflables.\n\n';
+    if (name)   text += 'Nombre: ' + name + '\n';
+    if (evento) text += 'Tipo de evento: ' + evento + '\n';
+    text += '\nPregunta:\n' + message;
+
+    window.open('https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
+  });
+</script>
+
+<style>
+.fwc { padding: var(--section-py) 0; background: var(--c-surface); }
+.fwc__inner { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+
+.fwc__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-8); align-items: start; }
+@media (min-width: 900px) { .fwc__grid { grid-template-columns: 1fr 400px; gap: var(--sp-10); } }
+
+/* ── Acordeón ── */
+.fwc__acc { display: flex; flex-direction: column; gap: var(--sp-3); }
+.fwc__item { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); overflow: hidden; }
+.fwc__item[open] { border-color: color-mix(in srgb, var(--c-primary) 35%, var(--c-border)); box-shadow: var(--shadow-sm); }
+.fwc__q {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5); font-family: var(--font-heading);
+  font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--c-ink);
+  line-height: var(--leading-snug);
+}
+.fwc__q::-webkit-details-marker { display: none; }
+.fwc__chev { flex-shrink: 0; color: var(--c-primary); transition: transform var(--transition); }
+.fwc__item[open] .fwc__chev { transform: rotate(180deg); }
+.fwc__a { padding: 0 var(--sp-5) var(--sp-5); }
+.fwc__a p { margin: 0; font-size: var(--text-sm); color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+.fwc__a :global(strong) { color: var(--c-ink); }
+
+/* ── Tarjeta sticky ── */
+.fwc__card { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-xl); padding: var(--sp-6); box-shadow: 0 4px 24px rgba(0,0,0,.10); }
+@media (min-width: 900px) { .fwc__card { position: sticky; top: calc(var(--stack-height) + var(--sp-5)); } }
+
+.fwc__card-hd { display: flex; align-items: flex-start; gap: var(--sp-3); padding-bottom: var(--sp-5); margin-bottom: var(--sp-5); border-bottom: 1px solid var(--c-border); }
+.fwc__wa-icon { flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--c-wa, #25D366); color: #fff; border-radius: var(--radius-lg); }
+.fwc__card-title { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--c-ink); margin: 0 0 .25rem; line-height: var(--leading-snug); }
+.fwc__card-sub { font-size: var(--text-sm); color: var(--c-muted); margin: 0; }
+
+.fwc__form { display: flex; flex-direction: column; gap: var(--sp-4); }
+.fwc__field { display: flex; flex-direction: column; gap: .375rem; }
+.fwc__label { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--c-ink); }
+.fwc__opt { font-weight: var(--weight-regular); color: var(--c-muted); }
+.fwc__req { color: var(--c-primary); margin-left: .1em; }
+
+.fwc__input {
+  font-family: var(--font-body); font-size: var(--text-base); color: var(--c-ink);
+  background: var(--c-white); border: 1.5px solid var(--c-border); border-radius: var(--radius-md);
+  padding: .625rem var(--sp-4); width: 100%; outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none; -webkit-appearance: none;
+}
+.fwc__input:focus { border-color: var(--c-primary); box-shadow: 0 0 0 3px rgba(var(--c-primary-rgb), .15); }
+.fwc__input--error { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,.12); }
+
+.fwc__select-wrap { position: relative; }
+.fwc__select { cursor: pointer; padding-right: 2.5rem; }
+.fwc__chevron { position: absolute; right: .75rem; top: 50%; transform: translateY(-50%); color: var(--c-muted); pointer-events: none; display: flex; align-items: center; }
+
+.fwc__textarea { resize: vertical; min-height: 108px; line-height: var(--leading-relaxed); }
+.fwc__counter { font-size: var(--text-xs); color: var(--c-muted); text-align: right; margin-top: .125rem; }
+.fwc__error { font-size: var(--text-sm); color: #dc2626; background: rgba(220,38,38,.07); border: 1px solid rgba(220,38,38,.25); border-radius: var(--radius-md); padding: var(--sp-3) var(--sp-4); margin: 0; }
+
+.fwc__btn {
+  display: flex; align-items: center; justify-content: center; gap: var(--sp-2); width: 100%;
+  padding: .75rem var(--sp-5); background: var(--c-wa, #25D366); color: #fff;
+  font-family: var(--font-body); font-size: var(--text-base); font-weight: var(--weight-semibold);
+  border: none; border-radius: var(--radius-md); cursor: pointer; line-height: 1;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+.fwc__btn:hover { background: #1fba59; box-shadow: 0 4px 12px rgba(37,211,102,.35); }
+.fwc__btn:active { background: #19a34a; }
+.fwc__privacy { font-size: var(--text-xs); color: var(--c-muted); text-align: center; margin: 0; line-height: 1.6; }
+
+.fwc__card-ft { display: flex; align-items: center; justify-content: center; gap: var(--sp-2); margin-top: var(--sp-5); padding-top: var(--sp-5); border-top: 1px solid var(--c-border); color: var(--c-muted); }
+.fwc__call-link { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--c-ink-2); text-decoration: none; transition: color var(--transition); }
+.fwc__call-link:hover { color: var(--c-primary); text-decoration: underline; }
+
+@media (max-width: 899px) { .fwc__col-form { order: -1; } }
+@media (prefers-reduced-motion: reduce) { .fwc__chev, .fwc__input, .fwc__btn { transition: none; } }
+</style>
