@@ -11,6 +11,7 @@ import Coverage from '../components/Coverage.astro';
 import FAQ from '../components/FAQ.astro';
 import CTAFinal from '../components/CTAFinal.astro';
 import ProductCard from '../components/ProductCard.astro';
+import ProductShowcase from '../components/ProductShowcase.astro';
 import CompanyAbout from '../components/CompanyAbout.astro';
 import { SITE, PRODUCTS, SERVICES, CONTACT, KEYWORDS } from '../config/site';
 
@@ -60,15 +61,18 @@ const iconSvgs: Record<string, string> = {
   <!-- 3. SectionMenu -->
   <SectionMenu />
 
-  <!-- 4. Catálogo -->
+  <!-- 4. Catálogo — grid rápido -->
   <section id="catalogo" class="section-catalog">
     <div class="container">
       <SectionHeading
         eyebrow="Catálogo completo"
         title="Inflables para renta"
         titleAccent="en CDMX y EdoMex"
-        desc="Los mejores inflables de la ciudad, desinfectados y con instalación incluida."
-        center={true}
+        layout="duo"
+        body={[
+          'Todos nuestros inflables están desinfectados, certificados y listos para entrega en CDMX y zona metropolitana. Elige el modelo que se adapte a tu espacio y a la edad de los niños.',
+          '¿No encuentras el indicado? Escríbenos por WhatsApp — te ayudamos a elegir el modelo perfecto para tu evento, espacio y presupuesto en minutos.',
+        ]}
       />
       <div class="catalog-grid">
         {PRODUCTS.map((p, i) => (
@@ -77,6 +81,9 @@ const iconSvgs: Record<string, string> = {
       </div>
     </div>
   </section>
+
+  <!-- 4b. ProductShowcase — detalle alternado por modelo -->
+  <ProductShowcase />
 
   <!-- 5. CompanyAbout -->
   <CompanyAbout />
@@ -88,8 +95,11 @@ const iconSvgs: Record<string, string> = {
         eyebrow="¿Por qué elegirnos?"
         title="Servicio profesional"
         titleAccent="en cada renta"
-        desc="Más de 10,000 eventos atendidos. Instalación incluida, equipos sanitizados y atención personalizada de inicio a fin."
         layout="duo"
+        body={[
+          'Más de 10,000 eventos atendidos. Instalación incluida, equipos sanitizados y atención personalizada de inicio a fin. Tu fiesta, sin preocupaciones.',
+          'Cubrimos toda la CDMX y zona metropolitana sin costo de traslado adicional. Llegamos puntual, montamos y recogemos todo al terminar.',
+        ]}
       />
       <div class="services-grid">
         {SERVICES.map((s) => (
