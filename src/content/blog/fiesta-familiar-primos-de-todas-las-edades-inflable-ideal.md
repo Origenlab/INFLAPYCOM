@@ -1,6 +1,6 @@
 ---
 title: "Fiesta familiar con primos de todas las edades: el inflable ideal"
-excerpt: "¿Fiesta familiar con primos de 2 a 12 años? Descubre por qué un inflable de túneles como Gusanitos funciona para todos y evita pleitos por edades en CDMX."
+excerpt: "Fiesta familiar con primos de 2 a 12 años: por qué un inflable de túneles como Gusanitos funciona para todos y evita pleitos por edades en CDMX y EdoMex."
 date: 2026-02-04
 product: "gusanitos"
 productSlug: "inflables-medianos/gusanitos"
@@ -10,89 +10,91 @@ imageAlt: "Inflable Gusanitos de túneles en fiesta familiar con primos de todas
 author: "INFLAPY"
 ---
 
-## El dilema de toda fiesta familiar: primos de todas las edades, un solo inflable
+## Primos de 2, 5, 8 y 12 años. Un solo inflable. ¿Cuál?
 
-Si alguna vez has organizado una reunión familiar grande — un cumpleaños de la abuela, una carne asada de fin de año, un bautizo con toda la familia extendida — conoces el problema de memoria: llegan primos de 2, 5, 8 y 12 años, y cualquier atracción que elijas deja fuera a alguien. El brincolín clásico aburre a los grandes o intimida a los chicos. La consola de videojuegos secuestra a tres niños y excluye al resto. Y los papás terminan haciendo de árbitros toda la tarde.
+Lo vemos casi cada fin de semana: cumpleaños de la abuela, carne asada, bautizo con toda la familia extendida. Llegan primos de todas las edades y cualquier atracción que elijas deja fuera a alguien. El brincolín aburre a los de secundaria o apachurra a los de pañal. La consola secuestra a tres y excluye al resto. Y los papás terminan de árbitros toda la tarde, que no era el plan.
 
-Para una fiesta familiar con primos de todas las edades, la respuesta que mejor nos ha funcionado en más de 30 años rentando inflables en CDMX y Estado de México es un inflable de circuito, no de salto. El [Gusanitos](/inflables-medianos/gusanitos) es exactamente eso: **túneles de colores conectados (verde, morado y amarillo) con varias entradas y salidas**, en una huella de **5×3 metros**, donde pueden jugar **5 a 7 niños al mismo tiempo** — y donde el bebé de 2 años y el primo de 12 conviven sin estorbarse. Cuesta **$1,350 MXN** con traslado, instalación, operación y retiro incluidos.
+Después de 30 años rentando inflables en CDMX y Estado de México, la respuesta que mejor nos ha funcionado para ese escenario no es un inflable de salto, sino uno de circuito. El [Gusanitos](/inflables-medianos/gusanitos) es exactamente eso: túneles de colores conectados — verde, morado y amarillo — con varias entradas y salidas, en una huella de **5×3 metros**, donde juegan **5 a 7 niños al mismo tiempo**. El de 2 años gatea por un túnel mientras el de 12 organiza carreras por otro, y nadie estorba a nadie. Cuesta **$1,350 MXN** con traslado, instalación, operación y retiro incluidos.
 
-## Por qué los inflables de túneles funcionan cuando las edades están mezcladas
+## Por qué los túneles funcionan cuando las edades están revueltas
 
-En un brincolín tradicional, el juego es uno solo: saltar. Y saltar es precisamente la actividad donde más pesa la diferencia de edad — un niño de 10 años brincando junto a uno de 3 es una receta para llantos. En un circuito de túneles, en cambio, cada niño juega a su propio ritmo y a su propia manera:
+En un brincolín tradicional el juego es uno: saltar. Y saltar es justo donde más pesa la diferencia de edad — un niño de 10 años brincando junto a uno de 3 es receta para llantos antes del pastel. En un circuito de túneles no existe esa colisión, porque cada niño juega distinto:
 
-- **Los más pequeños (2–4 años)** gatean por los túneles como si fuera una casita gigante. El espacio contenido les da seguridad y no necesitan coordinación avanzada para disfrutarlo.
-- **Los medianos (5–8 años)** exploran las rutas, memorizan qué entrada conecta con qué salida y organizan sus propias carreras de un extremo al otro.
-- **Los grandes (9–12 años)** inventan juegos con reglas: relevos, escondidas dentro del circuito, o asumen el rol de guías de los primos chicos — algo que en una fiesta familiar vale oro.
-- **Los papás y abuelos** ven todo desde afuera sin esfuerzo, porque los túneles son de perfil bajo y las múltiples salidas mantienen a los niños siempre visibles por segundos.
+- Los de **2 a 4 años** gatean por los túneles como si fuera una casita gigante. No necesitan coordinación avanzada, y el espacio contenido les da confianza.
+- Los de 5 a 8 exploran rutas, memorizan qué entrada conecta con qué salida y arman sus propias carreras de punta a punta.
+- Los de 9 a 12 inventan juegos con reglas: relevos, escondidas, o se autonombran guías de los primos chicos — algo que en una reunión familiar vale oro.
+- Los abuelos ven todo desde la sombra sin pararse, porque los túneles son de perfil bajo y las salidas múltiples mantienen a los niños a la vista.
 
-Como no hay una plataforma de salto compartida, no hay choques entre niños de tamaños muy distintos. Cada quien avanza por su túnel, se cruzan en las intersecciones y salen por donde quieren. Es más un recorrido que un brincolín, y esa diferencia lo cambia todo cuando la lista de invitados va de pañales a secundaria.
+Sin plataforma de salto compartida no hay choques entre cuerpos de tamaños muy distintos. Cada quien avanza por su túnel, se cruzan en las intersecciones y salen por donde quieren. Es más un recorrido que un brincolín, y esa diferencia lo cambia todo cuando la lista de invitados va de pañales a secundaria.
 
-## Comparativa: opciones de inflable para una reunión familiar mixta
+## ¿Y si mejor rento otro modelo? Comparativa honesta
 
-No todos los inflables resuelven igual el reto de las edades mezcladas. Esta tabla resume cómo se comportan nuestros modelos más solicitados cuando los invitados van de los 2 a los 12 años:
+No siempre el Gusanitos es la respuesta. Si todos tus sobrinos tienen entre 6 y 10 años, un inflable de salto les va a dar más guerra. Esta tabla resume cómo se comporta cada modelo cuando las edades están mezcladas:
 
-| Inflable | Edades | Medidas | Niños a la vez | Precio | ¿Funciona con edades mezcladas? |
+| Inflable | Edades | Medidas | Niños a la vez | Precio | ¿Con edades mezcladas? |
 |---|---|---|---|---|---|
-| [Gusanitos](/inflables-medianos/gusanitos) | Todas las edades | 5×3 m | 5–7 | $1,350 | Excelente: circuito sin saltos, todos juegan a su ritmo |
-| [Mini Castillo](/inflables-chicos/mini-castillo) | 1–3 años | 2×2 m | 3–4 | $800 | Solo bebés; los grandes quedan fuera |
+| [Gusanitos](/inflables-medianos/gusanitos) | Todas las edades | 5×3 m | 5–7 | $1,350 | La mejor opción: circuito sin saltos, cada quien a su ritmo |
+| [Mini Castillo](/inflables-chicos/mini-castillo) | 1–3 años | 2×2 m | 3–4 | $800 | Solo bebés; los grandes se quedan viendo |
 | [Dragones Rojos](/inflables-medianos/dragones-rojos) | 4–10 años | 4×4 m | 5–7 | $1,200 | Bien de 4 a 10, pero excluye a los más chicos |
-| [Barco Pirata](/inflables-grandes/barco-pirata) | 4+ años | 7×5 m | 8–10 | $1,800 | Bien si casi todos son mayores de 4 y hay jardín amplio |
+| [Barco Pirata](/inflables-grandes/barco-pirata) | 4+ años | 7×5 m | 8–10 | $1,800 | Bien si casi todos pasan de 4 años y hay jardín amplio |
 
-Si tu reunión tiene bebés muy pequeños **y** presupuesto para dos equipos, una combinación ganadora es Gusanitos para todos más un [Mini Castillo](/inflables-chicos/mini-castillo) exclusivo para los de 1 a 3 años. Pero si vas a rentar un solo inflable para toda la primada, el Gusanitos es el que no deja a nadie mirando desde la banca.
+Si en la familia hay bebés muy pequeños y el presupuesto alcanza para dos equipos, la combinación que más nos piden es Gusanitos para todos más un [Mini Castillo](/inflables-chicos/mini-castillo) exclusivo para los de 1 a 3. Pero si va a ser un solo inflable para toda la primada, el Gusanitos es el que no deja a nadie en la banca.
 
-## Cómo planear la fiesta familiar alrededor del inflable
+## Cómo acomodar la fiesta alrededor del inflable
 
 ### El espacio: ¿cabe en el patio de la abuela?
 
-El Gusanitos necesita un área libre de aproximadamente **5×3 metros**, más medio metro de margen alrededor. Al ser de perfil bajo (es un circuito de túneles, no una torre), pasa sin problema bajo tendederos, ramas medianas o techos de patio que descalificarían a un inflable alto. Funciona en jardines, patios de tierra firme, cocheras amplias y hasta en la calle cerrada de una posada, siempre sobre superficie razonablemente plana.
+Necesitas un área libre de **5×3 metros** más medio metro de margen alrededor. Como es un circuito de túneles y no una torre, pasa bajo tendederos, ramas medianas y techos de patio que descalificarían a un castillo alto. Lo hemos montado en jardines, patios de tierra firme, cocheras amplias y calles cerradas de posada. Lo único que pedimos: superficie razonablemente plana.
 
-Solo necesitas un **contacto de luz de 110V** a distancia razonable para el motor. Si la reunión es en un terreno sin luz, contamos con generador con costo extra — avísanos al cotizar.
+El error más común que nos toca ver es medir el jardín "a ojo". Antes de reservar, agarra un metro y mide de verdad; una jardinera o un tinaco que "casi no estorba" sí estorba. Y ubica el contacto de luz: el motor necesita **110V**. Si el contacto queda a más de 10 metros, ten lista una extensión de uso rudo — las delgaditas de interior se calientan. ¿Terreno sin luz? Tenemos generador con costo extra, avísanos al cotizar.
 
-### El horario: aprovecha las 4–6 horas de renta
+Un consejo que casi nadie pide y siempre agradecen: si tu patio da al poniente, coloca el inflable donde le pegue sombra después de las 4 de la tarde. La lona al sol directo se calienta, y los niños lo resienten justo a la hora en que más quieren jugar.
 
-La renta típica es de **4 a 6 horas**, suficiente para cubrir la comida familiar completa. Nuestra recomendación después de miles de eventos: pide la instalación 30–60 minutos antes de que lleguen los invitados. Nosotros llegamos, instalamos y dejamos todo operando — tú no cargas nada ni conectas nada. El precio ya **incluye traslado, instalación, operación y retiro**, sin costos ocultos, en las alcaldías de CDMX y municipios del Estado de México con cobertura (Coyoacán, Tlalpan, Benito Juárez, Naucalpan, Tlalnepantla, Atizapán y más).
+### El horario: exprime las 4–6 horas de renta
 
-### La logística familiar: reparte responsabilidades
+La renta típica es de **4 a 6 horas**, suficiente para cubrir la comida familiar completa. Pide la instalación 30–60 minutos antes de que lleguen los invitados: nosotros llegamos, montamos y dejamos todo operando, tú no cargas ni conectas nada. El precio ya incluye traslado, instalación, operación y retiro en las alcaldías de CDMX y municipios del Estado de México con cobertura — Coyoacán, Tlalpan, Benito Juárez, Naucalpan, Tlalnepantla, Atizapán y más.
 
-- **Nombra un "tío de guardia" por turno.** Con el Gusanitos basta un adulto atento por ratos, porque el inflable es fácil de supervisar desde fuera. Rotar el rol cada 45 minutos evita que a alguien le toque toda la tarde.
-- **Establece la regla de zapatos fuera desde el inicio.** Una caja o tapete junto a la entrada del inflable resuelve el caos de tenis perdidos.
-- **Coordina los alimentos con el juego.** Los niños comen rápido cuando saben que el inflable los espera; sirve su comida primero y tendrás sobremesa tranquila para los adultos.
-- **Reserva con al menos una semana de anticipación.** Y si tu reunión cae entre mayo y agosto — nuestra temporada alta — apártalo con más tiempo, porque los fines de semana se agotan.
+### La logística familiar: reparte la chamba
 
-## Higiene y seguridad: lo que los papás de la familia van a preguntar
+- Nombra un "tío de guardia" por turno y rótalo cada 45 minutos. Con el Gusanitos basta un adulto atento por ratos, porque se supervisa completo desde fuera.
+- Pon una caja o tapete junto a la entrada para los tenis. El chapoteo de zapatos en la entrada se vuelve caos si no le das un lugar desde el inicio.
+- Sirve la comida de los niños primero. Comen rápido cuando saben que el inflable los espera, y los adultos ganan una sobremesa tranquila.
+- Reserva con una semana de anticipación mínimo. De mayo a agosto los fines de semana se agotan, así que en temporada alta apártalo antes.
 
-En toda reunión familiar hay un papá o una mamá que pregunta por la limpieza y la seguridad, y hace bien. El Gusanitos está fabricado en **lona reforzada de 550 gramos**, con costuras diseñadas para uso intensivo, y **se desinfecta antes y después de cada evento**. El diseño de circuito, sin plataformas elevadas ni toboganes de altura, reduce de forma natural los incidentes típicos de los brincolines: no hay caídas desde arriba ni aterrizajes encimados.
+## Lo que el papá precavido de la familia va a preguntar
 
-Si prefieres desentenderte por completo, ofrecemos **supervisión opcional durante el evento**: una persona de INFLAPY se queda cuidando el flujo de niños para que los adultos de la familia solo disfruten.
+En toda reunión hay alguien que pregunta por la limpieza y la seguridad. Hace bien. El Gusanitos está fabricado en **lona reforzada de 550 gramos**, con costuras para uso intensivo, y se desinfecta antes y después de cada evento. El diseño de circuito, sin plataformas elevadas ni toboganes de altura, elimina de raíz los incidentes clásicos del brincolín: no hay caídas desde arriba ni aterrizajes encimados.
 
-## Preguntas frecuentes sobre inflables para fiestas familiares
+Y si de plano quieres desentenderte, ofrecemos supervisión opcional: una persona de INFLAPY se queda cuidando el flujo de niños toda la renta, para que los adultos de la familia solo coman y platiquen.
 
-### ¿Pueden jugar juntos un niño de 3 años y uno de 11 en el Gusanitos?
+## Preguntas frecuentes
 
-Sí, y esa es justamente su especialidad. Al ser un circuito de túneles con varias entradas y salidas, cada niño avanza a su ritmo sin que el tamaño o la fuerza de uno afecte al otro. No hay área de salto compartida, que es donde ocurren los choques entre edades muy distintas.
+### ¿Pueden jugar juntos un niño de 3 años y uno de 11?
 
-### ¿Cuántos niños pueden estar dentro al mismo tiempo?
+Sí, y esa es justamente la especialidad del Gusanitos. Cada uno avanza por su túnel a su ritmo; no hay área de salto compartida, que es donde chocan las edades muy distintas.
 
-La capacidad recomendada es de **5 a 7 niños simultáneos**. En reuniones familiares con 10–15 niños funciona muy bien con rotación natural: como los recorridos son cortos y hay varias salidas, los niños entran y salen constantemente sin filas largas.
+### ¿Cuántos niños aguanta a la vez?
 
-### ¿Qué pasa si mi fiesta es en un patio techado o con poco espacio de altura?
+**5 a 7 simultáneos**. Con 10–15 niños en la fiesta funciona bien por rotación natural: los recorridos son cortos, hay varias salidas y los niños entran y salen solos, sin filas largas.
 
-El Gusanitos es de perfil bajo precisamente porque es un circuito de túneles y no una torre de salto. Cabe en muchos patios techados donde un castillo inflable alto no entraría. Compártenos las medidas de tu espacio por WhatsApp y te confirmamos en minutos.
+### Mi patio es techado y bajito, ¿cabe?
 
-### ¿El precio de $1,350 tiene cargos adicionales por traslado?
+Muy probablemente sí. Al ser túneles y no torre, el Gusanitos entra en patios techados donde un castillo alto ni se intenta. Mándanos las medidas por WhatsApp y te confirmamos en minutos.
 
-No. El precio **incluye traslado, instalación, operación y retiro** dentro de nuestra zona de cobertura en CDMX (Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, GAM, Iztapalapa, Miguel Hidalgo, Tlalpan, Xochimilco) y Estado de México (Atizapán, Cuautitlán Izcalli, Ecatepec, Huixquilucan, Naucalpan, Tlalnepantla, Tultitlán). Sin costos ocultos.
+### ¿Los $1,350 traen cargos extra por traslado?
 
-### ¿Con cuánta anticipación debo reservar para una reunión familiar de fin de semana?
+No. El precio **incluye traslado, instalación, operación y retiro** dentro de la cobertura: CDMX (Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, GAM, Iztapalapa, Miguel Hidalgo, Tlalpan, Xochimilco) y Estado de México (Atizapán, Cuautitlán Izcalli, Ecatepec, Huixquilucan, Naucalpan, Tlalnepantla, Tultitlán).
 
-Mínimo **una semana de anticipación**. Los sábados y domingos son los días más demandados, y de mayo a agosto la disponibilidad se agota rápido. Atendemos de lunes a domingo de 8:00 a 20:00.
+### ¿Con cuánto tiempo reservo para un fin de semana?
 
-### ¿Y si en la familia hay más de 15 niños?
+Una semana de anticipación como mínimo. Sábados y domingos vuelan, y de mayo a agosto todavía más. Atendemos de lunes a domingo de 8:00 a 20:00.
 
-Considera subir de tamaño o combinar equipos: el [Barco Pirata](/inflables-grandes/barco-pirata) (7×5 m, 8–10 niños a la vez) o el [Castillo Blanco](/inflables-grandes/castillo-blanco) (6×5 m, 8–12 niños) manejan grupos grandes, y puedes sumar el Gusanitos como segunda estación para los más pequeños.
+### ¿Y si somos más de 15 niños?
 
-## Reserva el inflable que une a toda la primada
+Sube de tamaño o combina: el [Barco Pirata](/inflables-grandes/barco-pirata) (7×5 m, 8–10 niños) o el [Castillo Blanco](/inflables-grandes/castillo-blanco) (6×5 m, 8–12 niños) manejan grupos grandes, y el Gusanitos entra como segunda estación para los pequeños.
 
-Una fiesta familiar se recuerda por los momentos en que todos los primos jugaron juntos — no por el inflable que dividió al grupo en "grandes" y "chicos". Con más de 30 años de experiencia y más de 10,000 eventos en CDMX y Estado de México, en INFLAPY sabemos que el [Gusanitos](/inflables-medianos/gusanitos) es la apuesta segura cuando la lista de invitados abarca todas las edades.
+## El inflable que junta a toda la primada
 
-Cotiza hoy mismo por [WhatsApp](https://wa.me/525539048634) al **55 3904 8634**: dinos la fecha, la colonia y cuántos niños esperas, y te confirmamos disponibilidad al momento.
+Las reuniones familiares se recuerdan por los ratos en que todos los primos jugaron juntos, no por el inflable que partió al grupo en "grandes" y "chicos". Llevamos desde 1993 montando inflables en CDMX y Estado de México, y cuando la lista de invitados abarca todas las edades, el [Gusanitos](/inflables-medianos/gusanitos) es nuestra primera recomendación.
+
+Escríbenos por [WhatsApp](https://wa.me/525539048634) al **55 3904 8634** con la fecha, la colonia y cuántos niños esperas, y te confirmamos disponibilidad al momento.

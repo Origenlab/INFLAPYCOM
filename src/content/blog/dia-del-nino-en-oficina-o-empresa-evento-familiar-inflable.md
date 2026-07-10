@@ -1,6 +1,6 @@
 ---
 title: "Día del Niño en tu empresa: evento familiar con inflables"
-excerpt: "Organiza el Día del Niño en tu empresa con inflables: guía para RH con presupuesto, logística, elección de equipo y por qué un circuito de túneles funciona para hijos de todas las edades."
+excerpt: "Día del Niño en tu empresa con inflables: guía para RH con presupuesto, logística de sede, supervisión y por qué un circuito de túneles sirve a toda edad."
 date: 2026-06-09
 product: "gusanitos"
 productSlug: "inflables-medianos/gusanitos"
@@ -10,21 +10,21 @@ imageAlt: "Evento de Día del Niño en empresa con inflable Gusanitos de túnele
 author: "INFLAPY"
 ---
 
-## Día del Niño en tu empresa: cómo montar un evento familiar con inflables que sí funcione
+## La fiesta de la oficina de mamá o papá
 
-Cada vez más empresas en CDMX celebran el Día del Niño invitando a las familias de sus colaboradores: una tarde en el estacionamiento, el jardín corporativo o el patio de la planta, con comida, actividades y — la estrella indiscutible — un inflable. Es una de las inversiones de clima laboral con mejor retorno emocional: los colaboradores presumen su lugar de trabajo a sus hijos, y los hijos recuerdan "la fiesta de la oficina de mamá o papá" todo el año.
+Cada vez más empresas en CDMX celebran el Día del Niño invitando a las familias: una tarde en el estacionamiento, el jardín corporativo o el patio de la planta, con comida, actividades y — la estrella, siempre — un inflable. De las inversiones de clima laboral, pocas rinden tanto: los colaboradores presumen su trabajo a sus hijos, y los hijos hablan de "la fiesta de la oficina" el resto del año.
 
-Pero organizar un evento familiar corporativo tiene un reto que las fiestas particulares no: **no controlas la lista de edades**. Llegarán bebés de 2 años, niños de 7 y preadolescentes de 12, todos hijos de colaboradores, y todos deben poder jugar. Por eso, para eventos de empresa recomendamos partir de un inflable clasificado para **todas las edades** como el [Gusanitos](/inflables-medianos/gusanitos): un circuito de **túneles de colores conectados** de **5×3 metros**, con **varias entradas y salidas**, capacidad de **5–7 niños a la vez** y precio de **$1,350 MXN** con traslado, instalación, operación y retiro incluidos — un dato que a cualquier área de compras le facilita la vida. Esta guía está pensada para RH, comités de bienestar y organizadores internos.
+El reto que estos eventos tienen y las fiestas particulares no: nadie controla la lista de edades. Llegarán bebés de 2 años, niños de 7 y preadolescentes de 12, y todos deben poder jugar. Por eso para empresas recomendamos partir de un equipo clasificado para todas las edades como el [Gusanitos](/inflables-medianos/gusanitos): un circuito de túneles de colores conectados de **5×3 metros**, con varias entradas y salidas, capacidad de **5–7 niños** a la vez y precio cerrado de **$1,350 MXN** con traslado, instalación, operación y retiro incluidos — un dato que al área de compras le simplifica la vida. Esta guía es para RH, comités de bienestar y organizadores internos.
 
-## Paso 1: define el formato y el número de niños
+## Paso 1: formato y número de niños
 
-Antes de cotizar nada, resuelve tres preguntas con una encuesta rápida en el canal interno:
+Antes de cotizar nada, lanza una encuesta rápida en el canal interno con tres preguntas:
 
-- **¿Cuántos niños asistirán y de qué edades?** Es el dato que define cuántos inflables necesitas y de qué tipo. Pide a cada colaborador registrar a sus hijos con edad.
-- **¿Dónde será el evento?** Estacionamiento, jardín, azotea habilitada o explanada. Necesitas medir el espacio disponible y ubicar el **contacto de 110V** más cercano (si el punto no tiene electricidad, hay generador con costo extra).
-- **¿Qué horario conviene?** El formato más común es viernes por la tarde (14:00–18:00) o sábado a mediodía. La renta típica de **4–6 horas** cubre cualquiera de los dos, y atendemos de lunes a domingo de 8:00 a 20:00.
+- ¿Cuántos niños asistirán y de qué edades? Es el dato que define cuántos inflables necesitas. Pide a cada colaborador registrar a sus hijos con edad.
+- ¿Dónde será? Estacionamiento, jardín, explanada. Mide el espacio real — no lo calcules a ojo — y ubica el contacto de **110V** más cercano. Sin electricidad en el punto, hay generador con costo extra.
+- ¿Qué horario? Lo más común es viernes por la tarde (14:00–18:00) o sábado a mediodía. La renta de **4–6 horas** cubre cualquiera; atendemos de lunes a domingo de 8:00 a 20:00.
 
-Con esos datos, dimensiona los equipos con esta referencia:
+Con esos datos, dimensiona con esta referencia:
 
 | Niños esperados | Recomendación de inflables | Inversión aproximada |
 |---|---|---|
@@ -33,76 +33,76 @@ Con esos datos, dimensiona los equipos con esta referencia:
 | 30–50 | Gusanitos + [Barco Pirata](/inflables-grandes/barco-pirata) (8–10 niños a la vez) | $3,150 |
 | 50+ | Gusanitos + Barco Pirata + [Circuito Extremo](/inflables-grandes/extremo) (6+ años, retos) | $5,050 |
 
-La lógica del combo es siempre la misma: el Gusanitos garantiza que **ningún niño quede fuera por edad** — incluidos los más pequeños — mientras los equipos grandes absorben la demanda de los niños mayores. Todos los precios incluyen traslado, instalación, operación y retiro, sin costos ocultos, dentro de la cobertura en CDMX y Estado de México.
+La lógica del combo no cambia: el Gusanitos garantiza que ningún niño quede fuera por edad — incluidos los que apenas gatean — mientras los equipos grandes absorben a los mayores. Todos los precios incluyen traslado, instalación, operación y retiro dentro de la cobertura en CDMX y Estado de México.
 
-## Paso 2: resuelve la logística corporativa
+## Paso 2: la logística corporativa, sin sorpresas
 
-Los eventos en empresas tienen trámites que conviene adelantar. Esta lista de verificación evita sorpresas de último minuto:
+Los eventos en empresas traen trámites que conviene adelantar. Checklist:
 
-- **Acceso del proveedor.** Registra con seguridad/vigilancia la entrada del equipo de INFLAPY el día del evento (vehículo, personal e hidrolavado del área si su política lo pide). Nosotros llegamos antes del arranque, instalamos y dejamos todo operando.
-- **Espacio y superficie.** El Gusanitos requiere **5×3 metros** planos más margen. Funciona sobre pavimento de estacionamiento sin problema — no exige pasto — y su perfil bajo cabe bajo techumbres y sotechados donde un castillo alto no entra.
-- **Electricidad.** Un contacto de **110V** con extensión de uso rudo. En plantas industriales suele haber tomas cerca; en estacionamientos, verifica con mantenimiento.
-- **Documentación para compras.** Si tu empresa requiere cotización formal para liberar el pago, solicítala por WhatsApp al reservar; el precio cerrado con todo incluido simplifica la orden de compra.
-- **Seguridad interna.** Define el área infantil con vallas o cinta si el evento comparte espacio con autos o maquinaria, y comunica a los papás que los niños juegan bajo supervisión.
+- **Acceso del proveedor.** Registra con vigilancia la entrada del equipo de INFLAPY: vehículo y personal. Llegamos antes del arranque, instalamos y dejamos todo operando.
+- **Superficie.** El Gusanitos necesita **5×3 metros** planos más margen. El pavimento del estacionamiento funciona perfecto — no exige pasto — y su perfil bajo cabe bajo techumbres donde un castillo alto ni se intenta. Si el espacio es exterior y da al poniente, colócalo donde tenga sombra por la tarde: la lona al sol de las 4 se calienta y los niños lo resienten.
+- **Electricidad.** Contacto de 110V con extensión de uso rudo. En plantas suele haber tomas cerca; en estacionamientos, confírmalo con mantenimiento, no lo asumas.
+- **Documentación para compras.** ¿Tu empresa pide cotización formal para liberar el pago? Solicítala por WhatsApp al reservar. El precio cerrado con todo incluido evita partidas sorpresa en la orden de compra.
+- **Área infantil delimitada.** Si el evento comparte espacio con autos o maquinaria, marca la zona con vallas o cinta y comunícalo a los papás.
 
-### Supervisión: el punto que RH no debe improvisar
+### Supervisión: lo que RH no debe improvisar
 
-En un evento corporativo, los papás quieren convivir — no hacer guardias. Tienes dos caminos: organizar turnos voluntarios de colaboradores (con el Gusanitos basta una persona por turno, porque el circuito de túneles es **fácil de supervisar** desde fuera), o contratar la **supervisión opcional de INFLAPY**, donde nuestro personal cuida el flujo de niños durante todo el evento. Para eventos de empresa, la segunda opción es la que más recomiendan los organizadores: libera al comité y da certeza a los papás.
+En un evento corporativo los papás quieren convivir, no hacer guardias. Dos caminos: turnos voluntarios de colaboradores — con el Gusanitos basta una persona por turno, porque el circuito de túneles se vigila completo desde fuera — o la supervisión opcional de INFLAPY, con personal nuestro cuidando el flujo de niños todo el evento. Para empresas, la segunda es la que más recomiendan los organizadores: libera al comité y da certeza a los papás.
 
-## Paso 3: arma el programa de la tarde
+## Paso 3: el programa de la tarde
 
-Un evento familiar corporativo fluye mejor con estructura ligera. Este cronograma probado funciona para el formato viernes por la tarde:
+Estructura ligera, no guion de teatro. Este cronograma funciona para el formato de viernes:
 
 | Hora | Actividad |
 |---|---|
-| 13:00 | Ingreso de INFLAPY e instalación de inflables |
+| 13:00 | Ingreso de INFLAPY e instalación |
 | 14:00 | Llegada de familias, bienvenida y reglas del área infantil |
 | 14:15 | Inflables abiertos + convivio con comida |
 | 15:30 | Actividad guiada: rally o concursos por edades |
-| 16:30 | Entrega de obsequios o dulceros del Día del Niño |
+| 16:30 | Entrega de obsequios o dulceros |
 | 17:45 | Última llamada de juego |
 | 18:00 | Cierre y retiro de equipos |
 
-Dos consejos de quien ha operado cientos de estos eventos: entrega los dulceros **al final** (si los das al inicio, competirán con el inflable y tendrás dulces dentro de los túneles), y anuncia la "última llamada" 15 minutos antes del cierre para evitar el llanto colectivo del apagado sorpresa.
+Dos consejos que salen de operar cientos de estos eventos. Uno: entrega los dulceros al final — si los das al inicio, competirán con el inflable y acabarás con dulces dentro de los túneles. Dos: anuncia la "última llamada" 15 minutos antes del cierre; el apagado sorpresa produce llanto colectivo y esa no es la foto que RH quiere.
 
-## Por qué el Gusanitos es el inflable corporativo por excelencia
+## Por qué el Gusanitos rinde tanto en empresas
 
-Más allá de la edad universal, hay razones operativas por las que este circuito destaca en eventos de empresa:
+Más allá de la edad universal, hay razones operativas:
 
-1. **Rotación alta sin filas largas.** Las varias entradas y salidas mantienen el flujo constante; en una tarde, decenas de niños repiten el recorrido muchas veces sin cuellos de botella.
-2. **Bajo riesgo percibido y real.** Sin plataformas de salto elevadas ni toboganes de altura, es el equipo con menor fricción para papás precavidos — y para el área legal de tu empresa.
-3. **Materiales de grado comercial e higiene verificable.** **Lona reforzada de 550 gramos** y **desinfección antes y después de cada evento**, un dato que RH puede comunicar a los colaboradores con confianza.
-4. **Estética alegre y fotografiable.** Los túneles verdes, morados y amarillos lucen en las fotos internas y en la comunicación del evento.
-5. **Proveedor con trayectoria.** INFLAPY opera desde 1993: más de 30 años y más de 10,000 eventos, algo que pesa cuando compras a nombre de una empresa.
+1. Rotación alta sin filas. Las varias entradas y salidas mantienen el flujo; en una tarde, decenas de niños repiten el recorrido sin cuellos de botella.
+2. Riesgo bajo, percibido y real. Sin plataformas de salto elevadas ni toboganes de altura, es el equipo con menos fricción para papás precavidos — y para el área legal.
+3. Higiene verificable. **Lona reforzada de 550 gramos** y desinfección antes y después de cada evento; un dato que RH puede comunicar sin rodeos.
+4. Colores que lucen en las fotos internas: túneles verdes, morados y amarillos.
+5. Proveedor con historia. INFLAPY opera desde 1993, más de 10,000 eventos — y eso pesa cuando compras a nombre de una empresa.
 
-## Preguntas frecuentes sobre inflables para eventos de empresa
+## Preguntas frecuentes
 
-### ¿Pueden instalar el inflable en un estacionamiento de oficina?
+### ¿Lo pueden instalar en un estacionamiento de oficina?
 
-Sí. El Gusanitos se instala sobre pavimento sin problema, siempre que la superficie sea plana y el área de **5×3 metros** más margen esté libre de vehículos. Solo asegúrate de tener un contacto de **110V** accesible o solicita generador con costo extra.
+Sí. Sobre pavimento funciona sin problema, siempre que la superficie sea plana y los **5×3 metros** más margen estén libres de vehículos. Solo confirma el contacto de **110V** o pide generador con costo extra.
 
-### ¿Emiten cotización formal para el proceso de compras?
+### ¿Emiten cotización formal para compras?
 
-Sí. Solicita tu cotización por WhatsApp al **55 3904 8634** indicando razón del evento, fecha, sede y equipos de interés. El precio con todo incluido — traslado, instalación, operación y retiro — facilita la orden de compra sin partidas sorpresa.
+Sí. Pídela por WhatsApp al **55 3904 8634** indicando fecha, sede y equipos de interés. El precio con todo incluido facilita la orden de compra.
 
-### ¿Qué pasa si se registran hijos desde 2 hasta 12 años?
+### Se registraron hijos desde 2 hasta 12 años, ¿qué hago?
 
-Es el escenario típico corporativo y la razón de recomendar el Gusanitos como equipo base: está clasificado para **todas las edades** porque el juego es de recorrido, no de salto. Si el grupo de mayores es numeroso, súmale un equipo de reto como el [Circuito Extremo](/inflables-grandes/extremo) para 6 años en adelante.
+Ese es exactamente el escenario corporativo típico y la razón de usar el Gusanitos como base: el juego es de recorrido, no de salto, y por eso sirve a todas las edades. Si los mayores son muchos, súmale el [Circuito Extremo](/inflables-grandes/extremo) para los de 6 en adelante.
 
-### ¿Con cuánta anticipación debe reservar la empresa?
+### ¿Con cuánta anticipación reserva la empresa?
 
-Mínimo **una semana**, pero para fechas pico — el Día del Niño cae en plena **temporada alta de mayo a agosto** — recomendamos apartar con 3–4 semanas. Los viernes y sábados alrededor del 30 de abril se agotan primero.
+Una semana como mínimo, pero para el Día del Niño — que cae en plena temporada alta de mayo a agosto — aparta con 3–4 semanas. Los viernes y sábados alrededor del 30 de abril se agotan primero.
 
-### ¿La empresa necesita asignar personal para operar el inflable?
+### ¿Necesitamos asignar personal para operar el inflable?
 
-No para la operación técnica: instalación, operación y retiro están incluidos. Para el cuidado de los niños durante el juego, pueden organizar turnos de voluntarios o contratar nuestra **supervisión opcional**, que es lo habitual en eventos corporativos.
+Para la operación técnica no: instalación, operación y retiro van incluidos. Para el cuidado de los niños durante el juego, organicen turnos de voluntarios o contraten nuestra supervisión opcional, que es lo habitual en corporativos.
 
-### ¿Qué cobertura tienen para plantas u oficinas fuera de CDMX?
+### ¿Y si la planta está fuera de CDMX?
 
-Cubrimos sin costo extra 10 alcaldías de CDMX y, en el Estado de México, Atizapán, Cuautitlán Izcalli, Ecatepec, Huixquilucan, Naucalpan, Tlalnepantla y Tultitlán — donde se concentran muchos corporativos y parques industriales. Si tu sede está fuera de estas zonas, consúltanos disponibilidad.
+Cubrimos sin costo extra 10 alcaldías de CDMX y, en el Estado de México, Atizapán, Cuautitlán Izcalli, Ecatepec, Huixquilucan, Naucalpan, Tlalnepantla y Tultitlán — donde se concentran muchos corporativos y parques industriales. ¿Sede fuera de estas zonas? Consúltanos disponibilidad.
 
-## Convierte el Día del Niño en el evento favorito del año
+## Conviértelo en el evento favorito del año
 
-Un evento familiar bien montado hace más por el clima laboral que muchos programas formales: los colaboradores lo agradecen, los niños lo recuerdan y RH se anota un éxito visible. La clave está en los detalles — un inflable para todas las edades, supervisión resuelta y un proveedor que llega, instala y opera sin darte trabajo.
+Un evento familiar bien montado hace más por el clima laboral que muchos programas formales: los colaboradores lo agradecen, los niños lo recuerdan y RH se anota un logro visible. La clave está en tres detalles — un inflable para todas las edades, supervisión resuelta y un proveedor que llega, instala y opera sin darte trabajo.
 
-Cotiza tu evento por [WhatsApp](https://wa.me/525539048634) al **55 3904 8634**: dinos fecha, sede y número estimado de niños, y te armamos la propuesta con el [Gusanitos](/inflables-medianos/gusanitos) y los equipos complementarios ideales para tu empresa.
+Cotiza tu evento por [WhatsApp](https://wa.me/525539048634) al **55 3904 8634**: dinos fecha, sede y número estimado de niños, y te armamos la propuesta con el [Gusanitos](/inflables-medianos/gusanitos) y los equipos complementarios para tu empresa.

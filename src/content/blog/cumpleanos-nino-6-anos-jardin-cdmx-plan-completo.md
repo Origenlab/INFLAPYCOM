@@ -1,108 +1,108 @@
 ---
-title: "Cumpleaños de niño de 6 años en jardín: plan completo hora por hora"
-excerpt: "Organiza un cumpleaños de niño de 6 años en jardín en CDMX con este plan hora por hora: inflable con tobogán, comida, pastel y presupuesto realista."
+title: "Cumpleaños de niño de 6 años en jardín: plan hora por hora"
+excerpt: "Cumpleaños de niño de 6 años en jardín: plan hora por hora, presupuesto real para 20 niños, checklist previo y los errores que vemos cada sábado en CDMX."
 date: 2026-02-18
 product: "dragones-rojos"
 productSlug: "inflables-medianos/dragones-rojos"
 tags: ["cumpleaños niño 6 años", "fiesta en jardín CDMX", "renta de inflables", "plan de fiesta infantil"]
 image: "/img/dragones-rojos/dragones-rojos-inflable-cdmx-3.jpg"
-imageAlt: "Cumpleaños de niño de 6 años en jardín con inflable Dragones Rojos en CDMX"
+imageAlt: "Cumpleaños de niño de 6 años en un jardín de CDMX con el inflable Dragones Rojos al fondo"
 author: "INFLAPY"
 ---
 
-## Cumpleaños de niño de 6 años en jardín: el plan que sí funciona
+## El plan que le daríamos a un amigo
 
-Organizar un **cumpleaños de niño de 6 años en jardín** parece sencillo hasta que te sientas a planearlo: ¿a qué hora citas a los invitados?, ¿cuándo se parte el pastel?, ¿qué hacen 20 niños durante cuatro horas sin que la fiesta se convierta en caos? La buena noticia es que a los 6 años los niños son el público más agradecido que existe: tienen energía infinita, ya juegan en grupo y todavía se emocionan con todo. Solo necesitan una actividad central que los mantenga ocupados —y ahí es donde un inflable como el **[Dragones Rojos](/inflables-medianos/dragones-rojos)** hace la mitad del trabajo por ti.
+Organizar un cumpleaños de niño de 6 años en jardín parece fácil hasta que te sientas a planearlo. ¿A qué hora citas? ¿Cuándo se parte el pastel? ¿Qué hacen 20 niños durante cuatro horas sin que aquello termine en estampida? La buena noticia: a los 6 años los niños son el público más agradecido que existe. Juegan en grupo, tienen cuerda para rato y todavía se emocionan con todo. Solo necesitan una actividad central, y ahí un inflable hace la mitad del trabajo por ti.
 
-En INFLAPY hemos acompañado más de 10,000 eventos en CDMX y Estado de México desde 1993, y los cumpleaños de 5 a 7 años en jardín son, por mucho, el formato que más repetimos. Este artículo es el plan completo que le compartiríamos a un amigo: cronograma hora por hora, presupuesto realista, checklist de preparativos y los errores que vemos una y otra vez para que tú no los cometas.
+Llevamos en esto desde 1993 —más de 10,000 eventos en CDMX y Estado de México— y el cumpleaños de jardín para niños de 5 a 7 años es el formato que más veces hemos montado. Lo que sigue es el plan tal cual se lo contaríamos a un amigo: tres decisiones previas, cronograma hora por hora, presupuesto real y los errores que nos toca ver casi cada sábado.
 
-## Antes de la fiesta: las 3 decisiones que definen todo
+## Las 3 decisiones que definen la fiesta
 
-### 1. El horario
+### El horario
 
-Para niños de 6 años, el horario ganador es **de 13:00 a 18:00** (o de 12:00 a 17:00). Comen a su hora, juegan con luz de día y a las 6 de la tarde ya están agotados y felices, justo antes de que empiece el frío en los jardines de CDMX. Evita fiestas nocturnas a esta edad: los niños se desregulan y los papás invitados se quieren ir temprano de todos modos.
+Para niños de 6, el horario ganador es de 13:00 a 18:00 (o de 12 a 5). Comen a su hora, juegan con luz de día y a las seis ya están rendidos, justo antes de que refresque en los jardines de la ciudad. Fiesta nocturna a esta edad, mejor no: los niños se desregulan y los papás invitados igual se quieren ir temprano.
 
-### 2. El espacio
+### El espacio
 
-Un jardín o patio de casa funciona perfecto si tiene al menos **5×5 metros libres** para el inflable, más área para mesas. Revisa tres cosas: que no haya cables o ramas a menos de **5 metros de altura**, que exista un contacto de corriente **110V** cerca, y que el piso sea pasto, concreto o adoquín parejo. Si rentas un jardín de eventos, pregunta si permiten inflables externos (la mayoría sí, y suele ser más barato que contratar el de ellos).
+Tu jardín o patio funciona si tiene **5×5 metros libres** para el inflable, aparte del área de mesas. El error más común que nos toca ver es medir "a ojo"; toma el flexómetro y revisa tres cosas: que no haya cables ni ramas a menos de 5 metros de altura, que haya un contacto de 110V a distancia razonable y que el piso sea pasto o concreto parejo. Si rentas un jardín de eventos, pregunta si aceptan inflables externos; la mayoría sí, y casi siempre sale más barato que contratar el de ellos.
 
-### 3. La actividad central
+### La actividad central
 
-A los 6 años los niños ya no se entretienen solos con globos, y los shows de dos horas dejan tres horas vacías. Un inflable con tobogán resuelve la fiesta completa porque los niños regresan a él una y otra vez entre la comida, el pastel y la piñata. El **Dragones Rojos (4×4 m, 5–7 niños simultáneos, $1,200 MXN)** es nuestra recomendación número uno para esta edad: los dos dragones decorativos de 3 metros impactan desde que llegan, la temática funciona para niños y niñas, y el tobogán lateral crea un circuito que no aburre.
+A los 6 años los globos ya no entretienen solos, y un show de dos horas deja otras tres vacías. Un inflable con tobogán resuelve la tarde completa porque los niños vuelven a él una y otra vez entre la comida, el pastel y la piñata. Para esta edad recomendamos el [Dragones Rojos](/inflables-medianos/dragones-rojos): **4×4 m**, tobogán lateral, **5 a 7 niños** a la vez y **$1,200** con instalación incluida. Los dos dragones de 3 metros se ven desde que los invitados cruzan la puerta, y la temática les funciona igual a niños y a niñas.
 
-## Plan hora por hora para la fiesta
+## Hora por hora
 
-Este cronograma asume fiesta de 13:00 a 18:00 con unos 15–25 niños. Ajústalo a tu horario real:
+El cronograma asume fiesta de 13:00 a 18:00 con 15 a 25 niños. Muévelo a tu horario real:
 
-| Hora | Actividad | Tips prácticos |
+| Hora | Qué pasa | El detalle que ayuda |
 |---|---|---|
-| 11:00–12:00 | Llega INFLAPY e instala el inflable | La instalación está incluida en el precio; solo necesitamos acceso y contacto de luz |
-| 12:00–13:00 | Montaje de mesas, dulceros, música | Prueba el inflable con el festejado antes: será su momento favorito del día |
-| 13:00–13:45 | Llegada de invitados | Los niños van directo al inflable; ten un adulto cerca marcando turnos si llegan muchos a la vez |
-| 13:45–14:45 | Comida de los niños | Apaga la música fuerte; los niños comen más rápido si saben que el inflable los espera |
-| 14:45–16:00 | Juego libre en el inflable | La hora dorada: los adultos comen y platican tranquilos |
-| 16:00–16:30 | Piñata | Aleja la piñata del inflable para evitar palos voladores cerca de la lona |
-| 16:30–17:00 | Pastel y mañanitas | Aprovecha que están sentados para repartir el pastel de inmediato |
-| 17:00–17:45 | Última ronda de inflable | Los niños queman la energía del azúcar; salen agotados |
-| 17:45–18:00 | Despedida y bolsitas | Entrega las bolsitas en la puerta para marcar el fin de la fiesta |
-| 18:00–19:00 | INFLAPY retira el equipo | El retiro también está incluido; tú solo despides invitados |
+| 11:00–12:00 | Llega INFLAPY e instala | La instalación va incluida; solo necesitamos acceso y un contacto de luz |
+| 12:00–13:00 | Mesas, dulceros, música | Deja que el festejado estrene el inflable solo: será su momento del día |
+| 13:00–13:45 | Llegan los invitados | Van directo al inflable; un adulto cerca marca turnos si llegan en bola |
+| 13:45–14:45 | Comen los niños | Comen más rápido si saben que el inflable los espera |
+| 14:45–16:00 | Juego libre | La hora dorada: los adultos comen y platican en paz |
+| 16:00–16:30 | Piñata | Cuélgala lejos de la lona; palos y vinil no se llevan |
+| 16:30–17:00 | Pastel y mañanitas | Aprovecha que están sentados y reparte de inmediato |
+| 17:00–17:45 | Última ronda de inflable | Queman el azúcar del pastel y salen rendidos |
+| 17:45–18:00 | Bolsitas y despedida | Entrégalas en la puerta: marcan el fin de la fiesta |
+| 18:00–19:00 | INFLAPY retira el equipo | El retiro también va incluido; tú solo despides |
 
-La renta típica de 4 a 6 horas cubre perfectamente este esquema, y el horario de entrega e instalación se coordina contigo desde la reserva.
+La renta típica de 4 a 6 horas cubre este esquema completo, y el horario de entrega se coordina contigo desde la reserva.
 
-## Presupuesto realista para 20 niños en CDMX
+## Presupuesto real para 20 niños
 
-Cada familia gasta distinto, pero este rango es representativo de lo que vemos en fiestas de jardín en alcaldías como Coyoacán, Tlalpan o Benito Juárez y municipios como Naucalpan o Atizapán:
+Cada familia gasta distinto, pero este rango es el que vemos en fiestas de jardín en Coyoacán, Tlalpan, Benito Juárez, Naucalpan o Atizapán:
 
-- **Inflable Dragones Rojos: $1,200 MXN** con traslado, instalación, operación y retiro incluidos. Es el gasto con mejor relación costo–horas de entretenimiento de toda la fiesta.
-- **Comida:** pizzas o taquiza para niños y adultos, entre $1,500 y $3,000 según el número de familias invitadas.
-- **Pastel:** de $400 a $900 para 25–30 rebanadas.
-- **Piñata, dulces y bolsitas:** entre $600 y $1,000 si la llenas tú mismo comprando a granel.
-- **Decoración sencilla:** globos, mantel y un letrero, $300 a $500. Con el inflable como protagonista visual, no necesitas más.
+- Inflable Dragones Rojos: $1,200 con traslado, instalación, operación y retiro. Peso por peso, es el gasto que más horas de entretenimiento compra.
+- Comida: pizzas o taquiza para niños y adultos, entre $1,500 y $3,000 según cuántas familias lleguen.
+- Pastel: de $400 a $900 para 25–30 rebanadas.
+- Piñata, dulces y bolsitas: $600 a $1,000 si compras a granel y la llenas tú.
+- Decoración: globos, mantel y un letrero, $300 a $500. Con el inflable de protagonista visual, más que eso es ruido.
 
-Total aproximado: **$4,000 a $6,600 MXN** para una fiesta completa de 5 horas. Comparado con un salón de fiestas infantil, el jardín con inflable suele costar la mitad y los niños juegan el doble de tiempo.
+Total: **$4,000 a $6,600** por una fiesta de cinco horas. Un salón infantil cuesta el doble y los niños juegan la mitad del tiempo.
 
-## Checklist de la semana previa
+## La semana previa, sin corretizas
 
-- **7 días antes:** reserva el inflable (mínimo una semana de anticipación; si tu fiesta cae entre mayo y agosto, resérvalo antes porque es temporada alta). Confirma pastel y piñata.
-- **3 días antes:** revisa el pronóstico del clima. Si amenaza lluvia, define plan B: carpa, terraza techada de más de 5 m de altura o reprogramación.
-- **1 día antes:** poda o recoge el jardín, verifica que el contacto de 110V funcione y despeja el área de 5×5 metros donde irá el inflable.
-- **El día:** ten lista una extensión de uso rudo por si el contacto queda lejos, agua para los niños cerca del inflable y una zona de sombra para los papás.
+- 7 días antes: aparta el inflable (si tu fecha cae entre mayo y agosto, antes: es temporada alta y los sábados vuelan). Confirma pastel y piñata.
+- 3 días antes: revisa el pronóstico. Si amenaza lluvia, define plan B desde ya: carpa alta, terraza techada de más de 5 metros o cambio de fecha.
+- 1 día antes: recoge el jardín, verifica que el contacto de 110V funcione y despeja el área donde irá el inflable.
+- El día: ten a la mano una extensión de uso rudo por si el contacto queda lejos, agua para los niños junto al inflable y sombra para los papás.
 
-### Los 4 errores más comunes (y cómo evitarlos)
+### Los errores que vemos casi cada sábado
 
-- **Citar a todos "a la hora de la comida" sin servir comida pronto:** los niños con hambre no brincan, lloran. Sirve dentro de la primera hora.
-- **Rentar un inflable demasiado grande o demasiado chico:** para 15–25 niños de 6 años, un mediano de **4×4 m con capacidad de 5–7 simultáneos** es el punto exacto; los niños rotan solos. Si esperas más de 25 niños, considera subir al [Barco Pirata](/inflables-grandes/barco-pirata) (8–10 niños simultáneos).
-- **Mezclar bebés y grandes en el mismo inflable:** si habrá hermanitos de 1 a 3 años, agrega un [Mini Castillo](/inflables-chicos/mini-castillo) ($800) y cada grupo juega seguro a su ritmo.
-- **Poner la piñata junto al inflable:** un palo de piñata y una lona inflada no son amigos. Sepáralos al menos 5 metros.
+- Citar "a la hora de la comida" y servir hasta las cuatro. Niño con hambre no brinca: llora. Sirve dentro de la primera hora.
+- Rentar de más o de menos. Para 15–25 niños de 6 años, un mediano con rotación natural es la medida exacta; si esperas más de 25, sube al [Barco Pirata](/inflables-grandes/barco-pirata), que admite de 8 a 10 a la vez.
+- Meter bebés y grandes al mismo inflable. Si habrá hermanitos de 1 a 3 años, un [Mini Castillo](/inflables-chicos/mini-castillo) de $800 aparte les da su propio territorio y cada grupo juega a su ritmo.
+- Colgar la piñata junto al inflable. Sepárala 5 metros como mínimo.
 
 ## ¿Y si el festejado quiere un tema específico?
 
-A los 6 años los temas favoritos cambian cada mes, y comprar decoración de franquicia se encarece rápido. La ventaja del Dragones Rojos es que su temática de dragones y aventura combina con casi cualquier fiesta: caballeros, superhéroes, videojuegos o simplemente "fiesta de rojo". Si el festejado —o la festejada— prefiere otra línea, tenemos alternativas del mismo tamaño y precio, como el [Castillo de Princesas](/inflables-medianos/castillo-de-princesas) ($1,200) o la [Mini Jungla](/inflables-medianos/mini-jungla) con temática de selva y techo con sombra ($1,300).
+A los 6 años el tema favorito cambia cada mes, y la decoración de franquicia se encarece rápido. La ventaja de los dragones es que combinan con casi cualquier fiesta: caballeros, superhéroes, videojuegos o simplemente "todo de rojo". Y si el festejado —o la festejada— va por otra línea, hay alternativas del mismo tamaño y precio en el catálogo, como el Castillo de Princesas o la Mini Jungla con techo y sombra.
 
-## Preguntas frecuentes sobre cumpleaños en jardín con inflable
+## Preguntas que nos hacen antes de reservar
 
-### ¿Cuántas horas de inflable necesito para una fiesta de 5 horas?
+### ¿El inflable aguanta las 5 horas de la fiesta?
 
-La renta típica de INFLAPY es de **4 a 6 horas** y es flexible, así que cubre la fiesta completa. Instalamos antes de que lleguen los invitados y retiramos al final sin que tengas que hacer nada.
+Sí. La renta típica es de 4 a 6 horas y es flexible: instalamos antes de que lleguen tus invitados y retiramos al final sin que tengas que mover un dedo.
 
-### ¿Qué pasa si mi jardín no tiene contacto de luz cerca?
+### ¿Y si mi jardín no tiene contacto de luz cerca?
 
-El motor necesita un contacto de **110V**. Si está lejos, una extensión de uso rudo resuelve; si tu evento es en un espacio sin electricidad, contamos con **generador con costo extra**. Dínoslo al cotizar.
+Una extensión de uso rudo resuelve la mayoría de los casos. Si el evento es en un espacio sin electricidad, tenemos generador con costo extra; dínoslo al cotizar y lo dejamos resuelto desde antes.
 
-### ¿El inflable es seguro para niños de 6 años sin supervisión?
+### ¿Tengo que estar cuidando el inflable toda la tarde?
 
-El Dragones Rojos está diseñado para **4 a 10 años**, así que los niños de 6 están en el centro del rango ideal. Aun así, recomendamos que un adulto esté siempre a la vista; si prefieres despreocuparte, ofrecemos **supervisión durante el evento** como servicio opcional.
+El Dragones Rojos está pensado para niños de **4 a 10 años**, así que los de 6 quedan en el centro del rango. Basta un adulto a la vista; si prefieres desentenderte, ofrecemos supervisión durante el evento como servicio opcional.
 
-### ¿Hacen entregas en mi alcaldía o municipio?
+### ¿Llegan a mi alcaldía?
 
-Cubrimos **sin costo extra** Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, GAM, Iztapalapa, Miguel Hidalgo, Tlalpan y Xochimilco en CDMX, y Atizapán, Cuautitlán Izcalli, Ecatepec, Huixquilucan, Naucalpan, Tlalnepantla y Tultitlán en Estado de México.
+Cubrimos sin costo extra Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, GAM, Iztapalapa, Miguel Hidalgo, Tlalpan y Xochimilco en CDMX, y Atizapán, Cuautitlán Izcalli, Ecatepec, Huixquilucan, Naucalpan, Tlalnepantla y Tultitlán en Estado de México.
 
-### ¿Está desinfectado el inflable?
+### ¿Lo desinfectan?
 
-Sí. Desinfectamos cada inflable **antes y después de cada evento**, de modo que llega limpio a tu fiesta.
+Sí, antes y después de cada evento. Llega limpio a tu fiesta.
 
-## Reserva el inflable y tacha lo más importante de tu lista
+## Aparta primero el inflable; lo demás acomoda solo
 
-Con el plan hora por hora, el presupuesto y el checklist de arriba, el cumpleaños de tu hijo de 6 años está prácticamente resuelto. El paso que conviene dar primero es apartar el inflable, porque las fechas de fin de semana vuelan. El **[Dragones Rojos](/inflables-medianos/dragones-rojos)** cuesta **$1,200 MXN** con todo incluido y es el más rentado de nuestro catálogo por una razón: funciona.
+Con el cronograma, el presupuesto y el checklist de arriba, la fiesta está prácticamente resuelta. Lo que conviene amarrar primero es el inflable, porque las fechas de fin de semana se van rápido. El [Dragones Rojos](/inflables-medianos/dragones-rojos) cuesta **$1,200** con todo incluido y es el más rentado de nuestro catálogo por una razón simple: funciona.
 
-Mándanos un **[WhatsApp](https://wa.me/525539048634)** al **55 3904 8634** con la fecha de la fiesta y tu colonia, y te confirmamos disponibilidad el mismo día. Atendemos de lunes a domingo, de 8:00 a 20:00.
+Mándanos un [WhatsApp](https://wa.me/525539048634) al 55 3904 8634 con la fecha y tu colonia, y te confirmamos disponibilidad el mismo día. Atendemos de lunes a domingo, de 8:00 a 20:00.

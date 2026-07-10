@@ -1,91 +1,91 @@
 ---
 title: "Cumpleaños doble de hermanos: un inflable grande para muchos niños"
-excerpt: "Cumpleaños doble de hermanos en CDMX: cómo festejar a dos con un solo inflable grande para muchos invitados, dividir gastos, temática compartida y cronograma justo."
+excerpt: "Cumpleaños doble de hermanos en CDMX: cómo festejar a dos con un solo inflable grande, dividir el gasto, armar cronograma justo y evitar celos entre festejados."
 date: 2026-05-14
 product: "barco-pirata"
 productSlug: "inflables-grandes/barco-pirata"
 tags: ["cumpleaños doble hermanos", "inflable para muchos niños", "renta de inflables CDMX", "fiesta compartida hermanos"]
 image: "/img/barco-pirata/barco-pirata-inflable-cdmx-5.jpg"
-imageAlt: "Cumpleaños doble de hermanos con barco pirata inflable grande para muchos niños en CDMX"
+imageAlt: "Dos hermanos festejando su cumpleaños doble en el barco pirata inflable en CDMX"
 author: "INFLAPY"
 ---
 
-## Cumpleaños doble de hermanos: una fiesta, dos festejados, cero pleitos
+## Una fiesta, dos festejados, cero pleitos
 
-El cumpleaños doble de hermanos es una tradición muy nuestra: cuando los cumpleaños caen en el mismo mes (o la agenda y el presupuesto familiar piden piedad), juntar las dos fiestas en una sola es la jugada inteligente. El reto es real: el doble de invitados, dos grupos de amigos de edades distintas y dos festejados que merecen sentirse igual de especiales. La solución que hemos visto funcionar una y otra vez es un solo inflable grande — y el [Barco Pirata](/inflables-grandes/barco-pirata) de **7×5 metros**, con capacidad para **8 a 10 niños simultáneos**, es el candidato perfecto.
+Juntar los cumpleaños de dos hermanos en una sola fiesta es una tradición muy nuestra. A veces porque caen en el mismo mes, a veces porque la agenda y el bolsillo piden piedad. La idea es buena; el reto también es real: el doble de invitados, dos grupos de amigos de edades distintas y dos festejados que merecen sentirse igual de importantes. En 30 años y más de 10,000 eventos hemos visto una solución repetirse con éxito: un solo inflable grande como plaza central. Y el [Barco Pirata](/inflables-grandes/barco-pirata) de **7×5 metros**, con lugar para **8 a 10 niños a la vez**, es el candidato natural.
 
-En INFLAPY llevamos más de 30 años y 10,000 eventos rentando inflables en CDMX y Estado de México, y las fiestas dobles son cada vez más comunes: hermanos, primos que cumplen la misma semana, gemelos, o los famosos "medio años" que se emparejan. Aquí te contamos cómo organizarla para que rinda el presupuesto, alcance el inflable para todos y ninguno de los dos festejados sienta que fue "la fiesta del otro".
-
----
-
-## Por qué un inflable grande resuelve la fiesta doble
-
-Cuando invitas al salón de cada hermano más primos y vecinos, la lista sube fácilmente a 20–30 niños. Un inflable mediano se queda corto; dos inflables medianos duplican costo y espacio. Un solo inflable grande es el punto dulce:
-
-- **Capacidad real para grupos grandes**: el Barco Pirata recibe **8–10 niños a la vez**, así que con turnos cortos, 25 invitados juegan toda la tarde sin filas eternas.
-- **Un solo gasto que se divide entre dos festejos**: **$1,800 MXN** con traslado, instalación, operación y retiro incluidos. Si cada fiesta separada hubiera requerido su propio inflable mediano de $1,200–$1,350, el ahorro es evidente.
-- **Rango de edad amplio**: recomendado para **4 años en adelante**, cubre sin problema al hermano de 5 y a la hermana de 9, con sus respectivos amigos.
-- **Neutralidad temática con personalidad**: la temática pirata funciona igual para niños y niñas de casi cualquier edad — nadie siente que la fiesta "es del otro".
-- **Zonas diferenciadas**: zona de brinco central para los que quieren rebotar y tobogán de alta velocidad en la popa para los que buscan adrenalina; cada grupo de edad encuentra lo suyo.
+Las fiestas dobles son cada vez más comunes en CDMX y Estado de México: hermanos, primos que cumplen la misma semana, gemelos, los famosos "medio años" que se emparejan. Aquí va cómo organizarla para que el presupuesto rinda y ninguno de los dos termine sintiendo que fue "la fiesta del otro".
 
 ---
 
-## Fiesta doble vs. dos fiestas separadas: los números
+## Por qué un grande resuelve la fiesta doble
 
-La razón número uno para juntar los cumpleaños es económica. Compara:
+Cuando invitas al salón de cada hermano más primos y vecinos, la lista sube sola a 20 o 30 niños. Un inflable mediano se queda corto. Dos medianos duplican costo y se comen el jardín. Un grande es el punto medio que sí funciona:
+
+- El barco recibe **8–10 niños simultáneos**; con turnos cortos, 25 invitados juegan toda la tarde sin filas eternas.
+- Es un solo gasto de **$1,800 MXN** —traslado, instalación, operación y retiro incluidos— dividido entre dos festejos.
+- El rango de edad es amplio: desde los **4 años**, cubre al hermano de 5 y a la hermana de 9 con sus respectivos amigos.
+- La temática pirata no es "de niño" ni "de niña"; nadie siente que le prestaron la fiesta.
+- Tiene zonas con carácter distinto: la cubierta central para los que quieren brincar y el tobogán de la popa para los que buscan velocidad. Cada grupo encuentra lo suyo sin estorbarse.
+
+---
+
+## Los números: doble vs. dos fiestas separadas
+
+La razón número uno para juntar cumpleaños es económica, así que pongámosla en la mesa:
 
 | Concepto | Dos fiestas separadas | Una fiesta doble |
 |----------|----------------------|------------------|
-| Inflable | $1,200 + $1,200 (dos medianos) | **$1,800 (un Barco Pirata grande)** |
-| Comida | Se cocina/compra dos veces | Un solo servicio para todos |
-| Pastel | Dos pasteles completos | Un pastel grande (¡o dos chicos con una sola mesa!) |
+| Inflable | $1,200 + $1,200 (dos medianos) | $1,800 (un grande) |
+| Comida | Se compra y cocina dos veces | Un solo servicio |
+| Pastel | Dos pasteles completos | Uno grande o dos chicos en una mesa |
 | Decoración | Dos ambientaciones | Una temática compartida |
-| Tiempo de organización | Dos fines de semana | Un solo evento |
+| Organización | Dos fines de semana | Un solo evento |
 | Desgaste de los papás | Doble | La mitad |
 
-Solo en inflable, la fiesta doble ahorra **$600 pesos** y sube de categoría: en lugar de dos medianos en fechas distintas, los niños reciben el inflable grande de 4 metros de altura con mástil y velas que domina el jardín. Requisito único: un jardín o patio amplio de **7×5 metros mínimo** de área plana.
+Solo en inflable ahorras **$600** y además subes de categoría: en vez de dos medianos en fechas distintas, los niños reciben un barco de **4 metros de altura** con mástil y velas dominando el jardín. El único requisito que no se negocia: un jardín o patio amplio con 7×5 metros de área plana libre. Si el tuyo anda justo, mándanos fotos por WhatsApp antes de reservar y te confirmamos.
 
 ---
 
-## Cómo hacer que los dos festejados brillen por igual
+## Que los dos brillen por igual
 
-El miedo clásico de la fiesta doble: que uno de los hermanos sienta que le "prestaron" su cumpleaños al otro. Estos detalles lo evitan:
+El miedo clásico de la fiesta doble es que un hermano sienta que le tocó de acompañante. Los detalles que lo evitan son baratos y funcionan:
 
-- **Dos pasteles o un pastel de dos pisos con dos nombres**: cada quien sopla sus propias velitas y tiene su propia ronda de "Las Mañanitas". No se negocia.
-- **Piñata por festejado**: dos piñatas pequeñas salen casi igual que una grande y duplican el momento estelar. Se rompen en momentos separados del cronograma.
-- **Mesa de regalos dividida y rotulada**, para que la apertura (en casa, después) no genere conflictos de aduana.
-- **Un "momento capitán" para cada uno en el inflable**: cada festejado encabeza un turno del barco con su grupo de amigos — primero uno, luego el otro — y lanza el primer clavado por el tobogán de popa.
-- **Invitaciones con los dos nombres al mismo tamaño**. Suena obvio; se agradece.
+- Dos pasteles, o uno de dos pisos con dos nombres. Cada quien sopla sus velitas y tiene su ronda de "Las Mañanitas". Esto no se negocia.
+- Piñata por festejado. Dos chicas cuestan casi lo mismo que una grande y duplican el momento estelar; se rompen en horarios separados.
+- Mesa de regalos dividida y rotulada, para que la apertura en casa no acabe en aduana.
+- Un "momento capitán" para cada uno: cada festejado encabeza un turno del barco con su grupo y lanza el primer clavado por el tobogán. Primero uno, luego el otro.
+- Invitaciones con los dos nombres al mismo tamaño. Suena obvio. Se nota cuando no se hace.
 
 ---
 
-## Cronograma para una fiesta doble de 5 horas
+## Cronograma para 5 horas
 
-Con renta flexible de 4 a 6 horas, un evento doble aprovecha mejor un bloque de 5. Ejemplo con festejados de 5 y 9 años y unos 25 invitados:
+La renta es flexible de 4 a 6 horas, y una fiesta doble aprovecha mejor un bloque de 5. Ejemplo con festejados de 5 y 9 años y unos 25 invitados:
 
 | Hora | Actividad |
 |------|-----------|
-| 12:30 | Instalación del inflable (INFLAPY llega antes de los invitados) |
-| 13:00 | Llegada de invitados; primer bloque de juego libre por turnos |
-| 14:00 | Comida (inflable en pausa; nunca brincar recién comidos) |
-| 14:45 | "Momento capitán" del festejado 1 + retos piratas con su grupo |
-| 15:15 | "Momento capitán" del festejado 2 + retos con el suyo |
-| 15:45 | Piñatas (una por festejado) |
-| 16:15 | Pastel: mañanitas dobles, velitas para cada uno |
-| 16:45 | Último bloque de juego libre mezclando edades |
-| 17:30 | Despedida y bolsitas; retiro del inflable |
+| 12:30 | Llega INFLAPY e instala, antes de los invitados |
+| 13:00 | Llegada; primer bloque de juego libre por turnos |
+| 14:00 | Comida (barco en pausa) |
+| 14:45 | Momento capitán del festejado 1 y retos con su grupo |
+| 15:15 | Momento capitán del festejado 2 y retos con el suyo |
+| 15:45 | Piñatas, una por festejado |
+| 16:15 | Pastel: mañanitas dobles, velitas para cada quien |
+| 16:45 | Último bloque de juego libre, edades mezcladas |
+| 17:30 | Bolsitas y despedida; nosotros retiramos |
 
-El truco del cronograma doble: alternar los momentos protagonistas y dejar los bloques de juego libre como territorio común donde ambos grupos se mezclan.
+El truco está en alternar los momentos protagonistas y dejar el juego libre como territorio común. Y un detalle de oficio: respeta la pausa después de comer. Niño que brinca recién comido es niño que termina la fiesta antes de tiempo.
 
 ---
 
-## ¿Y si las edades de los hermanos son muy distintas?
+## ¿Y si las edades son muy distintas?
 
-Es el caso más consultado: hermano de 3 y hermana de 8, por ejemplo. El Barco Pirata está recomendado a partir de **4 años**, así que para el más pequeño y sus amiguitos de guardería hay dos caminos:
+Es la consulta que más recibimos para fiestas dobles: hermano de 3, hermana de 8. El barco arranca a los 4 años, y meter a un niño de 3 con los grandes no es buena idea aunque el hermano prometa cuidarlo. Dos caminos honestos:
 
-Agregar un [Mini Castillo](/inflables-chicos/mini-castillo) (2×2 m, **$800**, ideal para bebés de 1 a 3 años) crea una "zona chiquitos" segura junto a la fiesta grande. Si prefieres un solo inflable que reciba a todos, los [Gusanitos](/inflables-medianos/gusanitos) (5×3 m, $1,350) están diseñados para **todas las edades** con túneles de varias entradas y salidas — aunque sacrificas capacidad si tus invitados pasan de 20.
+El primero, agregar un [Mini Castillo](/inflables-chicos/mini-castillo) (2×2 m, **$800**) como zona de chiquitos junto a la fiesta grande. Los bebés de 1 a 3 años tienen su espacio y las mamás de los pequeños te lo van a agradecer. El segundo, si prefieres un solo inflable para todos, los [Gusanitos](/inflables-medianos/gusanitos) (5×3 m, $1,350) están diseñados para todas las edades con túneles de varias entradas — aunque, seamos claros, sacrificas capacidad si tu lista pasa de 20.
 
-Para hermanos ya grandes (8 y 11, por ejemplo) con invitados de primaria alta, considera el [Circuito Extremo](/inflables-grandes/extremo) (7×4 m, $1,900): obstáculos y muros de escalada que se prestan para competencias entre "el equipo de cada festejado".
+Caso contrario, hermanos ya grandes (8 y 11) con invitados de primaria alta: ahí el [Circuito Extremo](/inflables-grandes/extremo) (7×4 m, $1,900) puede ganarle al barco, porque los obstáculos y muros se prestan para competir "equipo de cada festejado" toda la tarde.
 
 ---
 
@@ -93,32 +93,32 @@ Para hermanos ya grandes (8 y 11, por ejemplo) con invitados de primaria alta, c
 
 ### ¿Un solo inflable alcanza para 25 o 30 invitados?
 
-Sí, con turnos. El Barco Pirata recibe **8–10 niños simultáneos**; organizando rotaciones de 15 minutos por grupos, 25–30 invitados juegan toda la tarde. Si tu lista pasa de 30, te conviene leer sobre combinar dos inflables o elegir el de mayor rotación.
+Sí, con turnos. Rotaciones de 15 minutos por grupos de 8–10 y todos juegan toda la tarde. Si tu lista pasa de 30, mejor platícanos: a veces conviene combinar dos inflables.
 
-### ¿Cuánto cuesta el Barco Pirata y qué incluye?
+### ¿Cuánto cuesta y qué incluye?
 
-**$1,800 MXN** por la renta típica de 4 a 6 horas (flexible), **incluyendo traslado, instalación, operación y retiro**. Sin costos ocultos. Cobertura sin cargo extra en CDMX (Coyoacán, Benito Juárez, Tlalpan, Miguel Hidalgo y más alcaldías) y Estado de México (Naucalpan, Tlalnepantla, Atizapán, Huixquilucan, entre otros).
+**$1,800 MXN** por la renta de 4 a 6 horas, con traslado, instalación, operación y retiro incluidos. Sin costos ocultos. Cobertura sin cargo extra en CDMX —Coyoacán, Benito Juárez, Tlalpan, Miguel Hidalgo y más— y Estado de México: Naucalpan, Tlalnepantla, Atizapán, Huixquilucan, entre otros.
 
-### ¿Qué espacio necesito para la fiesta doble?
+### ¿Qué espacio necesito?
 
-Para el inflable, un jardín o patio amplio de **7×5 metros mínimo** de área plana, con 4 metros de altura libre y contacto de 110V cerca. Suma espacio aparte para mesas y piñatas; las fiestas dobles suelen necesitar más sillas de lo que uno calcula.
+Para el inflable, un jardín amplio de **7×5 metros** de área plana con 4 metros de altura libre y contacto de 110V cerca. Aparte va el espacio de mesas y piñatas; las fiestas dobles siempre necesitan más sillas de las que uno calcula.
 
-### ¿La temática pirata funciona si uno de los festejados es niña?
+### ¿La temática pirata funciona si una festejada es niña?
 
-Totalmente: las capitanas piratas son protagonistas en la mitad de nuestras fiestas de barco. Si los gustos son muy opuestos, otra opción es una temática "aventura" neutra o elegir el inflable por capacidad y decorar cada mesa con el tema favorito de cada festejado.
+Las capitanas piratas protagonizan la mitad de nuestras fiestas de barco, así que sí. Y si los gustos son muy opuestos, elige el inflable por capacidad y decora cada mesa con el tema favorito de cada quien.
 
 ### ¿Puedo extender la renta si la fiesta se alarga?
 
-La renta típica es de 4 a 6 horas y es flexible; coméntanos desde la cotización cuántas horas planeas y lo dejamos cerrado. Nuestro horario de operación es de lunes a domingo, 8:00 a 20:00.
+La renta de 4 a 6 horas es flexible; dinos desde la cotización cuántas horas planeas y lo dejamos cerrado. Operamos de lunes a domingo, 8:00 a 20:00.
 
-### ¿Con cuánta anticipación reservo si el cumpleaños cae en mayo–agosto?
+### ¿Con cuánta anticipación reservo en mayo–agosto?
 
-Esa es nuestra **temporada alta**: reserva con más de 1 semana de anticipación, idealmente 2–3 semanas si la fiesta es en fin de semana, que es cuando los inflables grandes vuelan.
+Es temporada alta. El mínimo es una semana, pero para sábado o domingo lo sensato son 2–3 semanas, que los grandes vuelan.
 
 ---
 
-## Dos festejados, un barco, una gran historia
+## Dos festejados, un barco
 
-Un cumpleaños doble bien planeado no divide la atención: la multiplica. Con dos momentos estelares, piñata para cada quien y un [Barco Pirata](/inflables-grandes/barco-pirata) de 7×5 metros como plaza central de la fiesta, tus dos hijos van a sentir que ese día fue completamente suyo — y tu presupuesto lo va a agradecer.
+Un cumpleaños doble bien planeado no divide la atención, la multiplica: dos momentos estelares, piñata para cada quien y un [Barco Pirata](/inflables-grandes/barco-pirata) de 7×5 metros como plaza central. Tus dos hijos sienten que el día fue suyo y tu presupuesto respira.
 
-Cotiza tu fiesta doble por [WhatsApp](https://wa.me/525539048634) al **55 3904 8634**. En INFLAPY llevamos más de 30 años ayudando a familias de CDMX y Estado de México a festejar en grande, incluso cuando los festejados son dos.
+Cotiza tu fiesta doble por [WhatsApp](https://wa.me/525539048634) al **55 3904 8634**. Más de 30 años ayudando a familias de CDMX y Estado de México a festejar en grande, incluso cuando los festejados son dos.

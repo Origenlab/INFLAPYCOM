@@ -1,6 +1,6 @@
 ---
-title: "Zona infantil en tu boda: cómo entretener a los niños con elegancia"
-excerpt: "Zona infantil en boda: guía práctica para entretener a los niños invitados con un inflable blanco elegante en CDMX. Ubicación, cronograma y presupuesto."
+title: "Zona infantil en tu boda: cómo entretener a los niños invitados"
+excerpt: "Zona infantil en boda: dónde ponerla, cuánto cuesta y cómo un inflable blanco mantiene a los niños contentos sin arruinar tus fotos en CDMX."
 date: 2026-02-10
 product: "castillo-blanco"
 productSlug: "inflables-grandes/castillo-blanco"
@@ -10,95 +10,95 @@ imageAlt: "Zona infantil en boda con castillo inflable blanco elegante en CDMX"
 author: "INFLAPY"
 ---
 
-## Zona infantil en boda: la decisión que salva tu recepción (y a tus invitados con hijos)
+## Los niños en tu boda: el pendiente que nadie anota
 
-Si estás planeando tu boda en CDMX o Estado de México, ya lo sabes: la lista de invitados incluye primos, sobrinos y los hijos de tus mejores amigos. En una boda mexicana promedio, entre el 10% y el 20% de los invitados son niños. Y aquí viene la pregunta que toda pareja se hace tarde o temprano: ¿qué van a hacer esos niños durante las cinco o seis horas que dura la recepción?
+Haz la cuenta rápida de tu lista de invitados. Sobrinos, primos chicos, los hijos de tus amigas. En una boda de 150 a 250 personas casi siempre salen entre 15 y 30 niños. Y la recepción dura cinco o seis horas.
 
-La respuesta improvisada —"que se entretengan solos"— termina siempre igual: niños corriendo entre meseros con charolas, jalando el mantel de la mesa de postres o llorando de aburrimiento a mitad del vals. La respuesta planeada es una **zona infantil en tu boda**: un espacio delimitado, con entretenimiento real, donde los niños quieran quedarse por voluntad propia. Y la pieza central más efectiva que hemos visto en más de 30 años instalando inflables en eventos es el **[Castillo Blanco](/inflables-grandes/castillo-blanco)**: un castillo inflable de **6×5 metros**, completamente blanco con detalles plateados, diseñado precisamente para eventos donde la estética importa tanto como la diversión.
+Lo vemos casi cada sábado: la ceremonia termina, los adultos se van al cóctel, y a los veinte minutos ya hay tres niños jugando a las traes entre los meseros. No es que sus papás no los cuiden. Es que un niño de seis años no tiene nada que hacer en una sobremesa de adultos, y lo va a resolver a su manera.
 
-En esta guía te contamos cómo montar una zona infantil elegante paso a paso: dónde ubicarla, qué incluir además del inflable, cuánto presupuestar y cómo coordinar los tiempos con el resto de tu boda.
+La alternativa es darles su propio territorio: una zona infantil con algo que de verdad los retenga. Después de treinta y tantos años montando inflables en bodas de CDMX y Estado de México, sabemos qué funciona como ancla de esa zona: el [Castillo Blanco](/inflables-grandes/castillo-blanco), un castillo de **6×5 metros**, blanco con detalles plateados, hecho para eventos donde las fotos importan.
 
-## Por qué un inflable blanco y no cualquier inflable
+## "Un inflable va a arruinar mis fotos"
 
-La objeción más común de las novias es inmediata: "un inflable va a arruinar mis fotos". Y con un inflable tradicional de colores primarios, tienen razón. Pero el Castillo Blanco fue pensado para lo contrario: su estructura **blanca con detalles plateados** combina con cualquier paleta de boda —blanco y verde, blush y dorado, azul marino, terracota— y en las fotografías se lee como parte de la decoración, no como un intruso.
+Esa frase la escuchamos seguido, y con un inflable de colores primarios la novia tiene toda la razón. Un brincolín amarillo con rojo se roba cualquier toma en la que aparezca, aunque sea de fondo.
 
-Además del factor estético, hay razones prácticas de peso:
+El Castillo Blanco se diseñó al revés. Blanco con plateado, sin personajes, sin estampados. En las fotos se lee como parte del montaje —como una carpa clara o el mobiliario lounge— y combina con cualquier paleta: blush y dorado, verde salvia, terracota, azul marino. Más de una pareja nos ha contado que la foto de los pajes frente al castillo terminó en el álbum final.
 
-- **Capacidad real para bodas:** recibe de **8 a 12 niños al mismo tiempo**, suficiente para el grupo infantil típico de una boda de 150 a 250 invitados, donde suele haber entre 15 y 30 niños rotando.
-- **Rango de edad amplio (3 a 12 años):** en una boda conviven primitos de 4 años con sobrinos de 11. La gran zona de brinco del Castillo Blanco funciona para todos sin necesidad de separar por edades.
-- **Espectacular en fotos:** más de una pareja nos ha contado que la sesión de fotos de los pajes frente al castillo blanco terminó entre sus tomas favoritas del álbum.
-- **Sin logística oculta:** el precio de **$1,700 MXN** incluye traslado, instalación, operación y retiro. Tu wedding planner no tiene que coordinar nada más que el horario.
+Aparte de la estética, resuelve los números de una boda: recibe de **8 a 12 niños a la vez**, con un rango de **3 a 12 años**, así que el primito de cuatro convive con el sobrino de once sin que tengas que organizar nada. Y el precio de **$1,700 MXN** ya trae traslado, instalación, operación y retiro: tu wedding planner solo coordina el horario.
 
-## Dónde ubicar la zona infantil en el venue
+## Dónde ponerlo dentro del venue
 
-La ubicación decide el éxito de la zona infantil. Estos son los principios que aplicamos al instalar en jardines y salones de CDMX y Estado de México:
+La ubicación decide si la zona infantil funciona o estorba. Lo que revisamos al llegar a un jardín o salón:
 
-- **Visible desde las mesas, pero fuera del eje principal:** los papás deben poder supervisar desde su lugar sin levantarse a cada rato, pero el castillo no debe aparecer detrás del presídium ni del arco de ceremonia en las fotos formales.
-- **Sobre pasto o superficie firme y nivelada:** el Castillo Blanco necesita un área libre de aproximadamente **7×6 metros** contando perímetro de seguridad. En jardines de Tlalpan, Coyoacán o Huixquilucan esto rara vez es problema; en salones, confirma la altura del techo (mínimo 4 metros).
-- **Cerca de un contacto de 110V:** el soplador requiere corriente continua. Si tu venue es un jardín sin instalación eléctrica cercana, podemos llevar generador con costo extra.
-- **Lejos de la pista de baile y las bocinas:** los niños duermen siesta, se sobreestimulan o simplemente quieren gritar a gusto. Un poco de distancia acústica beneficia a todos.
+- Visible desde las mesas, pero fuera del eje altar–pista–mesa de honor. Los papás supervisan sentados y el castillo no sale en las fotos formales.
+- Piso nivelado, de preferencia pasto firme. Pide un área libre de unos 7×6 metros para el perímetro de seguridad y el soplador.
+- Un contacto de **110V** a distancia razonable. Si va a haber extensión, que sea de uso rudo; las delgadas de casa se calientan con el soplador. Y si tu jardín no tiene corriente cerca, llevamos generador con costo extra.
+- Ojo con el sol de la tarde. Si la recepción arranca a las 3, el vinil del lado poniente se calienta. Cuando se puede, orientamos la entrada hacia la sombra o hacia donde pega menos el sol entre 4 y 6.
+- Lejos de las bocinas. Los niños gritan a gusto y el ruido no se cuela en el audio del brindis.
 
-## Cronograma sugerido: cuándo activar el inflable
+En salón techado también se puede, con altura mínima de 4 metros.
 
-Una renta típica de INFLAPY es de **4 a 6 horas**, con horario flexible. La clave está en alinear el inflable con los momentos en que los niños más lo necesitan: los tiempos muertos de los adultos.
+## Cronograma: cuándo conviene tenerlo activo
 
-| Momento de la boda | Hora aproximada | ¿Inflable activo? | Por qué |
-|---|---|---|---|
-| Ceremonia | 14:00–15:00 | No | Los niños acompañan a sus papás; instalamos antes, en silencio |
-| Cóctel y fotos formales | 15:00–16:30 | Sí | El momento más aburrido para un niño; el castillo los recibe de inmediato |
-| Comida / banquete | 16:30–18:00 | Sí, con moderación | Los niños comen rápido y regresan al castillo mientras los adultos sobremesa |
-| Vals y brindis | 18:00–18:45 | Sí | Mantiene a los pequeños entretenidos durante los protocolos largos |
-| Baile | 18:45–20:00 | Sí, hasta el retiro | Los papás bailan tranquilos; el retiro toma solo 15–20 minutos |
+La renta típica es de 4 a 6 horas con horario flexible. El truco es alinear el inflable con los ratos más aburridos para un niño, que son justo los más importantes para los adultos:
 
-Con este esquema, una renta de 5 horas (15:00 a 20:00) cubre exactamente el arco completo de la recepción. Recuerda que operamos de **lunes a domingo de 8:00 a 20:00**, y que en temporada alta (mayo a agosto) conviene reservar con más de una semana de anticipación.
+| Momento | Hora aproximada | ¿Castillo activo? |
+|---|---|---|
+| Ceremonia | 14:00–15:00 | No; instalamos antes, en 20–25 minutos, sin ruido |
+| Cóctel y fotos formales | 15:00–16:30 | Sí, y es cuando más lo agradecen |
+| Banquete | 16:30–18:00 | Sí; los niños comen rápido y regresan solos |
+| Vals y brindis | 18:00–18:45 | Sí, mantiene a los chicos lejos del protocolo |
+| Baile | 18:45–20:00 | Sí, hasta el retiro (15–20 minutos) |
 
-## Qué más incluir en la zona infantil (además del inflable)
+Con una renta de 15:00 a 20:00 cubres el arco completo. Pide el montaje una hora antes de que lleguen los invitados: así el castillo aparece ya inflado, limpio y sin camionetas cruzando el jardín. Operamos de lunes a domingo de 8:00 a 20:00.
 
-El castillo es el ancla, pero una zona infantil de boda completa se redondea con pocos elementos bien elegidos:
+## Con qué completar la zona infantil
 
-- **Mesa infantil con mantelería a juego:** una mesa baja con mantel blanco o del color de tu paleta, vajilla resistente y un menú amigable (deditos de pollo, pasta, fruta) evita que los niños batallen en las mesas de adultos.
-- **Kit de actividades tranquilas:** libros para colorear con temática de boda, crayolas y burbujas cubren los ratos en que los niños necesitan bajar el ritmo después de brincar.
-- **Niñeras o personal de apoyo:** una cuidadora por cada 8–10 niños es la proporción recomendada. INFLAPY ofrece **supervisión opcional del inflable durante el evento**, lo que libera a las niñeras para el resto de la zona.
-- **Señalización elegante:** un letrero de acrílico o madera con "Zona de peques" en la misma tipografía de tu papelería integra el espacio al diseño general de la boda.
+El castillo es el ancla, pero la zona se redondea con poco:
 
-## ¿Y si hay bebés o niños muy pequeños?
+- Una mesa infantil baja con mantel del color de tu paleta y menú que sí se coman: deditos, pasta, fruta.
+- Actividades tranquilas para los descansos entre brincos: libros para colorear, crayolas, burbujas.
+- Una cuidadora por cada 8–10 niños. Nosotros ofrecemos supervisión opcional del inflable durante el evento, con costo extra; combina bien con las niñeras.
+- Una canasta bonita para los zapatos en la entrada del castillo. Regla de seguridad y, de paso, orden visual.
 
-El Castillo Blanco está diseñado para niños de **3 a 12 años**. Si tu lista incluye varios bebés y niños de 1 a 3 años, la solución es sumar un segundo inflable pequeño: el [Mini Castillo](/inflables-chicos/mini-castillo) de 2×2 metros está pensado exactamente para esa edad, cabe en cualquier rincón del jardín y evita que los más chiquitos intenten meterse al castillo grande con niños mayores. Otra alternativa muy noble para edades mezcladas son los [Gusanitos](/inflables-medianos/gusanitos), con túneles de varias entradas y salidas que disfrutan desde los más pequeños hasta los primos grandes.
+## Cuándo el Castillo Blanco no es la respuesta
 
-## Presupuesto realista para la zona infantil
+Honestidad de gremio: si tu lista infantil son puros bebés y niños de 1 a 3 años, este castillo no es para ellos. La edad mínima es 3 años, y un niño de dos entre grandes de diez la pasa mal. Para ese caso existe el [Mini Castillo](/inflables-chicos/mini-castillo) de 2×2 metros, que cabe en cualquier rincón y les da su propio espacio. Y si las edades vienen muy revueltas, los [Gusanitos](/inflables-medianos/gusanitos) —túneles con varias entradas y salidas— reparten el juego mejor que cualquier zona de brinco.
 
-Para una boda de 150–200 invitados con 20–25 niños, una zona infantil bien montada en CDMX se resuelve así: el **Castillo Blanco a $1,700 MXN** (todo incluido: traslado, instalación, operación y retiro, sin costos ocultos), más mesa infantil y kit de actividades (varía según proveedor), más una o dos niñeras. En proporción al costo total de una boda, la zona infantil suele representar menos del 2% del presupuesto y resuelve uno de los focos de estrés más grandes del evento.
+Si tienes las dos poblaciones, la combinación castillo grande más inflable chico resuelve la tarde entera.
 
-Cobertura sin costo extra de traslado en las alcaldías Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, Gustavo A. Madero, Iztapalapa, Miguel Hidalgo, Tlalpan y Xochimilco, y en municipios del Estado de México como Atizapán, Cuautitlán Izcalli, Ecatepec, Huixquilucan, Naucalpan, Tlalnepantla y Tultitlán.
+## Lo que cuesta, sin letras chiquitas
 
-## Preguntas frecuentes sobre la zona infantil en bodas
+Para una boda de 150–200 invitados con 20–25 niños: Castillo Blanco a $1,700 MXN todo incluido, más mesa infantil y kit de actividades, más una o dos niñeras. Contra el presupuesto total de una boda, la zona infantil suele quedar por debajo del 2% y quita uno de los focos de estrés más grandes del día.
 
-### ¿El inflable no se ve mal en las fotos de la boda?
+El traslado no cuesta extra en Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, Gustavo A. Madero, Iztapalapa, Miguel Hidalgo, Tlalpan y Xochimilco, ni en Atizapán, Cuautitlán Izcalli, Ecatepec, Huixquilucan, Naucalpan, Tlalnepantla y Tultitlán en el Estado de México.
 
-Con un inflable de colores, sí. El Castillo Blanco es blanco con detalles plateados precisamente para integrarse a la paleta del evento. Bien ubicado —fuera del eje de las fotos formales y con algo de iluminación cálida por la noche— se ve elegante y hasta suma como fondo para fotos espontáneas de los niños.
+## Preguntas que nos llegan por WhatsApp
 
-### ¿Cuánto espacio necesito en el jardín o salón?
+### ¿No se va a ver mal en las fotos?
 
-El castillo mide **6×5 metros**; recomienda un área libre de unos 7×6 metros para el perímetro de seguridad y el soplador. En interiores, el techo debe tener al menos 4 metros de altura.
+Con un inflable de colores, sí. Este es blanco con plateado justamente para integrarse. Colócalo fuera del eje de las fotos formales y de noche, con un par de luces cálidas cerca, se ve mejor que muchas carpas.
 
-### ¿Quién cuida a los niños mientras están en el inflable?
+### ¿Cuánto espacio necesito?
 
-El precio incluye operación básica del equipo. Si quieres personal dedicado vigilando turnos, entradas y salidas durante todo el evento, ofrecemos **supervisión opcional** con costo adicional. La recomendación es combinarla con las niñeras de la zona infantil.
+El castillo mide 6×5 metros; deja unos 7×6 libres para el perímetro y el soplador. En interior, techo de 4 metros mínimo.
 
-### ¿Qué pasa si llueve el día de la boda?
+### ¿Y si llueve?
 
-El castillo puede instalarse bajo carpa o en salón techado (con altura mínima de 4 metros). Si la lluvia es intensa y el equipo está a la intemperie, se apaga temporalmente por seguridad y se reactiva al pasar el chubasco. Al cotizar por WhatsApp te ayudamos a planear el plan B según tu venue.
+Bajo carpa o techo alto, la fiesta sigue. A la intemperie, si cae un chubasco fuerte apagamos el equipo por seguridad y lo reactivamos al pasar el agua. Al cotizar te ayudamos a armar el plan B según tu venue.
 
-### ¿Con cuánta anticipación debo reservar?
+### ¿Quién cuida a los niños mientras brincan?
 
-Mínimo **una semana**, pero para bodas recomendamos apartar la fecha en cuanto tengas el venue confirmado. La temporada alta va de **mayo a agosto** y los sábados se agendan rápido.
+La renta incluye la operación del equipo. Si quieres a alguien dedicado a vigilar turnos y entradas toda la noche, la supervisión opcional tiene costo adicional y en bodas la recomendamos.
 
-### ¿El inflable está limpio y desinfectado?
+### ¿Con cuánto tiempo reservo?
 
-Sí. Cada equipo se **desinfecta antes y después de cada evento**, sin excepción. Llevamos más de 30 años y más de 10,000 eventos cuidando ese estándar.
+Mínimo una semana. Pero las bodas caen en sábado y la temporada alta va de mayo a agosto: en cuanto tengas venue confirmado, aparta.
 
-## Reserva la zona infantil de tu boda hoy
+### ¿Está limpio el equipo?
 
-Una zona infantil bien planeada significa papás que se quedan hasta el final, niños felices y una novia que no tuvo que preocuparse ni una vez por un pequeño corriendo hacia el pastel. El **[Castillo Blanco](/inflables-grandes/castillo-blanco)** es la pieza que hace posible todo eso sin sacrificar la estética que planeaste durante meses.
+Se desinfecta antes y después de cada evento, sin excepción. Llevamos más de 10,000 eventos desde 1993 con ese estándar.
 
-Escríbenos por [WhatsApp](https://wa.me/525539048634) al **55 3904 8634** con la fecha y el venue de tu boda, y te cotizamos en minutos con todo incluido: traslado, instalación, operación y retiro. INFLAPY, desde 1993 haciendo que los niños también disfruten las bodas.
+## Aparta la zona infantil de tu boda
+
+Una zona infantil bien resuelta se nota en algo muy simple: las familias con hijos se quedan hasta el final. Mándanos un [WhatsApp](https://wa.me/525539048634) al **55 3904 8634** con la fecha y el venue, y te cotizamos el [Castillo Blanco](/inflables-grandes/castillo-blanco) en minutos, con traslado, instalación, operación y retiro incluidos. INFLAPY, desde 1993 haciendo que los niños también disfruten las bodas.
