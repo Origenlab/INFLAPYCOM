@@ -1,0 +1,483 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../../config/site';
+
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+// Tiempo de lectura
+function readTime(body: string | undefined) {
+  if (!body) return 5;
+  return Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 200));
+}
+
+// Labels de productos
+const PRODUCT_LABELS: Record<string, string> = {
+  'mini-castillo':        'Mini Castillo',
+  'dragones-rojos':       'Dragones Rojos',
+  'mini-jungla':          'Mini Jungla',
+  'gusanitos':            'Gusanitos',
+  'castillo-de-princesas':'Castillo de Princesas',
+  'barco-pirata':         'Barco Pirata',
+  'extremo':              'Circuito Extremo',
+  'castillo-blanco':      'Castillo Blanco',
+};
+
+// Unique product filters
+const productFilters = [...new Set(allPosts.map(p => p.data.product).filter(Boolean))] as string[];
+
+const [featured, ...rest] = allPosts;
+
+const title = 'Artículos sobre renta de inflables | Guías y consejos | INFLAPY';
+const description = 'Guías profesionales, consejos de organización y comparativas de inflables para fiestas en CDMX. Todo lo que necesitas saber antes de rentar un inflable.';
+---
+
+<PageLayout title={title} description={description} canonical={`${SITE.url}/articulos`}>
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <Breadcrumbs items={[
+        { label: 'Inicio', href: '/' },
+        { label: 'Artículos' },
+      ]} />
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="blog-hero">
+    <div class="container">
+      <span class="eyebrow">Blog INFLAPY</span>
+      <h1 class="hero-heading">Guías y consejos para tu fiesta perfecta</h1>
+      <p class="hero-sub">{allPosts.length} artículos · Renta de inflables · CDMX y EdoMex</p>
+    </div>
+  </section>
+
+  <section class="blog-body">
+    <div class="container">
+
+      <!-- Featured article -->
+      {featured && (() => {
+        const rt = readTime(featured.body);
+        const dateStr = featured.data.date.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
+        const productLabel = featured.data.product ? PRODUCT_LABELS[featured.data.product] : null;
+        return (
+          <article class="featured-card" data-product={featured.data.product ?? ''}>
+            {featured.data.image && (
+              <a href={`/articulos/${featured.id}`} class="featured-img-wrap" tabindex="-1" aria-hidden="true">
+                <img
+                  src={featured.data.image}
+                  alt={featured.data.imageAlt ?? featured.data.title}
+                  width="900" height="506"
+                  loading="eager" decoding="auto" fetchpriority="high"
+                  onerror="this.src='/img/placeholder.svg'"
+                />
+                <span class="featured-badge">Destacado</span>
+              </a>
+            )}
+            <div class="featured-content">
+              <div class="featured-meta">
+                {productLabel && <span class="product-chip">{productLabel}</span>}
+                <time>{dateStr}</time>
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span>{rt} min de lectura</span>
+              </div>
+              <h2 class="featured-title">
+                <a href={`/articulos/${featured.id}`}>{featured.data.title}</a>
+              </h2>
+              <p class="featured-excerpt">{featured.data.excerpt}</p>
+              <div class="featured-tags">
+                {featured.data.tags.slice(0, 3).map(t => (
+                  <span class="tag-chip">{t}</span>
+                ))}
+              </div>
+              <a href={`/articulos/${featured.id}`} class="featured-cta">
+                Leer artículo completo
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        );
+      })()}
+
+      <!-- Filter chips -->
+      <div class="filter-bar" role="group" aria-label="Filtrar por inflable">
+        <button class="filter-btn active" data-filter="all">Todos <span class="filter-count">{allPosts.length}</span></button>
+        {productFilters.map(pid => {
+          const count = allPosts.filter(p => p.data.product === pid).length;
+          return (
+            <button class="filter-btn" data-filter={pid}>
+              {PRODUCT_LABELS[pid] ?? pid}
+              <span class="filter-count">{count}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <!-- Grid -->
+      <div class="blog-grid" id="blog-grid">
+        {rest.map(post => {
+          const rt = readTime(post.body);
+          const dateStr = post.data.date.toLocaleDateString('es-MX', { year: 'numeric', month: 'short', day: 'numeric' });
+          const productLabel = post.data.product ? PRODUCT_LABELS[post.data.product] : null;
+          return (
+            <article class="blog-card" data-product={post.data.product ?? ''}>
+              {post.data.image && (
+                <a href={`/articulos/${post.id}`} class="card-img-wrap" tabindex="-1" aria-hidden="true">
+                  <img
+                    src={post.data.image}
+                    alt={post.data.imageAlt ?? post.data.title}
+                    width="640" height="360"
+                    loading="lazy" decoding="async"
+                    onerror="this.src='/img/placeholder.svg'"
+                  />
+                </a>
+              )}
+              <div class="card-body">
+                <div class="card-meta">
+                  {productLabel && <span class="product-chip product-chip--sm">{productLabel}</span>}
+                  <time class="card-date">{dateStr}</time>
+                  <span class="meta-dot" aria-hidden="true">·</span>
+                  <span class="card-rt">{rt} min</span>
+                </div>
+                <h2 class="card-title">
+                  <a href={`/articulos/${post.id}`}>{post.data.title}</a>
+                </h2>
+                <p class="card-excerpt">{post.data.excerpt}</p>
+                <div class="card-footer">
+                  <div class="card-tags">
+                    {post.data.tags.slice(0, 2).map(t => (
+                      <span class="tag-chip tag-chip--sm">{t}</span>
+                    ))}
+                  </div>
+                  <a href={`/articulos/${post.id}`} class="card-read-more">
+                    Leer
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+    </div>
+  </section>
+</PageLayout>
+
+<script>
+  // Filter chips
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('[data-product]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter!;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.product === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<style>
+.container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+.breadcrumb-bar { background: var(--c-white); border-bottom: 1px solid var(--c-border); padding-block: var(--sp-3); }
+
+/* ── Hero ── */
+.blog-hero {
+  background: linear-gradient(135deg, #faf8ff 0%, var(--c-white) 60%);
+  padding-block: var(--sp-10) var(--sp-8);
+  border-bottom: 1px solid var(--c-border);
+  text-align: center;
+}
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-2);
+}
+.hero-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  line-height: 1.15;
+  margin-bottom: var(--sp-3);
+}
+.hero-sub { font-size: 1rem; color: var(--c-muted); margin: 0; }
+
+/* ── Body ── */
+.blog-body { padding-block: var(--sp-10) var(--section-py); background: var(--c-surface); }
+
+/* ── Featured card ── */
+.featured-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--sp-8);
+}
+.featured-img-wrap {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--c-surface);
+  aspect-ratio: 16 / 10;
+}
+.featured-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.4s ease;
+}
+.featured-card:hover .featured-img-wrap img { transform: scale(1.04); }
+.featured-badge {
+  position: absolute;
+  top: var(--sp-4);
+  left: var(--sp-4);
+  background: var(--c-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+.featured-content {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-4);
+}
+.featured-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  font-size: 0.8rem;
+  color: var(--c-muted);
+  font-weight: 500;
+}
+.meta-dot { opacity: 0.4; }
+.featured-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.featured-title a { text-decoration: none; color: inherit; }
+.featured-title a:hover { color: var(--c-primary); }
+.featured-excerpt {
+  font-size: 0.92rem;
+  color: var(--c-ink-2);
+  line-height: 1.7;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.featured-tags { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.featured-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.75rem 1.4rem;
+  background: var(--c-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background var(--transition), gap var(--transition);
+}
+.featured-cta:hover { background: var(--c-primary-dark); gap: calc(var(--sp-2) + 4px); }
+
+/* ── Chips ── */
+.product-chip {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-primary);
+  background: rgba(var(--c-primary-rgb), 0.1);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+.product-chip--sm { font-size: 0.65rem; padding: 0.18rem 0.55rem; }
+.tag-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--c-muted);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+.tag-chip--sm { font-size: 0.65rem; }
+
+/* ── Filter bar ── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-7);
+}
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 0.45rem 1rem;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-full);
+  background: var(--c-white);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--c-primary); color: var(--c-primary); }
+.filter-btn.active { background: var(--c-primary); border-color: var(--c-primary); color: #fff; }
+.filter-count {
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0.7;
+  background: rgba(255,255,255,0.2);
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--radius-full);
+}
+.filter-btn:not(.active) .filter-count {
+  background: rgba(var(--c-primary-rgb), 0.08);
+  color: var(--c-primary);
+  opacity: 1;
+}
+
+/* ── Blog grid ── */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.blog-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+.card-img-wrap {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--c-surface);
+  flex-shrink: 0;
+}
+.card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+.blog-card:hover .card-img-wrap img { transform: scale(1.05); }
+
+.card-body {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex: 1;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.card-date, .card-rt { font-size: 0.72rem; color: var(--c-muted); font-weight: 500; }
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.35;
+  margin: 0;
+}
+.card-title a { text-decoration: none; color: inherit; }
+.card-title a:hover { color: var(--c-primary); }
+.card-excerpt {
+  font-size: 0.83rem;
+  color: var(--c-ink-2);
+  line-height: 1.65;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--c-border);
+}
+.card-tags { display: flex; gap: var(--sp-1); flex-wrap: wrap; }
+.card-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.card-read-more:hover { text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .featured-card { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-img-wrap { aspect-ratio: 16 / 8; }
+}
+@media (max-width: 600px) {
+  .blog-grid { grid-template-columns: 1fr; }
+  .filter-bar { gap: var(--sp-2); }
+  .filter-btn { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+}
+</style>

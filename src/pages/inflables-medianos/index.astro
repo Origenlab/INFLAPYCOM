@@ -4,10 +4,30 @@ import ProductCard from '../../components/ProductCard.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { SITE, CONTACT, WA_MESSAGES, getProductsByCategory } from '../../config/site';
 import { waUrl, telUrl } from '../../lib/utils';
+import { getCollection } from 'astro:content';
 
 const products = getProductsByCategory('medianos');
 const waHref = waUrl(WA_MESSAGES.cotizar);
 const telHref = telUrl();
+
+// Blog articles for medianos category
+const medianosProducts = ['dragones-rojos', 'mini-jungla', 'gusanitos', 'castillo-de-princesas'];
+const blogArticles = (await getCollection('blog'))
+  .filter(p => p.data.product && medianosProducts.includes(p.data.product))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 4);
+
+function readTime(body: string | undefined) {
+  if (!body) return 4;
+  return Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 200));
+}
+
+const MEDIANOS_LABELS: Record<string, string> = {
+  'dragones-rojos': 'Dragones Rojos',
+  'mini-jungla': 'Mini Jungla',
+  'gusanitos': 'Gusanitos',
+  'castillo-de-princesas': 'Castillo de Princesas',
+};
 
 const title = 'Inflables medianos | Castillos y brincolines 3 a 10 años | Renta CDMX';
 const description =
@@ -51,7 +71,120 @@ const description =
     </div>
   </section>
 
-  <!-- 3. CTA strip -->
+  <!-- 3. Guide: cómo elegir -->
+  <section class="guide-section">
+    <div class="container">
+      <div class="guide-inner">
+        <div class="guide-text">
+          <span class="eyebrow">Guía de elección</span>
+          <h2 class="guide-heading">¿Cuál inflable mediano es el indicado para tu fiesta?</h2>
+          <p>
+            Los inflables medianos son nuestra categoría más popular en CDMX y Estado de México.
+            Cuatro opciones temáticas, cada una diseñada para un tipo de fiesta específico.
+            La elección correcta depende del tema, el espacio disponible y la edad de los niños.
+          </p>
+          <ul class="guide-list">
+            <li><strong><a href="/inflables-medianos/dragones-rojos">Dragones Rojos:</a></strong> ideal para fiestas de aventura y niños de 4–8 años. El más rentado del portafolio.</li>
+            <li><strong><a href="/inflables-medianos/castillo-de-princesas">Castillo de Princesas:</a></strong> perfecto para cumpleaños con temática de princesas, hadas o kawaii.</li>
+            <li><strong><a href="/inflables-medianos/mini-jungla">Mini Jungla:</a></strong> versátil — sirve para temas de animales, selva, safari o Mundo Animal.</li>
+            <li><strong><a href="/inflables-medianos/gusanitos">Gusanitos:</a></strong> la opción de doble función — brinca y tobogán pequeño — para 3 a 6 años.</li>
+          </ul>
+          <a href="/catalogo" class="guide-cta">
+            Ver catálogo completo con todos los inflables
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <aside class="guide-table-wrap">
+          <h3 class="guide-table-title">Comparativa rápida</h3>
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Inflable</th>
+                <th>Edad</th>
+                <th>Desde</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="/inflables-medianos/dragones-rojos">Dragones Rojos</a></td>
+                <td>4–8 años</td>
+                <td>$1,200</td>
+              </tr>
+              <tr>
+                <td><a href="/inflables-medianos/castillo-de-princesas">Castillo Princesas</a></td>
+                <td>3–8 años</td>
+                <td>$1,200</td>
+              </tr>
+              <tr>
+                <td><a href="/inflables-medianos/mini-jungla">Mini Jungla</a></td>
+                <td>3–7 años</td>
+                <td>$1,100</td>
+              </tr>
+              <tr>
+                <td><a href="/inflables-medianos/gusanitos">Gusanitos</a></td>
+                <td>3–6 años</td>
+                <td>$1,100</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="guide-table-note">* Precios aproximados. Confirma disponibilidad por WhatsApp.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Blog articles -->
+  {blogArticles.length > 0 && (
+    <section class="cat-articles">
+      <div class="container">
+        <div class="cat-articles-header">
+          <div>
+            <span class="eyebrow">Desde el blog</span>
+            <h2 class="cat-articles-title">Guías e ideas para tu fiesta</h2>
+          </div>
+          <a href="/articulos" class="cat-articles-all">
+            Ver todos los artículos
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="cat-articles-grid">
+          {blogArticles.map(post => {
+            const rt = readTime(post.body);
+            const dateStr = post.data.date.toLocaleDateString('es-MX', { month: 'short', day: 'numeric', year: 'numeric' });
+            const productLabel = post.data.product ? MEDIANOS_LABELS[post.data.product] : null;
+            return (
+              <article class="cat-article-card">
+                {post.data.image && (
+                  <a href={`/articulos/${post.id}`} class="cat-article-img" tabindex="-1" aria-hidden="true">
+                    <img src={post.data.image} alt={post.data.imageAlt ?? post.data.title} width="480" height="270" loading="lazy" decoding="async" onerror="this.src='/img/placeholder.svg'" />
+                  </a>
+                )}
+                <div class="cat-article-body">
+                  <div class="cat-article-meta">
+                    {productLabel && <span class="cat-product-chip">{productLabel}</span>}
+                    <time>{dateStr}</time>
+                    <span aria-hidden="true">·</span>
+                    <span>{rt} min</span>
+                  </div>
+                  <h3 class="cat-article-title">
+                    <a href={`/articulos/${post.id}`}>{post.data.title}</a>
+                  </h3>
+                  <p class="cat-article-excerpt">{post.data.excerpt}</p>
+                  <a href={`/articulos/${post.id}`} class="cat-article-read">
+                    Leer guía
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- 5. CTA strip -->
   <section class="cta-strip">
     <div class="container cta-inner">
       <div class="cta-text">
@@ -112,12 +245,7 @@ const description =
   margin-bottom: var(--sp-5);
 }
 
-.cat-meta {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-4);
-  flex-wrap: wrap;
-}
+.cat-meta { display: flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap; }
 
 .count-badge {
   display: inline-flex;
@@ -133,29 +261,256 @@ const description =
 .cat-price-hint { font-size: 0.9rem; color: var(--c-muted); }
 .cat-price-hint strong { color: var(--c-ink); font-weight: 700; }
 
-.cat-grid {
-  padding-block: var(--section-py);
-  background: var(--c-surface);
-}
+.cat-grid { padding-block: var(--section-py); background: var(--c-surface); }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-6);
 }
+@media (max-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .products-grid { grid-template-columns: 1fr; } }
 
-@media (max-width: 900px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-  .products-grid { grid-template-columns: 1fr; }
-}
-
-.cta-strip {
-  background: var(--c-ink);
-  padding-block: var(--sp-8);
+/* ── Guide ── */
+.guide-section {
+  padding-block: var(--section-py);
+  background: var(--c-white);
+  border-top: 1px solid var(--c-border);
 }
 
+.guide-inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--sp-12);
+  align-items: start;
+}
+@media (max-width: 900px) { .guide-inner { grid-template-columns: 1fr; } }
+
+.guide-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-4);
+  letter-spacing: -0.02em;
+}
+
+.guide-text p {
+  font-size: 0.95rem;
+  color: var(--c-ink-2);
+  line-height: 1.7;
+  margin-bottom: var(--sp-5);
+}
+
+.guide-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.guide-list li {
+  font-size: 0.92rem;
+  color: var(--c-ink-2);
+  line-height: 1.55;
+  padding-left: 1.4rem;
+  position: relative;
+}
+.guide-list li::before { content: '→'; position: absolute; left: 0; color: var(--c-primary); font-weight: 700; }
+.guide-list a { color: var(--c-primary); text-decoration: underline; }
+.guide-list a:hover { text-decoration: none; }
+
+.guide-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  text-decoration: none;
+  transition: gap 0.15s ease;
+}
+.guide-cta:hover { gap: var(--sp-3); text-decoration: underline; }
+
+.guide-table-wrap {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+}
+.guide-table-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-4);
+}
+.guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.guide-table th {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--c-border);
+}
+.guide-table td {
+  padding: var(--sp-2-5) 0;
+  color: var(--c-ink-2);
+  border-bottom: 1px solid var(--c-border);
+  line-height: 1.4;
+}
+.guide-table td a { color: var(--c-primary); text-decoration: none; }
+.guide-table td a:hover { text-decoration: underline; }
+.guide-table td:last-child { font-weight: 700; color: var(--c-ink); text-align: right; }
+.guide-table tr:last-child td { border-bottom: none; }
+.guide-table-note { font-size: 0.75rem; color: var(--c-muted); margin-top: var(--sp-3); margin-bottom: 0; }
+
+/* ── Blog articles ── */
+.cat-articles {
+  padding-block: var(--section-py);
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+}
+.cat-articles-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+  flex-wrap: wrap;
+}
+.cat-articles-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  color: var(--c-ink);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.cat-articles-all {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.55rem 1.1rem;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+.cat-articles-all:hover { border-color: var(--c-primary); color: var(--c-primary); }
+
+.cat-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6);
+}
+@media (max-width: 700px) { .cat-articles-grid { grid-template-columns: 1fr; } }
+
+.cat-article-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.cat-article-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+.cat-article-img {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--c-surface);
+}
+.cat-article-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.cat-article-card:hover .cat-article-img img { transform: scale(1.04); }
+
+.cat-article-body {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex: 1;
+}
+.cat-article-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  font-size: 0.75rem;
+  color: var(--c-muted);
+  font-weight: 500;
+}
+.cat-product-chip {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--c-primary);
+  background: rgba(var(--c-primary-rgb), 0.1);
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+.cat-article-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cat-article-title a { text-decoration: none; color: inherit; }
+.cat-article-title a:hover { color: var(--c-primary); }
+.cat-article-excerpt {
+  font-size: 0.84rem;
+  color: var(--c-ink-2);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cat-article-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap 0.15s ease;
+}
+.cat-article-read:hover { gap: var(--sp-2); text-decoration: underline; }
+
+/* ── CTA strip ── */
+.cta-strip { background: var(--c-ink); padding-block: var(--sp-8); }
 .cta-inner {
   display: flex;
   align-items: center;
@@ -163,50 +518,21 @@ const description =
   gap: var(--sp-6);
   flex-wrap: wrap;
 }
-
-.cta-label {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--c-white);
-  margin: 0 0 var(--sp-1);
-}
-.cta-sub {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.65);
-  margin: 0;
-}
-
-.cta-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-  flex-wrap: wrap;
-  flex-shrink: 0;
-}
-
+.cta-label { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--c-white); margin: 0 0 var(--sp-1); }
+.cta-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); margin: 0; }
+.cta-actions { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; flex-shrink: 0; }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  padding: .75rem 1.5rem;
-  font-family: var(--font-heading);
-  font-size: 0.875rem;
-  font-weight: 600;
-  border-radius: var(--radius-md);
-  border: 2px solid transparent;
-  cursor: pointer;
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: .75rem 1.5rem; font-family: var(--font-heading); font-size: 0.875rem; font-weight: 600;
+  border-radius: var(--radius-md); border: 2px solid transparent; cursor: pointer;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  white-space: nowrap;
-  line-height: 1;
-  text-decoration: none;
+  white-space: nowrap; line-height: 1; text-decoration: none;
 }
 .btn svg { flex-shrink: 0; width: 18px; height: 18px; }
 .btn-wa { background: var(--c-wa); color: #04210f; box-shadow: 0 4px 16px rgba(37,211,102,.3); }
 .btn-wa:hover { background: #1ebe5a; transform: translateY(-1px); }
 .btn-ghost { background: transparent; color: var(--c-white); border-color: rgba(255,255,255,.4); }
 .btn-ghost:hover { border-color: var(--c-white); background: rgba(255,255,255,.08); }
-
 @media (max-width: 640px) {
   .cta-inner { flex-direction: column; align-items: flex-start; }
   .cta-actions { width: 100%; }

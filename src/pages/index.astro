@@ -21,6 +21,7 @@ import Reviews from '../components/Reviews.astro';
 import Coverage from '../components/Coverage.astro';
 import FAQWithContact from '../components/FAQWithContact.astro';
 import CTAFinal from '../components/CTAFinal.astro';
+import BlogPreview from '../components/BlogPreview.astro';
 import { PRODUCTS, SERVICES, KEYWORDS, WA_MESSAGES } from '../config/site';
 import { buildSchema } from '../lib/seo';
 import { waUrl } from '../lib/utils';
@@ -28,20 +29,23 @@ import { waUrl } from '../lib/utils';
 const schema = buildSchema({ pageType: 'home' });
 
 // ── Inflables estrella para los spotlights (datos reales del catálogo) ──
-const mini    = PRODUCTS.find((p) => p.id === 'mini-castillo')!;
-const dragones = PRODUCTS.find((p) => p.id === 'dragones-rojos')!;
-const extremo = PRODUCTS.find((p) => p.id === 'extremo')!;
+const mini      = PRODUCTS.find((p) => p.id === 'mini-castillo')!;
+const jungla    = PRODUCTS.find((p) => p.id === 'mini-jungla')!;
+const princesas = PRODUCTS.find((p) => p.id === 'castillo-de-princesas')!;
+const blanco    = PRODUCTS.find((p) => p.id === 'castillo-blanco')!;
+const dragones  = PRODUCTS.find((p) => p.id === 'dragones-rojos')!;
+const extremo   = PRODUCTS.find((p) => p.id === 'extremo')!;
 
 // IDs que tienen spotlight propio → se excluyen del grid para no duplicar
-const SPOTLIGHT_IDS = new Set(['mini-jungla', 'dragones-rojos', 'extremo']);
+const SPOTLIGHT_IDS = new Set(['mini-jungla', 'castillo-de-princesas', 'castillo-blanco', 'dragones-rojos', 'extremo']);
 
 // ── Guía de selección: qué inflable según edad y espacio (derivado de PRODUCTS) ──
 const guiaRows = [
-  { nivel: '1–3 años', ejemplos: 'Mini Castillo', minimo: '2×2 m (cabe en interior)', complementos: '4–5 bebés' },
-  { nivel: '3–8 años', ejemplos: 'Mini Jungla · Gusanitos · Castillo de Princesas', minimo: '3×3 m', complementos: '4–5 niños' },
-  { nivel: '3–10 años', ejemplos: 'Dragones Rojos · Castillo Blanco', minimo: '4×4 m', complementos: '5–7 niños' },
-  { nivel: '5–12 años', ejemplos: 'Barco Pirata', minimo: '5×4 m (jardín)', complementos: '6–8 niños' },
-  { nivel: '6–15 años', ejemplos: 'Circuito Extremo', minimo: '8×4 m (aire libre)', complementos: '8–10 niños' },
+  { nivel: '1–3 años', ejemplos: 'Mini Castillo', minimo: '2×2 m (cabe en interior)', complementos: '3–4 niños' },
+  { nivel: '4–10 años', ejemplos: 'Dragones Rojos · Castillo de Princesas', minimo: '4×4 m', complementos: '5–7 niños' },
+  { nivel: '5–10 años', ejemplos: 'Mini Jungla · Gusanitos', minimo: '4.5×4 m / 5×3 m', complementos: '5–7 niños' },
+  { nivel: '4+ años', ejemplos: 'Barco Pirata', minimo: '7×5 m (jardín amplio)', complementos: '8–10 niños' },
+  { nivel: '6+ años', ejemplos: 'Circuito Extremo', minimo: '7×4 m (aire libre)', complementos: '6–10 niños' },
 ];
 
 // ── Iconos inline para las tarjetas de servicio (¿por qué elegirnos?) ──
@@ -115,18 +119,94 @@ const iconSvgs: Record<string, string> = {
     imgB={{ src: mini.images[2], alt: 'Bebés jugando en el Mini Castillo inflable' }}
   />
 
-  {/* 6 · SPOTLIGHT — el más rentado (Dragones Rojos). Galería a la derecha. */}
+  {/* 6 · SPOTLIGHT — aventura temática (Mini Jungla). */}
   <CategoryFeature
     surface={true}
+    eyebrow="Aventura temática"
+    title="Mini Jungla:"
+    titleAccent="la selva en tu fiesta"
+    description={jungla.descLong}
+    features={[
+      { label: 'Temática selva con animales y lianas', desc: 'zonas para esconderse — más circuito que brincolin' },
+      { label: 'Interior 4.5×4 m con techo cubierto', desc: 'ventilado y con sombra para 5–7 niños de 5 a 10 años' },
+      { label: 'Perfecto para exploradores', desc: 'animales, safari, dinosaurios y naturaleza' },
+      { label: 'Instalación incluida', desc: 'entrega y recolección en CDMX y EdoMex' },
+    ]}
+    brands={[
+      { name: 'Fiestas temáticas' },
+      { name: 'Cumpleaños 3–8 años' },
+      { name: 'Kermeses escolares' },
+    ]}
+    ctaLabel="Reservar Mini Jungla"
+    ctaHref={waUrl(WA_MESSAGES.reservar(jungla.name))}
+    ctaExternal={true}
+    imgMain={{ src: jungla.images[0], alt: 'Mini Jungla — inflable temático de selva en renta CDMX' }}
+    imgA={{ src: jungla.images[1], alt: 'Mini Jungla detalle serpientes y animales' }}
+    imgB={{ src: jungla.images[2], alt: 'Niños jugando en el inflable Mini Jungla' }}
+  />
+
+  {/* 7 · SPOTLIGHT — favorito de niñas (Castillo de Princesas). */}
+  <CategoryFeature
+    eyebrow="Favorito de niñas"
+    title="Castillo de Princesas:"
+    titleAccent="un palacio en tu jardín"
+    description={princesas.descLong}
+    features={[
+      { label: 'Colores rosa y pastel con resbaladilla', desc: 'torres, arcos y coronas de cuento incluidas' },
+      { label: 'Espacio 4×4 m para 5–7 niñas', desc: '3 a 10 años — el rango más solicitado para niñas' },
+      { label: 'Espectacular para fotos', desc: 'el fondo perfecto que combina con cualquier decoración' },
+      { label: 'Incluye traslado y montaje', desc: 'listo en CDMX y zona metropolitana' },
+    ]}
+    brands={[
+      { name: 'Cumpleaños de niñas' },
+      { name: 'Fiestas de princesas' },
+      { name: 'Celebraciones de cuento' },
+    ]}
+    ctaLabel="Reservar Castillo de Princesas"
+    ctaHref={waUrl(WA_MESSAGES.reservar(princesas.name))}
+    ctaExternal={true}
+    imgMain={{ src: princesas.images[0], alt: 'Castillo de Princesas — inflable rosa y morado en renta CDMX' }}
+    imgA={{ src: princesas.images[1], alt: 'Castillo de Princesas torres y coronas de cuento' }}
+    imgB={{ src: princesas.images[2], alt: 'Niñas jugando en el Castillo de Princesas' }}
+  />
+
+  {/* 8 · SPOTLIGHT — línea premium (Castillo Blanco). */}
+  <CategoryFeature
+    surface={true}
+    eyebrow="Línea premium"
+    title="Castillo Blanco:"
+    titleAccent="elegancia para tu evento"
+    description={blanco.descLong}
+    features={[
+      { label: 'Diseño blanco sin colores estridentes', desc: 'combina con cualquier paleta y ambientación' },
+      { label: '6×5 m para 8–12 niños', desc: 'la zona de brinco más amplia de la línea premium' },
+      { label: 'Espectacular en fotografías', desc: 'el fondo perfecto para fotos de recuerdo' },
+      { label: 'Instalación y desinfección incluidas', desc: 'servicio completo en CDMX y EdoMex' },
+    ]}
+    brands={[
+      { name: 'Bodas y XV años' },
+      { name: 'Comuniones' },
+      { name: 'Eventos sofisticados' },
+    ]}
+    ctaLabel="Reservar Castillo Blanco"
+    ctaHref={waUrl(WA_MESSAGES.reservar(blanco.name))}
+    ctaExternal={true}
+    imgMain={{ src: blanco.images[0], alt: 'Castillo Blanco — inflable premium blanco con detalles plateados en renta CDMX' }}
+    imgA={{ src: blanco.images[1], alt: 'Castillo Blanco detalle detalles plateados' }}
+    imgB={{ src: blanco.images[2], alt: 'Castillo Blanco montado en jardín para evento' }}
+  />
+
+  {/* 9 · SPOTLIGHT — el más rentado (Dragones Rojos). Galería a la derecha. */}
+  <CategoryFeature
     eyebrow="El más rentado"
     title="Dragones Rojos:"
     titleAccent="el favorito de las fiestas"
     description={dragones.descLong}
     features={[
-      { label: '2 dragones de 3 m', desc: 'decoración épica que domina cualquier jardín' },
-      { label: 'Tobogán lateral + zona de brinco', desc: 'diversión completa en un solo inflable' },
-      { label: 'Para 5–7 niños de 3 a 10 años', desc: 'el rango de edad más solicitado' },
-      { label: 'Espacio 4×4 m', desc: 'ideal para jardines y patios medianos' },
+      { label: 'Dos dragones de 3 m a los costados', desc: 'el inflable más llamativo de cualquier patio' },
+      { label: 'Área de brinco 4×4 m', desc: 'espacio para 5–7 niños de 4 a 10 años' },
+      { label: 'Funciona para niñas y niños', desc: 'combina con cualquier decoración al no ser personaje de franquicia' },
+      { label: 'Necesita 5×5 m con 5 m altura libre', desc: 'preferentemente en exterior' },
     ]}
     brands={[
       { name: 'Cumpleaños 4–10' },
@@ -141,7 +221,7 @@ const iconSvgs: Record<string, string> = {
     imgB={{ src: dragones.images[2], alt: 'Niños jugando en el inflable Dragones Rojos' }}
   />
 
-  {/* 7 · SPOTLIGHT — el más grande (Circuito Extremo). MISMO acomodo que arriba
+  {/* 10 · SPOTLIGHT — el más grande (Circuito Extremo). MISMO acomodo que arriba
        (galería a la derecha, SIN flip → sin zig-zag); fondo surface solo separa. */}
   <CategoryFeature
     eyebrow="El más grande"
@@ -149,10 +229,10 @@ const iconSvgs: Record<string, string> = {
     titleAccent="diversión sin límites"
     description={extremo.descLong}
     features={[
-      { label: 'Circuito con obstáculos', desc: 'túneles, escalada y tobogán de altura' },
-      { label: 'Hasta 8–10 niños a la vez', desc: 'perfecto para fiestas grandes y escuelas' },
-      { label: 'Para edades de 5 a 15 años', desc: 'el reto favorito de los más grandes' },
-      { label: 'Requiere 8×4 m', desc: 'pensado para espacios abiertos al aire libre' },
+      { label: 'Muros de escalada + túneles + resbaladilla', desc: 'circuito completo de obstáculos de 7×4 m' },
+      { label: 'Hasta 6–10 participantes de 6+ años', desc: 'el reto favorito para niños grandes y teams' },
+      { label: 'Perfecto para competencias por equipos', desc: 'kermeses, eventos escolares y corporativos' },
+      { label: 'Requiere 7×4 m al aire libre', desc: 'espacio abierto sin techo para instalación segura' },
     ]}
     brands={[
       { name: 'Eventos escolares' },
@@ -227,7 +307,13 @@ const iconSvgs: Record<string, string> = {
   {/* 13 · FAQ + CONTACTO — acordeón + tarjeta WhatsApp sticky */}
   <FAQWithContact />
 
-  {/* 14 · CIERRE — último empujón a la conversión */}
+  {/* 14 · BLOG — guías y consejos recientes */}
+  <BlogPreview
+    title="Guías para tu fiesta perfecta"
+    subtitle="Artículos profesionales sobre inflables, decoración y organización de fiestas infantiles en CDMX — escritos por nuestro equipo con 30 años de experiencia."
+  />
+
+  {/* 15 · CIERRE — último empujón a la conversión */}
   <CTAFinal variant="red" />
 </PageLayout>
 

@@ -1,0 +1,236 @@
+---
+// BlogPreview.astro — Sección de artículos recientes para la homepage.
+// Carga los 3 artículos más recientes del blog y los muestra en un grid 3-col.
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  limit?: number;
+}
+
+const {
+  title = 'Guías y consejos',
+  subtitle = 'Todo lo que necesitas saber antes de rentar un inflable — artículos escritos por nuestro equipo con 30 años de experiencia.',
+  limit = 3,
+} = Astro.props;
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, limit);
+
+function readTime(body: string | undefined) {
+  if (!body) return 5;
+  return Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 200));
+}
+
+const PRODUCT_LABELS: Record<string, string> = {
+  'mini-castillo':        'Mini Castillo',
+  'dragones-rojos':       'Dragones Rojos',
+  'mini-jungla':          'Mini Jungla',
+  'gusanitos':            'Gusanitos',
+  'castillo-de-princesas':'Castillo de Princesas',
+  'barco-pirata':         'Barco Pirata',
+  'extremo':              'Circuito Extremo',
+  'castillo-blanco':      'Castillo Blanco',
+};
+---
+
+<section class="bp-section" aria-labelledby="bp-heading">
+  <div class="bp-container">
+    <div class="bp-header">
+      <div class="bp-header-text">
+        <span class="bp-eyebrow">Desde el blog</span>
+        <h2 class="bp-title" id="bp-heading">{title}</h2>
+        <p class="bp-subtitle">{subtitle}</p>
+      </div>
+      <a href="/articulos" class="bp-see-all">
+        Ver todos los artículos
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="bp-grid">
+      {posts.map((post, i) => {
+        const rt = readTime(post.body);
+        const dateStr = post.data.date.toLocaleDateString('es-MX', { month: 'short', day: 'numeric', year: 'numeric' });
+        const productLabel = post.data.product ? PRODUCT_LABELS[post.data.product] : null;
+        return (
+          <article class:list={['bp-card', i === 0 && 'bp-card--featured']}>
+            {post.data.image && (
+              <a href={`/articulos/${post.id}`} class="bp-card-img" tabindex="-1" aria-hidden="true">
+                <img
+                  src={post.data.image}
+                  alt={post.data.imageAlt ?? post.data.title}
+                  width="640" height="360"
+                  loading="lazy" decoding="async"
+                  onerror="this.src='/img/placeholder.svg'"
+                />
+              </a>
+            )}
+            <div class="bp-card-body">
+              <div class="bp-card-meta">
+                {productLabel && <span class="bp-product-chip">{productLabel}</span>}
+                <time>{dateStr}</time>
+                <span class="bp-meta-sep" aria-hidden="true">·</span>
+                <span>{rt} min</span>
+              </div>
+              <h3 class="bp-card-title">
+                <a href={`/articulos/${post.id}`}>{post.data.title}</a>
+              </h3>
+              <p class="bp-card-excerpt">{post.data.excerpt}</p>
+              <a href={`/articulos/${post.id}`} class="bp-read-more">
+                Leer artículo
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+.bp-section {
+  padding-block: var(--section-py);
+  background: var(--c-white);
+  border-top: 1px solid var(--c-border);
+}
+.bp-container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+.bp-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-8);
+  flex-wrap: wrap;
+}
+.bp-header-text { display: flex; flex-direction: column; gap: var(--sp-2); }
+.bp-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--c-primary);
+}
+.bp-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800; color: var(--c-ink);
+  line-height: 1.15; letter-spacing: -0.02em;
+  margin: 0;
+}
+.bp-subtitle {
+  font-size: 0.95rem; color: var(--c-muted);
+  line-height: 1.6; margin: 0;
+  max-width: 55ch;
+}
+.bp-see-all {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: 0.6rem 1.2rem;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--c-ink-2); text-decoration: none;
+  white-space: nowrap; flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+.bp-see-all:hover { border-color: var(--c-primary); color: var(--c-primary); background: rgba(var(--c-primary-rgb), 0.05); }
+
+.bp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.bp-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.bp-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+.bp-card-img {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--c-surface);
+  flex-shrink: 0;
+}
+.bp-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+.bp-card:hover .bp-card-img img { transform: scale(1.04); }
+
+.bp-card-body {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex: 1;
+}
+.bp-card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  font-size: 0.75rem;
+  color: var(--c-muted);
+  font-weight: 500;
+}
+.bp-product-chip {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--c-primary);
+  background: rgba(var(--c-primary-rgb), 0.1);
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+.bp-meta-sep { opacity: 0.4; }
+.bp-card-title {
+  font-family: var(--font-heading);
+  font-size: 1rem; font-weight: 700;
+  color: var(--c-ink); line-height: 1.3;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bp-card-title a { text-decoration: none; color: inherit; }
+.bp-card-title a:hover { color: var(--c-primary); }
+.bp-card-excerpt {
+  font-size: 0.84rem;
+  color: var(--c-ink-2); line-height: 1.6;
+  margin: 0; flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bp-read-more {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 0.8rem; font-weight: 700;
+  color: var(--c-primary); text-decoration: none;
+  margin-top: auto;
+  transition: gap 0.15s ease;
+}
+.bp-read-more:hover { gap: var(--sp-2); text-decoration: underline; }
+
+@media (max-width: 900px) { .bp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) {
+  .bp-grid { grid-template-columns: 1fr; }
+  .bp-header { flex-direction: column; align-items: flex-start; }
+}
+</style>

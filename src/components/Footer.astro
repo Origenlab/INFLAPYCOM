@@ -6,20 +6,37 @@ const year = new Date().getFullYear();
 
 const navLinks = [
   { label: 'Inicio', href: '/' },
-  { label: 'Catálogo', href: '/#catalogo' },
+  { label: 'Catálogo completo', href: '/catalogo' },
   { label: 'Nosotros', href: '/nosotros' },
   { label: 'Contacto', href: '/contacto' },
-  { label: 'Inflables Chicos', href: '/inflables-chicos' },
-  { label: 'Inflables Medianos', href: '/inflables-medianos' },
-  { label: 'Inflables Grandes', href: '/inflables-grandes' },
+  { label: 'Cobertura CDMX', href: '/#cobertura' },
+  { label: 'Preguntas frecuentes', href: '/#faq' },
+];
+
+const productLinks = [
+  { label: 'Mini Castillo (1–3 años)', href: '/inflables-chicos/mini-castillo' },
+  { label: 'Dragones Rojos', href: '/inflables-medianos/dragones-rojos' },
+  { label: 'Mini Jungla', href: '/inflables-medianos/mini-jungla' },
+  { label: 'Gusanitos', href: '/inflables-medianos/gusanitos' },
+  { label: 'Castillo de Princesas', href: '/inflables-medianos/castillo-de-princesas' },
+  { label: 'Barco Pirata', href: '/inflables-grandes/barco-pirata' },
+  { label: 'Circuito Extremo', href: '/inflables-grandes/extremo' },
+  { label: 'Castillo Blanco', href: '/inflables-grandes/castillo-blanco' },
+];
+
+const articleLinks = [
+  { label: 'Primer cumpleaños en departamento', href: '/articulos/primer-cumpleanos-departamento-inflable-bebe-cdmx' },
+  { label: 'El inflable más rentado en CDMX', href: '/articulos/dragones-rojos-inflable-mas-rentado-cdmx' },
+  { label: 'Guía completa Mini Castillo', href: '/articulos/mini-castillo-inflable-guia-completa-renta-cdmx' },
+  { label: 'Fiesta de princesas en CDMX', href: '/articulos/fiesta-princesas-perfecta-cdmx-castillo-inflable-rosa' },
+  { label: 'Kermeses y olimpiadas infantiles', href: '/articulos/circuito-extremo-inflable-kermeses-olimpiadas-infantiles' },
+  { label: 'Inflable para bodas y XV años', href: '/articulos/inflable-blanco-bodas-xv-anos-comuniones-cdmx' },
 ];
 ---
 
 <footer class="footer">
-  <!-- Top accent bar -->
   <div class="footer__accent" aria-hidden="true"></div>
 
-  <!-- Body: 3 columnas -->
   <div class="footer__body">
     <div class="footer__body-inner">
 
@@ -33,33 +50,49 @@ const navLinks = [
         <ul class="footer__contact-list">
           <li>
             <a href={telUrl()} class="footer__contact-link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               {CONTACT.phoneDisplay}
             </a>
           </li>
           <li>
             <a href={waUrl(WA_MESSAGES.cotizar)} target="_blank" rel="noopener" class="footer__contact-link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
               WhatsApp
             </a>
           </li>
           <li>
             <a href={`mailto:${CONTACT.email}`} class="footer__contact-link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               {CONTACT.email}
             </a>
           </li>
         </ul>
       </div>
 
-      <!-- Columna 2: Navegación -->
+      <!-- Columna 2: Inflables -->
+      <div class="footer__nav-col">
+        <h3 class="footer__nav-title">Inflables</h3>
+        <ul class="footer__nav-list">
+          {productLinks.map((link) => (
+            <li><a href={link.href} class="footer__nav-link">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Columna 3: Artículos -->
+      <div class="footer__nav-col">
+        <h3 class="footer__nav-title">
+          <a href="/articulos" class="footer__nav-title-link">Artículos</a>
+        </h3>
+        <ul class="footer__nav-list">
+          {articleLinks.map((link) => (
+            <li><a href={link.href} class="footer__nav-link">{link.label}</a></li>
+          ))}
+          <li><a href="/articulos" class="footer__nav-link footer__nav-link--all">Ver todos los artículos →</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Navegación + Legal -->
       <div class="footer__nav-col">
         <h3 class="footer__nav-title">Navegación</h3>
         <ul class="footer__nav-list">
@@ -67,11 +100,7 @@ const navLinks = [
             <li><a href={link.href} class="footer__nav-link">{link.label}</a></li>
           ))}
         </ul>
-      </div>
-
-      <!-- Columna 3: Legal -->
-      <div class="footer__nav-col">
-        <h3 class="footer__nav-title">Legal</h3>
+        <h3 class="footer__nav-title footer__nav-title--spaced">Legal</h3>
         <ul class="footer__nav-list">
           <li><a href="/aviso-de-privacidad" class="footer__nav-link">Aviso de privacidad</a></li>
           <li><a href="/terminos" class="footer__nav-link">Términos y condiciones</a></li>
@@ -81,7 +110,6 @@ const navLinks = [
     </div>
   </div>
 
-  <!-- Bottom bar -->
   <div class="footer__bottom">
     <div class="footer__bottom-inner">
       <span class="footer__copy">
@@ -100,23 +128,10 @@ const navLinks = [
 </footer>
 
 <style>
-  .footer {
-    background: var(--c-ink);
-    color: rgba(255, 255, 255, 0.7);
-  }
+  .footer { background: var(--c-ink); color: rgba(255,255,255,0.7); }
+  .footer__accent { height: 3px; background: linear-gradient(90deg, var(--c-primary) 0%, var(--c-primary-light) 100%); }
 
-  /* Accent bar */
-  .footer__accent {
-    height: 3px;
-    background: linear-gradient(90deg, var(--c-primary) 0%, var(--c-primary-light) 100%);
-  }
-
-  /* Body */
-  .footer__body {
-    padding-block: var(--sp-12);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
+  .footer__body { padding-block: var(--sp-12); border-bottom: 1px solid rgba(255,255,255,0.08); }
   .footer__body-inner {
     max-width: var(--container-max);
     margin-inline: auto;
@@ -125,128 +140,46 @@ const navLinks = [
     grid-template-columns: 1fr;
     gap: var(--sp-10);
   }
+  @media (min-width: 640px) { .footer__body-inner { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .footer__body-inner { grid-template-columns: 1.6fr 1fr 1.2fr 1fr; } }
 
-  @media (min-width: 640px) {
-    .footer__body-inner {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .footer__body-inner {
-      grid-template-columns: 2fr 1fr 1fr;
-    }
-  }
-
-  /* NAP column */
   .footer__logo {
     display: inline-block;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #fff;
-    text-decoration: none;
+    font-size: 1.5rem; font-weight: 800;
+    color: #fff; text-decoration: none;
     margin-bottom: var(--sp-4);
     letter-spacing: -0.02em;
   }
-
-  .footer__nap-desc {
-    font-size: 0.875rem;
-    line-height: 1.65;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: var(--sp-3);
-  }
-
-  .footer__address {
-    font-style: normal;
-    font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.4);
-    margin-bottom: var(--sp-4);
-  }
-
-  .footer__contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--sp-2);
-  }
-
+  .footer__nap-desc { font-size: 0.875rem; line-height: 1.65; color: rgba(255,255,255,0.5); margin-bottom: var(--sp-3); }
+  .footer__address { font-style: normal; font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-bottom: var(--sp-4); }
+  .footer__contact-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--sp-2); }
   .footer__contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--sp-2);
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.55);
-    text-decoration: none;
-    transition: color 0.15s ease;
+    display: inline-flex; align-items: center; gap: var(--sp-2);
+    font-size: 0.85rem; color: rgba(255,255,255,0.55);
+    text-decoration: none; transition: color 0.15s;
   }
+  .footer__contact-link:hover { color: #fff; }
 
-  .footer__contact-link:hover {
-    color: #fff;
-  }
-
-  /* Nav columns */
   .footer__nav-title {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: #fff;
-    margin-bottom: var(--sp-4);
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em;
+    text-transform: uppercase; color: #fff; margin-bottom: var(--sp-4); margin-top: 0;
   }
+  .footer__nav-title--spaced { margin-top: var(--sp-7); }
+  .footer__nav-title-link { color: inherit; text-decoration: none; }
+  .footer__nav-title-link:hover { color: rgba(255,255,255,0.7); }
+  .footer__nav-list { list-style: none; padding: 0; margin: 0 0 0; display: flex; flex-direction: column; gap: var(--sp-2); }
+  .footer__nav-link { font-size: 0.875rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.15s; line-height: 1.4; display: block; }
+  .footer__nav-link:hover { color: #fff; }
+  .footer__nav-link--all { color: rgba(var(--c-primary-rgb), 0.8); font-weight: 600; margin-top: var(--sp-1); }
+  .footer__nav-link--all:hover { color: #c084fc; }
 
-  .footer__nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--sp-2);
-  }
-
-  .footer__nav-link {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.55);
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-
-  .footer__nav-link:hover {
-    color: #fff;
-  }
-
-  /* Bottom bar */
-  .footer__bottom {
-    padding-block: var(--sp-5);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
+  .footer__bottom { padding-block: var(--sp-5); border-top: 1px solid rgba(255,255,255,0.12); }
   .footer__bottom-inner {
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding-inline: var(--container-px);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--sp-3);
+    max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-3);
   }
-
-  .footer__copy {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.3);
-  }
-
-  .footer__top {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-
-  .footer__top:hover {
-    color: #fff;
-  }
+  .footer__copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+  .footer__top { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.15s; }
+  .footer__top:hover { color: #fff; }
 </style>

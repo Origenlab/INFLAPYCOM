@@ -122,14 +122,14 @@ const {
     <!-- Columna derecha: galería -->
     <div class="cf__gallery">
       <figure class="cf__img-wrap cf__img-wrap--main">
-        <img src={imgMain.src} alt={imgMain.alt} width="800" height="500" loading="lazy" decoding="async" class="cf__img" />
+        <img src={imgMain.src} alt={imgMain.alt} width="800" height="500" loading="lazy" decoding="async" class="cf__img" onerror="this.src='/img/placeholder.svg'" />
       </figure>
       <div class="cf__img-row">
         <figure class="cf__img-wrap cf__img-wrap--sm">
-          <img src={imgA.src} alt={imgA.alt} width="400" height="300" loading="lazy" decoding="async" class="cf__img" />
+          <img src={imgA.src} alt={imgA.alt} width="400" height="300" loading="lazy" decoding="async" class="cf__img" onerror="this.src='/img/placeholder.svg'" />
         </figure>
         <figure class="cf__img-wrap cf__img-wrap--sm">
-          <img src={imgB.src} alt={imgB.alt} width="400" height="300" loading="lazy" decoding="async" class="cf__img" />
+          <img src={imgB.src} alt={imgB.alt} width="400" height="300" loading="lazy" decoding="async" class="cf__img" onerror="this.src='/img/placeholder.svg'" />
         </figure>
       </div>
     </div>
