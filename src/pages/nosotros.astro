@@ -11,7 +11,7 @@ const schema = JSON.stringify({
   "@type": "Organization",
   "name": SITE.brand,
   "url": SITE.url,
-  "logo": `${SITE.url}/img/inflapy-og-image.jpg`,
+  "logo": { "@type": "ImageObject", "url": `${SITE.url}/img/inflapy-og-image.jpg`, "width": 1200, "height": 630 },
   "description": SITE.description,
   "foundingDate": "1993",
   "areaServed": [

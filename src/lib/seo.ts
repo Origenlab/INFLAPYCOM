@@ -57,7 +57,12 @@ export function buildSchema(props: SchemaProps): string {
       url: SITE.url,
       telephone: `+52-${CONTACT.phone.slice(0,2)}-${CONTACT.phone.slice(2,6)}-${CONTACT.phone.slice(6)}`,
       email: CONTACT.email,
-      logo: `${SITE.url}/icon.png`,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE.url}/icon.png`,
+        width: 192,
+        height: 192,
+      },
       image: `${SITE.url}${SITE.ogImage}`,
       priceRange: '$800 - $2500 MXN',
       currenciesAccepted: 'MXN',

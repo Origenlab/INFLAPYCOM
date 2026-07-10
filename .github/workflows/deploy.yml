@@ -25,6 +25,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Historia completa: el sitemap resuelve lastmod real con git log
+          fetch-depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
