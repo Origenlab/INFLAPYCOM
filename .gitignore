@@ -6,3 +6,7 @@ dist
 .cache
 # Astro dev artifacts
 .astro/
+.DS_Store
+*.log
+.env
+.wrangler
